@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ㅏㅐ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: powderblue;
+        }
+        .wrap{
+            width: 450px;
+            height: 650px;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 5px 5px 15px rgba(0, 0, 100, 0.2);
+        }
+        h2{
+            padding-top: 25px;
+            text-align: center;
+            padding-bottom: 40px;
+            font-family: fantasy;
+            color: darkblue;
+            position: relative;
+            z-index: 3;
+            background-color: #fff;
+            
+        }
+        .wrap::before{
+            width: 100%;
+            content: '';
+            height: 60px;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            border-radius: 50%;
+            box-shadow: 5px 5px 20px rgba(0, 0, 100, 0.2);
+        }
+
+        .formbox{
+            padding: 20px;
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+        }
+        .todo{
+            margin-right: 10px;
+            padding: 5px 10px 5px 15px;
+            /* 상우하좌 순으로 간다 */
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 20px;
+            width: 180px;
+            font-family: 'pretendard';
+        }
+        .todo:placeholder{
+            background-color: blueviolet;
+        }
+        .write{
+            background-color: blueviolet;
+            border: 0;
+            color: #fff;
+            width: 60px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        .write:hover{
+            background-color: blanchedalmond;
+        }
+        .write:active{
+            background-color: brown;
+        }
+        .outputbox{
+            padding: 40px;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li::before{
+            content: '#';
+            font-weight: 700;
+            color: #444;
+            margin-right: 5px;
+        }
+        ul li:hover::before{
+            color: slateblue;
+
+        }
+        ul li{
+            font-family: 'pretendard';
+            border-bottom: 1px solid cornflowerblue;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <h2>To Do list</h2>
+    <div class="formbox">
+        <form action="">
+        <input type="text" placeholder="write something" class="todo">
+        <button class="write">write</button>
+        </form>
+    </div>
+    <div class="outputbox">
+        <ul>
+            <li>test text</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+let form = document.querySelector('form')
+    todo = document.querySelector('.todo')
+    ul = document.querySelector('.ul')
+ 
+    // 비여있는 배열 변수 만들기
+    let list=[];
+
+form.addEventListener('submit',function(e){
+
+       e.preventDefault();
+       let txt = todo.value;
+       list.push(txt);
+
+       console.log(list);
+
+       ul.innerHTML = "";
+
+       todo.value = "";//인풋리셋
+       for(let i = 0; i<list.length; i++){
+
+       let li = document.createElement('li');
+           li.innerText = 'text[i]';
+       ul.append(li);
+       }
+
+});
+
+
+</script>
+
+</body>
+</html>

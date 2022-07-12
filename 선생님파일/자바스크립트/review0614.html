@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REVIEW 0614</title>
+        <style>
+            *{margin:0;padding:0;}
+            .wrap{
+                width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                padding:40px;
+                border:1px solid #ddd;
+                margin-top: 100px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .wrap div{
+                width: 48%;
+                border:1px solid #ddd;
+                border-radius: 10px;
+                padding:20px;
+                box-sizing: border-box;
+                font-size: 22px;
+                font-family: 'pretendard';
+                color: #363636;
+            }
+            
+            fieldset{
+                border:0;
+                margin-bottom: 20px;
+            }
+
+            /* input들 중에 속성값 type="text"가지고 있는 것들
+            video[muted=true] */
+            input[type=text]{
+                border:0;
+                padding:5px;
+                border-bottom: 1px solid #ccc;
+                margin:0 10px;
+                font-size: 22px;
+                font-weight: bold;
+                width: 100px;
+                text-align: right;
+            }
+
+            input::placeholder{
+                color: steelblue;
+            }
+
+            .formBox{
+                position: relative;
+            }
+            button{
+                position: absolute;
+                top: 40px;
+                right: 20px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 140px;
+                height: 50px;
+                text-align: center;
+                background-color: transparent;
+                border: 1px solid steelblue;
+                border-radius: 3px;
+                color: steelblue;
+                font-weight: bold;
+            }
+
+            .result{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+
+            .print{
+                font-size: 48px;
+                font-weight: 700;
+                color: steelblue;
+                margin-right: 10px;
+            }
+
+
+            .warning{
+                color: crimson;
+                font-size: 16px;
+                margin-top: 5px;
+                visibility: hidden;
+                /* 숨김처리
+
+                1. opacity:0;
+                2. display:none;
+                3. visibility : hidden;
+                  display:none처럼 요소를 숨김처리하는
+                  속성이나, display:none은 아예
+                  공간 자체를 삭제하는 반면에
+                  visibility :hidden은 
+                  원래의 공간을 계속 유지한채, 나오는
+                  모양만 제거를 합니다 
+                
+                */
+            }
+
+            .warning span{
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                border:1px solid crimson;
+                text-align: center;
+                font-size: 14px;
+                line-height: 14px;
+                font-weight: bold;
+                margin-left: 35px;
+            }
+
+            .tax{
+                display: block;
+                width: 100%;
+                font-size: 16px;
+                text-align: right;
+            }
+
+            input[type=checkbox]{
+                width: 20px;
+                height: 20px;
+                border:1px solid #ccc;
+                vertical-align: -5px;
+                margin-left: 5px;
+            }
+
+            input[type=checkbox]:checked{
+                background-color: steelblue;
+            }
+            
+
+        </style>
+    </head>
+
+    <body>
+        
+        <div class="wrap">
+            <div class="formBox">
+                <form>
+                    <fieldset>
+                      <!-- <legend>시급입력</legend> -->
+                    <label for="pay">시급</label>
+                    <input id="pay" type="text" class="pay"
+                    placeholder="9,160" required>원
+                    </fieldset>
+<!-- fieldset 은 form(양식) 안에서 여러 input들이랑
+레이블들을 묶을 때 사용하는 div같은 무언가....(그룹화!)
+    <legend> 해당 그룹에 타이틀 붙이는 용도 
+-->
+
+            <fieldset>
+                <label for="hours">총 근무 시간</label>
+                <input type="text" class="hr" id="hours"
+                 placeholder="48" required>시간
+
+                <p class="warning">
+                    <span>!</span> 법정근로기준시간을 초과하였습니다.
+                </p>
+            </fieldset>
+
+            <button>입력</button>
+
+                </form>
+            </div><!--formBox-->
+
+            <div class="result">
+                <p><span class="print"></span> 원</p>
+                
+                <label class="tax">
+                    세금 3.3% 공제
+                    <input type="checkbox" class="check">
+                </label>
+            </div><!--result-->
+
+        </div><!--wrap-->
+
+        <script>
+          //선택자를 잡아줍시다!!! 
+    let form = document.querySelector('form'), //폼
+        pay = document.querySelector('.pay'), //시급인풋
+        hr = document.querySelector('.hr'),  // 시수인풋
+        print = document.querySelector('.print'),//출력span
+        warning = document.querySelector('.warning'),//경고창
+        check = document.querySelector('.check')//checkbox; 
+
+//이벤트 생성을 해 줍시다! : form의 submit 이벤트 
+form.addEventListener('submit',function(e){
+    e.preventDefault(); // submit이벤트의 새로고침 막기 
+
+    //1.입력받은 값들을 각각의 변수에 저장을 좀 합니다
+    let money = pay.value; //value가 인풋에 입력된 값 
+    let hours = hr.value; 
+
+    let result = money * hours;
+
+
+    if(money < 9160){
+        alert('법정최저임금 미만입니다!');
+    }
+
+    if(hours >= 15){
+        alert('주휴수당 지급 대상입니다.')
+    }
+
+    if(hours >= 52){
+
+        warning.style.visibility = "visible";
+
+    }
+
+
+    print.innerText = result;
+    //2. 저장받은 값들을 연산하고
+    //3. span.print 안에 출력함!
+
+
+
+    //만약에 체크박스가 체크가 되어있으면!
+    //3.3% 뺀 값을 출력 
+
+    //check.checked 체크박스가 체크가 되어있다 ->
+    //check.checked == true // check.checked == false
+
+    if(check.checked == true){
+
+        result = result - (result * 0.033);
+        
+        print.innerText = result;
+    }
+
+});//func.form 
+    
+
+check.addEventListener('click',function(){
+
+    
+    let result = pay.value * hr.value;
+    console.log(this.checked, result);
+    
+    if(this.checked == true){
+         print.innerText = result - (result * 0.033);
+    }else{
+        print.innerText = result;    
+    }
+
+}); //func.check
+
+
+        </script>
+    </body>
+</html>
+
+
+

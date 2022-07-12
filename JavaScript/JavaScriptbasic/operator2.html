@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오퍼2</title>
+    <style>
+        .num{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            font-weight: 900;
+            color: #000;
+            text-align: center;
+            line-height: 200px;
+            font-size: 80px;
+            border-radius: 50%;
+            user-select: none;
+            /* 블록 안씌어짐 */
+            cursor: pointer;
+            /* 커서 바꾸기 */
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        .num:active{
+            background-color: blue;
+            color: #fff;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="num">
+             0
+    </div>
+    <script>
+
+        let num = document.querySelector('.num');
+        let txt = 0;
+
+        num.addEventListener('click',function(){
+                   
+
+        txt++;
+        num.innerText = txt;
+
+        });
+
+        let a = 2;
+            a = a + 2;
+
+            //a 자체의 값을 바꾸고 싶다면
+            //연산한 값을 다시금 a에 저장을 해줘야 합니다.
+            a = a + 2;
+            a += 2;
+            a += 2;
+            //더한 값을 다시 저장까지하는 연산자  +=
+            //a -= 뺀값을 다시 저장까지 합니다
+
+            //*= /=
+            //할당연산자 띄어 쓰기없이함
+
+            a++;
+        document.write(a);
+    </script>
+</body>
+</html>

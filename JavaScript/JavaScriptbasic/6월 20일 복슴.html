@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .color{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .color li{
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+        .color li:hover{
+            color: #fff;
+            background-color: blueviolet;
+        }
+        .wrap{
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 10px solid #000;
+            position: relative;
+            height: 400px;
+        }
+        .wrap div{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 400px;
+            font-size: 40px;
+            text-align: center;
+            line-height: 400px;
+            font-weight: 900;
+            font-family: Arial, Helvetica, sans-serif;
+            display: none;
+        }
+        ul{
+            list-style: none;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .forestgreen{
+            background-color: forestgreen;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .wrap .red{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="color">
+        <li>red</li>
+        <li>orange</li>
+        <li>yellow</li>
+        <li>forestgreen</li>
+        <li>blue</li>
+    </ul>
+    <div class="wrap">
+        <div class="red">red</div>
+        <div class="orange">orange</div>
+        <div class="yellow">yellow</div>
+        <div class="forestgreen">forestgreen</div>
+        <div class="blue">blue</div>
+    </div>
+
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        /* 컬러에 있는 엘아이 클릭 했을때 해당 엘아이만 백그라운드 색상 #000 글자색상 #fff로 변경*/
+
+        $('.color li').on('click',function(){
+            $(this).css({
+                'backgroundColor' : '#000',
+                'color' : '#fff'}).siblings().css({
+                    'backgroundColor' : 'transparent',
+                    'color' : '#000'
+                });
+
+                let i = $(this).index();
+                // 클릭한 엘아이에 맞는 디아이브이 나타내기
+                $('.wrap div').eq(i).fadeIn().siblings().fadeOut();
+ -+
+                
+            });
+
+            // 디스플레이 논으로 단순한 형태가 아니라 페이드처럼 시간이 걸리는 속성으로 디스플레이 논 적용시키려고 할때는 사라지고 나타나는 시간차 때문에 공간 값이 발생할 수 있습니다 그래서 이때는 
+            // div들을 포지션 앱솔루트로 다겹처두고 실행시키면 공간 값이 계속 원래대로 유지 되면서 작동하는 것 처럼 보이게 할 수 있습니다
+        
+
+    </script>
+</body>
+</html>

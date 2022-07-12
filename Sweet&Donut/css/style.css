@@ -1,0 +1,306 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@font-face {
+    font-family: Donut;
+    src: url(../font/DonutsCookies.woff.otf); format('woff2');
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 폰트관련된 속성들은 부모에게 줘 놓으면 다 내려받기 때문에 제일큰 부모 에게 폰트색상을 지정해두면 모든 태그가 영향을 받음 */
+html{
+    color: #363636;
+    font-family: Pretendard;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+header{
+    height: 200px;
+    text-align: center;
+    border-top: 4px solid blueviolet;
+    padding-top: 43px;
+    position: relative;
+    
+}
+.hwrap{
+    width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gnb{
+    margin-top: 37px;
+    display: flex;
+    justify-content: center;
+
+}
+.gnb li{
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.util{
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 450px;
+    color: #666666;
+    
+}
+.util li{
+  font-size: 12px;
+  border-right: 1px solid #999;
+  margin-left: 10px;
+  padding-right: 10px;
+}
+.util li:last-child{
+    border: none;
+}
+.gnb li:hover{
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(148, 0, 211, 0.5), 
+                 1px 1px 1px rgba(148, 0, 211, 0.7),
+                 0px 0px 8px rgba(220, 100, 200, 0.8);
+                 /* rgba에서 투명도 넣기 레드 그린 블루 알파=알파는 투명도 조절 */
+    /* 텍스트 쉐도우는:x값 y값 번짐 색상 글자에 그림자 넣는 속성(드랍쉐도우같은)
+    x값 - 가로축이동
+    y값 - 세로축이동 
+    번짐 - 사이즈 개념
+    
+    텍스트 쉐도우는 , 로 구분하여 여러단계로 나누어서 가능하다*/
+}
+.bn{
+    background-image: url(../images/images/images/스위트도넛_06.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center , 0;
+    height: 560px;
+}
+.bn a{
+    display: block;
+    height: 100%;
+}
+.s1{
+    width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+
+}
+.con{
+    display: flex;
+    justify-content: space-between;
+}
+.s1 .simg{
+    background-image: url(../images/images/images/스위트도넛2_09.jpg);
+    height: 400px;
+    width: 648px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.s1 .txtbox{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: auto;
+margin-right: auto;
+}
+.s1 .txt h3{
+    font-family: donut;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.txt p{
+    font-size: 14px;
+}
+
+.con2{
+    display: flex;
+    justify-content: space-between;
+}
+.s1 .txtbox2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.s1 .txt2 h3{
+    font-family: donut;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.txt2 p{
+    font-size: 14px;
+}
+
+.s2{
+    margin-top: 72px;
+}
+
+.s2 h2{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 800;
+}
+.s2 .con3{
+    width: 1320px;
+    margin-top: 72px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+.s2 .con3 .item{
+    width: 312px;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 1.5s;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 20px rgba(183,163,185, 0.5);
+}
+.con3 .item .txt{
+padding: 25px;
+}
+.s2 .item:hover{
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px 30px #rgba();
+    /* 있던 자리에서 움직이는 속성!
+    꾸미기 속성임으로 이걸로 정렬을 시켜서는 안되고 딱 이렇게 마우스 올렸을때 모양이 변하는 용도로 사용함 */
+}
+.s2 h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+.s2 p{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.s3{
+    background-image: url(../images/images/images/images/sprinkles-falling-glazed-donuts.jpg    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 120px;
+    height: 450px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.s3 .swrap{
+    width: 1320px;
+}
+.s3 .tit{
+    font-family: donut;
+    font-size: 30px;
+    font-weight: 100;
+}
+.s3 h3{
+    font-size: 28px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.s3 span{
+    font-weight: 700;
+}
+.s3 a{
+    display: block;
+    background-color: #fff;
+    width: 175px;
+    height: 55px;
+    border-radius: 100px;
+    color: #363636;
+    text-align: center;
+    line-height: 55px;
+    font-weight: 600;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 1s;
+    font-size: 20px;
+    
+}
+.s3 .btn{
+    display: flex;
+    margin-top: 24px;
+}
+.btn a:last-child{
+    margin-left: 24px;
+}
+.s3 .txt{
+    font-size: 14px;
+    margin-top: 24px;
+}
+.btn a:hover{
+    transform: translate(2px, 2px);
+    box-shadow: 5px; 5px; 5px rgba(0,0,0,0.4);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.s4{
+    width: 1320px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 72px;
+}
+.s4 .box{
+    position: relative;
+    
+}
+.s4 .box .sns{
+           display: flex;
+           position: absolute;
+           top: 210px;
+           left: 35px;
+}
+.s4 .box .sns li{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.s4 .box1-1{
+    margin-bottom: 20px;
+}
+.mak{
+    margin: 92px;
+    text-align: center;
+}
+.mak h3{
+    margin-top: 30px;
+    font-size: 16px;
+}
+footer{
+    background-color: blueviolet;
+    height: 250px;
+    color: #fff;
+}
+.fwrap{
+    width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    padding-bottom: 0;
+}
+footer h1{
+    font-family: donut;
+
+}
+address{
+    margin-top: 10px;
+    font-style: normal;
+    font-size: 14px;
+    
+}
+.info{
+    font-size: 14px;
+    margin: 8px;
+}
+.copy{
+    font-size: 14px;
+    margin-top: 10px;
+}

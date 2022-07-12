@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>margin</title>
+        <style>
+            .box1{
+                width: 200px;
+                height: 300px;
+                background-color: mediumblue;
+                margin-bottom: 50px;
+                margin-left: 100px;
+                margin-top: 80px;
+                margin-right: 100px;
+/* margin은 외부여백입니다 요소들과 요소들 사이의 간격을 띄우기 위해서 사용 */
+            }
+            .box2{
+                width: 300px;
+                height: 280px;
+                background-color: lawngreen;
+                margin-left: 40px;
+            }
+            .box3{
+                width: 420px;
+                height: 380px;
+                background-color: tomato;
+                margin-left: auto;
+                margin-right: auto;
+                /* 블록요소는 너비를 주기전엔 항상 너비가 가득 차있다!! 여기에 너비를 적용시키면
+                남은 공간을 마진으로 처리됩니다 그래서 이 마진을 자동으로 분배시키는 마진 레프트 오토 라이트 오토를 적용시키면 가운데로 모이게 된다 */
+            }
+            .box4{
+                width: 280px;
+                height: 360px;
+                background-color: pink;
+                margin-left: 100px;
+                margin-top: 400px;
+            }
+            .box5{
+                width: 360px;
+                height: 480px;
+                background-color: skyblue;
+                margin-top: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+           안녕하세요
+        </div>
+        <div class="box2">
+           안녕하세요
+        </div>
+        <div class="box3">
+            안녕하세요
+        </div>
+        <div class="box4">
+            안녕하세요
+        </div>
+        <div class="box5">
+            안녕하세요
+        </div>
+    </body>
+</html>

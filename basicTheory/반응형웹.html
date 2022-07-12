@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            *{
+                margin: 0; padding: 0;
+            }
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            ul{
+                list-style: none;
+            }
+            .con{
+                padding-left: 15px;
+                padding-right: 15px;
+                max-width: 920px;
+                margin-left: auto;
+                margin-right: auto;
+
+            
+            
+            }
+            .con .item{
+                
+                border-radius: 10px;
+                box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+                margin-bottom: 15px;
+                box-sizing: border-box;
+            }
+            .item a{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            figure{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: blueviolet;
+                padding: 10px;
+            }
+            article{
+                width: calc(100% - 100px);
+            }
+            h3{
+                color: #333;
+            }
+            p{
+                color: #888;
+                font-size: 12px;
+            }
+            .bn{
+                height: 100vh;
+                /* vh란? 뷰포트 하이트의 줄임말로 지금 보고 있는 그창*/
+                /* 100vh= 지금 보고 있는 그창의 높이값 100%기본적으로 상대값이며, % 로 적용됩니다
+                50vh는 절반!!!
+                
+                q.그렇다면 vh는 반드시 높이값 적용시킬때만 써야하나요?
+                a.*/
+                background-image: linear-gradient(45deg, #ccc, #d54d);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            h2{
+                font-size: 4vw;
+                /* vw=보고있는 그창의 넚이값
+                들수 있는의문
+                그냥 % 쓰면 안되냐? 써도 되는 상황이면 써라 근데 기본적으로 %는 부모를 기준으로 작동한다
+                그러나 브라우저를 기준으로 작동하게끔 할려면 vw,vh 를 쓴다
+                넚이 값 뿐만 아니라 폰트사이즈 넚이 값등 다양하게 적용시킬수 있다 */
+            }
+            span{
+                max-width: 600px;
+                text-align: center;
+            }
+            header{
+                background-color: orangered;
+                height: 50px;
+                position: relative;
+            }
+            .allbtn{
+                background-color: transparent;
+                border: 0;
+                background-color: darkgoldenrod;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            header h1{
+                color: #fff;
+                text-align: center;
+            }
+            nav{
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: gold;
+                width: 100%;
+                z-index: 999;
+                /* 하이트 100%는 부모가 하이트 값을 가지고 있어야만 적용이 됩니다
+                그런데 포지션 픽스드 상태에서
+                하이트 100% 쓸 경우 100vh 오버플로우 히든 효과가 납니다
+                다시말해서 브라우저를 가득 채우는 높이 값이 되고
+                그안에 들어 있는 내용물이 해당 요소를 벗어난다 하더라도 출력되지 않습니다
+                스크롤이 안생김 */
+            }
+            .close{
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                border: 0;
+                background-color: olivedrab;
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: #fff;
+            }
+            .gnb{
+                margin-top: 50px;
+
+            }
+            .gnb li{
+                border-bottom: 1px solid #888;
+                text-indent: 15px;
+                line-height: 40px;
+            }
+            .allbtn span{
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width: 22px;
+                height: 4px;
+                margin-bottom: 4px;
+                background-color: #fff;
+            }
+            .allbtn span:last-child{
+                margin-bottom: 0;
+            }
+            @media all and (min-width:1000px){
+                .con{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                .item{
+                    width: calc(50% - 10px);
+                    /* 어차피 저스티파이 컨텐스 스페이스 비트윈이 설정되어있다
+                    그러기 때문에 아이템들의 너비 값만 조절해주면 알아서 자기들끼리 떨어지게 되어있습니다
+                    그래서 너비값을 조절하는데 50% 보다 10px씩 작게 적용을 시켜 두면 각각의 div가 50%보다 10px씩 작은 상태로 적용이되고 
+                    그렇게 되면 div 사이에는 총 20px의 갭이 생긴다 */
+                    margin-bottom: 20px;
+                    overflow: hidden;
+                }
+                .item a{
+                    flex-direction: column;
+                    /* 플렉스 컬럼!!!
+                    플렉스 컨테이너 내에서 메익축을 세로로 전환 시키는 속성 저스티파이 컨텍츠와 얼라인 아이템 속성에 대해서 다시금 생각 해봐야됩니다
+                    왜냐면 애초에 저스티파이 컨텐트 속성은 가로축 내에서의 정렬이 아니라 메인축 내에서의 정렬을 바꾸는 속서잉기 떄문에
+                    얼라인 아이템즈도 마찬가지 */
+                    align-items: baseline;
+                    /* 얼라인 아이템 베이스 라인중 기본적인 형태 기본값은 스트레치 */
+                     }
+                     figure{
+                         border-radius: 0;
+                         width: 100%;
+                         height: 200px;
+                     }
+                     article{
+                         width: auto;
+                         padding: 15px;
+                     }
+            }
+            @media all and (min-width:1000px){
+
+header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+    /* height를 기본값으로 세팅
+    기본값이란?
+    안에 들어있는 내용물만큼 
+    자동으로 내려오게끔 하는 기본값 */
+}
+
+header button{
+    display: none;
+}
+nav{
+    display: block !important;
+    /* 
+    속성뒤 한칸 띄우고 !important를 쓰면
+    우선순위가 1위가 됩니다.
+    이게 모든 css선택자 통틀어서
+    가장 우선순위가 높은 속성이 됩니다.
+
+    그렇기 때문에
+    복잡한 작업을 단축 시킬 수 있습니다!
+    그렇지만 남발할 경우
+    수습이 불가능할정도로 코드가 꼬여버리기 때문에
+    주의깊게 사용해야 합니다. 
+    
+    */
+    position: unset;
+    background-color: unset;
+    /* 
+    모바일에서 줘 뒀던 position:fixed를
+    제거해야되기때문에 
+    position 속성의 가장 기본값인 static
+    을 줬습니다!!
+
+    이렇듯 모든 속성들은 기본값들이 다 다릅니다
+    position:static;
+    background-color:transparent;
+    border:none
+    ....
+    Q. 이걸 다 외워야 하나요?
+    A.뭐 어차피 자동완성 되는데...
+    
+    마법의 주문 : unset
+    뭐든간에 unset을 속성값으로 주면
+    줬던 것들이 제거가 됩니다. 
+    */
+}
+
+
+.gnb{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.gnb li{
+    text-indent: 0;
+    line-height: normal;
+    border:0;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+
+
+.con{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item{
+    overflow: hidden;
+    padding:0;
+    width:calc(50% - 10px);
+    /* 
+    어차피 justify-content:space-between이
+    설정이 되어 있습니다!!!!
+    그렇기때문에 아이템들의 너비값만 조절해주면
+    알아서 자기들끼리 떨어지게 되어있습니다
+    그래서 너비값을 조절하는데,
+    50%보다 10px씩 작게 적용을 시켜두면
+    각각의 div가 50%보다 10px씩 작은 상태로
+    적용이 되고,
+    그렇게되면 div 사이에 총 20px의 갭이 생겨납니다
+    */
+    margin-bottom: 20px;
+}
+
+.item a{
+    flex-direction: column;
+    align-items:baseline;
+    /* baseline이 가장 기본적인 형태
+    그렇다고 해서 align-items의 기본값은
+    아닙니다!!(기본값은 stratch) */
+}
+
+figure{
+    border-radius: 0;
+    width: 100%;
+    height: 200px;
+}
+
+article{
+    width: auto;
+    /* width의 가장 기본형태
+    100%가 가장 기본형태가 아님... */
+    padding:15px;
+}
+
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hwrap">
+            <h1><a href="#">LOGO</a></h1>
+            <nav>
+                <ul class=" gnb">
+                    <li><a href="#">list1</a></li>
+                    <li><a href="#">list1</a></li>
+                    <li><a href="#">list1</a></li>
+                    <li><a href="#">list1</a></li>
+                    <li><a href="#">list1</a></li>
+                </ul>
+                <button class="close">close</button>
+            </nav>
+            <button class="allbtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <div class="bn">
+        <h2>All you need is love</h2>
+        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid deserunt vero reiciendis maiores, quam molestiae enim aut ratione autem provident perferendis inventore suscipit? Deleniti ab, nobis quidem rerum voluptas repudiandae.</span>
+    </div>
+    <div class="con">
+        <div class="item">
+            <a href="#">
+                <figure></figure>
+                <article>
+                    <h3>타이틀</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, deserunt commodi voluptatum perspiciatis aut earum delectus nihil illum perferendis facilis atque fugiat itaque? Voluptate, ullam maxime modi eum deserunt necessitatibus.</p>
+                </article>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <figure></figure>
+                <article>
+                    <h3>타이틀</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, deserunt commodi voluptatum perspiciatis aut earum delectus nihil illum perferendis facilis atque fugiat itaque? Voluptate, ullam maxime modi eum deserunt necessitatibus.</p>
+                </article>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <figure></figure>
+                <article>
+                    <h3>타이틀</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, deserunt commodi voluptatum perspiciatis aut earum delectus nihil illum perferendis facilis atque fugiat itaque? Voluptate, ullam maxime modi eum deserunt necessitatibus.</p>
+                </article>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <figure></figure>
+                <article>
+                    <h3>타이틀</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, deserunt commodi voluptatum perspiciatis aut earum delectus nihil illum perferendis facilis atque fugiat itaque? Voluptate, ullam maxime modi eum deserunt necessitatibus.</p>
+                </article>
+            </a>
+        </div>
+    </div>
+    <script>
+                let allBtn = document.querySelector('.allBtn');
+        let nav = document.querySelector('nav');
+        let closeBtn = document.querySelector('.close');
+
+        allBtn.addEventListener('click',function(){
+            nav.style.display = 'block'
+        });
+
+        closeBtn.addEventListener('click',function(){
+            nav.style.display = 'none'
+        });
+         </script>
+</body>
+</html>

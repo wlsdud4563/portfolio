@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* header mobile */
+
+
+.pc{
+    display: none;
+}
+
+h1 img{
+    width: 112px;
+}
+h1{
+    text-align: center;
+    background-color: #E41E25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 63px;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+}
+header{
+    height: 63px;
+}
+
+.btnNav, .btnMy{
+    width: 65px;
+    height: 63px;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+}
+.btnNav img, .btnMy img{
+    width: 25px;
+}
+
+.btnNav{
+    left: 0;
+}
+
+.btnMy{
+    right: 0;
+    background-color: #222;
+}
+
+nav{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.navMo{
+    display: flex;
+}
+.btnClose{
+    background-color: #fff;
+    width: 65px;
+    height: 65px;
+}
+.btnClose img{
+    width: 22px;
+}
+
+.btnSrch{
+    background-color: #333;
+    width: 65px;
+}
+.btnSrch img{
+    width: 23px;
+}
+
+.navMo input{
+    background-color: #333;
+    border:0;
+    /* width: 100%; */
+    width: calc(100% - 130px);
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.gnb{}
+.gnb li{
+    color:#fff;
+    background-color: #333;
+    border-top: 1px solid #444;
+    padding-left: 20px;
+    line-height: 50px;
+}
+.gnb .red{
+    background-color: #E41E25;
+}
+
+.bn img{
+    width: 100%;
+}
+
+.tablet{
+    display: none;
+}
+
+
+section{
+    display: flex;
+    flex-wrap:wrap;
+}
+section .item{
+    width: 50%;
+    position: relative;
+}
+
+section .item:hover .txt{
+    opacity: 1;
+}
+section .item .txt{
+    opacity: 0;
+    transition: all 1s;
+
+    font-size: 14px;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+section .item img{
+    width: 100%;
+    display: block;
+}
+section .item .icon{
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+footer{
+    background-color: #333;
+    padding: 20px;
+    color: #777;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sns{
+    background-color: pink;
+    width: 100%;
+}
+
+.fmenu1, .fmenu2, .sns{
+    display: flex;
+}
+
+.sns .mobile{
+    height: 27px;
+}
+.sns{
+    margin-top: 20px;
+}
+.sns li{
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.fmenu1 li:after, .fmenu2 li:after{
+    content: '|';
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+footer ul li:last-child:after{
+    content: none;
+}
+
+@media all and (min-width:768px){
+    .tablet{
+        display: block;
+    }
+
+    .bn .mobile{
+        display: none;
+    }
+
+    section .item{  
+        width: 33.33%;
+    }
+}
+
+
+
+@media all and (min-width:1200px){
+
+    .mobile{
+        display: none;
+    }
+
+    .pc{
+        display: block;
+    }
+
+    h1{
+        width: 10%;
+    }   
+
+    header{
+        position: relative;
+        border-bottom: 1px solid #E41E25;
+        font-size: 14px;
+    }
+    nav{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        height: auto;
+        width: calc(90% - 130px);
+    }
+    .gnb{
+        display: flex;
+    }
+    .gnb li{
+        border:0;
+        padding-left: 0;
+        line-height: 63px;
+        width: 12.5%;
+        text-align: center;
+        border-right: 1px solid #444;
+    }
+
+    .btnPcs{
+        width: 65px;
+        height: 63px;
+        position: absolute;
+        top: 0;
+        right: 65px;
+        background-color: #333;
+    }
+
+    .btnMy .pc{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .fmenu1{
+        margin-right: 15px;
+    }
+    .sns{
+        width: auto;
+        margin-top: 0;
+        margin-left: auto;
+    }
+
+    .sns li{
+        position: relative;
+    }
+    .sns .on{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.4s;
+    }
+    .sns li:hover .on{
+        opacity: 1;
+    }
+
+
+
+}

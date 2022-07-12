@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Righteous&display=swap');
+
+    h1{
+        position: fixed;
+        top: 50px;
+        width: 200px;
+        left: 50px;
+        z-index: 50;
+
+
+    }
+    h1 img{
+        width: 100%;
+    }
+    nav{
+        position: fixed;
+        top: 50%;
+        margin-top: -100px;
+        z-index: 30;
+    }
+    nav a{
+        display: block;
+        width: 200px;
+        text-align: right;
+        font-size: 14px;
+        font-family: 'Righteous', cursive;
+        color: #111;
+        border-top: 1px solid #111;
+        height: 60px;
+        transition: all 0.5s;
+    }
+    nav a:hover{
+        font-size: 24px;
+    }
+    nav a:nth-child(1):hover, nav a:nth-child(1).on{
+        color: #d4164c;
+        border-color: #f4164c;
+    }
+    nav a:nth-child(2):hover, nav a:nth-child(2).on{
+        color: #fff;
+        border-color: #fff;
+    }
+    nav a:nth-child(3):hover, nav a:nth-child(3).on{
+        color: #ffec6a;
+        border-color: #ffec6a;
+    }
+    nav a:nth-child(4):hover, nav a:nth-child(4).on{
+        color: #005a89;
+        border-color: #005a89;
+    }
+    #wrap{}
+    #wrap section{
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: right 0;
+        overflow: hidden;
+        position: relative;
+    }
+    .spring{
+        background-image: url(images/bg1.jpg);
+    }
+    .summer{
+        background-image: url(images/bg2.jpg);
+    }
+    .autumu{
+        background-image: url(images/bg3.jpg);
+    }
+    .winter{
+        background-image: url(images/bg4-1.jpg);
+    }
+    article{
+        position: absolute;
+        left: 360px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    article h3{
+        font-size: 50px;
+        font-family: 'Righteous', cursive;
+    }
+    article span{
+        color: #111;
+    }
+    article p{
+        font-size: 50px;
+        font-family: 'Righteous', cursive;
+        letter-spacing: 2px;
+    }
+    .spring p{
+        color: #d4164c;
+    }
+    .summer p{
+        color: #fff;
+    }
+    .autumu p{
+        color: #ffec6a;
+    }
+    .winter p{
+        color: #005a89;
+    }
+    .summer span, .autumu span{
+        color: #fff;
+    }
+    .p11{bottom:20px; right:20px;}
+.p12{bottom:-40px; right:130px;}
+.p13{bottom:140px; right:60px;}
+
+.p21{bottom:-480px; right:-180px;}
+.p22{bottom:-40px; right:130px;}
+
+.p31{bottom:30px; right:180px;}
+.p32{bottom:-270px; right:110px;}
+.p33{bottom:-130px; right:-70px;}
+
+.p41{bottom:-120px; right:20px;}
+.p42{bottom:-180px; right:0px;}
+
+</style>
+<body>
+    <h1><a href="#"><img src="images/logo.png" alt=""></a></h1>
+    <nav>
+        <a href="#" class="on">Full Blossom</a>
+        <a href="#">Be Colorful</a>
+        <a href="#">Time on Board</a>
+        <a href="#">Shiny Adduct</a>
+    </nav>
+    <div id="wrap">
+        <section class="spring">
+            <article>
+                <p>FULL BLOSSEM</p>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>
+            </article>
+
+            <img src="images/obj11.png" class="p11">
+            <img src="images/obj12.png" class="p12">
+            <img src="images/obj13.png" class="p13">
+        </section><!--봄-->
+        <section class="summer">
+            <article>
+                <p>BE COLORFUL</p>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>
+            </article>
+            <img src="images/obj21.png" class="p21">
+            <img src="images/obj22.png" class="p22">
+        </section>
+        <section class="autumu">
+            <article>
+                <p>TIME ON BOARD</p>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>
+            </article>
+            <img src="images/obj31.png" class="p31">
+            <img src="images/obj32.png" class="p32">
+        </section>
+        <section class="winter">
+            <article>
+                <p>SHINY ADDICT</p>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>
+            </article>
+            <img src="images/obj41.png" class="p41">
+            <img src="images/obj12.png" class="p42">
+        </section>
+        
+    </div><!--wrap-->
+
+
+    <script src="../JavaScript/JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script src="../JavaScript/JavaScriptbasic/js/jquery-mousewheel-main/jquery.mousewheel.min.js"></script>
+    <script>
+        $('section').on('mousewheel',function(e,d){
+
+            if(d<0){
+                let nxt = $(this).next().offset().top;
+                $('html,body').stop().animate({'scrollTop' : nxt},1000,'easeOutBounce');
+            }else if(d>0){
+                let prv = $(this).prev().offset().top;
+                $('html,body').stop().animate({'scrollTop' : prv},1000,'easeOutBounce');
+            }
+
+        });
+    </script>
+</body>
+</html>

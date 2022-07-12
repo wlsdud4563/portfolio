@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+html{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+header{
+    background-color: black;
+    color: #fff;
+}
+.hwrap{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+header h1{
+     padding-top: 35px;
+     border-bottom: 1px solid #666;
+    padding-bottom: 5px;
+}
+.gnb{
+    font-family: Arial, sans-serif;
+    font-family: 700;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top: 60px;
+    left: 280px;
+}
+.gnb .green{
+    color: forestgreen;
+}
+.gnb li{
+    margin-right: 20px;
+}
+.util{
+    color: #c5c5c5;
+    font-size: 12px;
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 0;
+}
+.util li::after{
+    content: '|';
+    /* li 안에 특수문자 삽입 컨텐트까지 셋트 */
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.util li:last-child::after{
+    content: none;
+    /* 에프터 삭제하는법 */
+}
+.srch{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    /* 부모가 포지션 만 가지고 있으면 부모 안에서 움직입니다
+    그럼 왜 부모에게 꼭 포지션 렐러티브를 주라고 했을까요?
+    포지션 앱솔루트나  픽스드는 가지게 되는 순간
+    레이아웃에서 해당요소가 아예 벗어나 버리게 됩니다
+     = 레이아웃이 망가지거나 예측이 불가능한 범위로 움직입니다
+    그런데 position:relative는
+    적용을 시켜도 아무런 일이 일어나지 않습니다  */
+}
+.srch input{
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    position: absolute;
+    top: -2px;
+    right: -4px;
+}
+.srch button{
+    border: 0;
+    background-color: transparent;
+}
+.srch button img{
+    display: block;
+}
+.shopmenu{
+    display: flex;
+    margin-top: 10px;
+}
+.shopmenu li:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.shopmenu li:first-child{
+    background-color: #fff;
+    color: #000;
+}
+.shopmenu li{
+    padding-left: 20px;
+ padding-right: 20px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+.shopmenu .yellow{
+    color: yellow;
+    margin-left: auto;
+}
+.shopmenu .yellow:hover{
+    background-color: transparent;
+    color: yellow;
+}
+/* bn */
+.mainbn{
+    position: relative;
+}
+.mainbn .bnimg{
+    height: 400px;
+    background-image: url(../images/main_bn.jpg);
+    background-size: cover;
+    background-position: center 0;
+}
+.mainbn .bnimg a{
+ display: block;
+ height: 100%;
+ text-indent: -9999px;
+ /* 텍스트 인덴트는 들여쓰기 속성!!
+ 원래는 이렇게 텍스트 시작지점에 자동으로 들여 쓰게 하기 위한 속성으로 만들어 졌으나 
+ 웹접근성을 위해서 설명 텍스트들을 지우기 위해 -9999px 값과 함꼐 사용됨 */
+}
+.mainbn button{
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.next{
+    right: 200px;
+}
+.prev{
+    left: 200px;
+}
+.pager{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.pager a{
+    width: 14px;
+    height: 14px;
+    background-color: #cccc;
+    border-radius: 50%;
+    text-indent: -9999px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.pager a:hover{
+    background-color: #888;
+}
+main{
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18px;
+}
+main img{
+    vertical-align: top;
+}
+.main .content{}
+.row1, .row2{
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.row3{
+    position: relative;
+}
+.row3 .con{
+    width: 875px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+.row3 .item{
+    width: 175px;
+    height: 209px;
+    position: relative;
+}
+.row3 .txt{
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.row3 .prd{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mdprev, .mdnext{
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 150px;
+}
+.mdnext{
+    right: 0;
+}
+.mdprev{
+    left: 0;
+}
+.row4{
+    margin-top: 18px;
+}
+.soundonly{
+    display: block;
+    text-indent: -9999px;
+    /* 스판은 인라인 요소라서 텍스트인덴트가 안먹힙니다 그래서 블록으로 바꿔줌
+    스판쓴것들은 그렇게 바꾸기 */
+}
+.row5{}
+.row5 .con{
+    display: flex;
+}
+.row5 .item{
+    width: 33.33%;
+    color: #333;
+    font-size: 14px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+.row5 h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+.row5 .news li{
+    margin-bottom: 5px;
+    width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 글자 일정이상 넘어가면 숨김처리!!! */
+}
+.row5 .news{
+    background-image: url(../images/ico_news.jpg);
+    background-position: 0 center;
+    padding-left: 80px;
+    /*  */
+}
+.row5 .member{
+    background-image: url(../images/ico_membership.jpg);
+    padding-left: 100px;
+    background-position: 22px center;
+}
+.row5 .cs{
+    background-image: url(../images/ico_cscenter.jpg);
+    padding-left: 80px;
+    background-position: 0 center;
+}
+.campaign{
+    background-color: #f2f2f2;
+    margin-top: 18px;
+    text-align: center;
+}
+footer{
+    background-color: #000;
+    color: #fff;
+    padding-bottom: 20px;
+}
+footer h1{
+    border-bottom: 1px solid #666;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+footer .fwrap{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.fmenu{
+    display: flex;
+    font-size: 12px;
+    position: absolute;
+    top: 30px;
+    left: 180px;
+}
+.fmenu li{
+    margin-left: 25px;
+}
+footer .con{
+    display: flex;
+    margin-top: 10px;
+}
+footer .link{
+    margin-right: 35px;
+}
+footer .sns{
+    display: flex;
+}
+footer .sns a{
+    margin-right: 5px;
+}
+footer .safety{
+    display: block;
+    padding: 10px;
+    border:  2px solid #fff;
+    font-size: 14px;
+    margin-top: 10px;
+}
+footer .info{
+    font-size: 12px;
+    color: #888;
+    padding-top: 10px;
+}
+address{
+    font-style: normal;
+}
+footer .copy{
+    color: #fff;
+    margin-top: 15px;
+}
+

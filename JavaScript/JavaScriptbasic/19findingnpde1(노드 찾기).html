@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드찾기</title>
+  <style>
+*:not(html,body){
+    /* 낫 태크 이거 뺴고 나머지란뜻 */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #444;
+    font-size: 14px;
+    font-family: 'pretendaed';
+    color: #000;
+}
+span{
+    font-weight: bold;
+}
+ul{
+    list-style: none;
+}
+.select{
+    background-color: papayawhip;
+}
+.apple{
+    background-color: powderblue;
+}
+
+  </style>
+
+</head>
+<body>
+    <div class="wrap">
+        div.wrap
+        <div class="header">
+            div.header
+            <h1>h1</h1>
+            <ul class="gnb">
+             ul.gnb
+             <li>li gnb</li>
+             <li class="select">li gnb select</li>
+             <li>li gnb</li>
+             <li>li gnb <span>스판</span></li>
+             <li>li gnb <span>스판</span></li>
+            </ul>
+            <ul class="util">
+                util
+                <li>li util</li>
+                <li>li util <span></span></li>
+                <li>li util <span></span></li>
+                <li>li util</li>
+            </ul>
+        </div><!--헤더-->
+        <div class="con">
+            div.con
+            <div class="space">
+                div.spacs
+                <div class="box">
+                    div,.box
+                    <p>p1</p>
+                    <p>p1</p>
+                    <p>p1</p>
+                    <p>p1</p>
+                </div>
+                <div class="box">
+                    div,.box
+                    <p>p1</p>
+                    <p>p1</p>
+                    <p>p1</p>
+                </div>
+            </div><!--스페이스-->
+            <div class="nemo">
+                div,.nemo
+                <div class="txt">
+                    div,.txt
+                        <h3>h3</h3>
+                        <ul>
+                            <li>li1</li>
+                            <li>li1</li>
+                            <li>li1</li>
+                            <li>li1</li>
+                            <li>li1</li>
+                        </ul>
+                </div>
+            </div>
+        </div><!--컨-->
+        <div class="footer">
+            div,.footer
+            <h1>h1</h1>
+            <ul class="fmenu">
+                ul,.fmenu
+                <li>li1 <span>span</span></li>
+                <li>li1 <span>span</span></li>
+                <li>li1</li>
+                <li class="apple">li1</li>
+                <li>li1</li>
+            </ul>
+            <ul class="list">
+                ul,.list
+                <li>li1</li>
+                <li>li1</li>
+                <li>li1</li>
+                <li>li1</li>
+            </ul>
+            <div class="info">
+                div,.info
+                <p>p1</p>
+                <p>p1</p>
+                <p>p1</p>
+            </div>
+            <div class="content">
+                div,.content
+                <div class="txt">
+                    div,.txt
+                    <div class="pic">
+                        div,.pic
+                    </div>
+                    <h3>h3</h3>
+                    <p>p1</p>
+                </div>
+                <div class="txt">
+                    div,.txt
+                    <div class="pic">
+                        div,.pic
+                    </div>
+                    <h3>h3</h3>
+                    <p>p1</p>
+                </div>
+            </div>
+        </div>
+    </div><!--랩-->
+
+
+
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+// 간단한 조작법
+// 1.$('') 로 선택자를 잡는다
+// 2.이어지는 기능들은 무조건 뒤에 . 매서드() 형태로 집어넣는다
+
+// css() 제이쿼리로 css값을 변경시키는 매서드
+// 1. css('속성','속성값');
+// 1. css({'속성':'속성값',   여러개 동시에 가능});
+// 여러개 문법을 제이슨 문법json문법이라고 부른다
+
+
+
+$('.header').css({'borderColor' : 'red'});
+
+// 노드찾기(html요소 찾기) 시작!
+/*
+1.자식요소찾기
+*/
+$('.header').children().css({
+    // 칠드런 헤더 안에 자식요소들에게 해당 값을 줘라 바로아래 자식 직계자식
+
+    'borderColor' : 'gold'
+});
+$('.header').children("h1").css({'backgroundColor':'bule'});
+
+$('.header').find('span')
+.css({'color' : 'red'});
+// 파인드는 칠드런 처런 괄호안을 비워서 쓸수 없음 모든 자식들 중 찾기
+//find("선택자") 안에들어 있는 모든 후손중 선택자 찾기
+    
+
+$('.con').find("h3").css({'color':'green'});
+
+// 2.순서찾기
+
+$('.gnb').children().first().css({'border':'4px solid #f06'});
+$('.gnb').children().last().css({'border':'4px solid #08f'});
+
+
+$('.gnb').children().eq(2).css({'backgroundColor':'pink'});
+// eq는 인덱스 넘버 
+
+
+$('.con').find('.box').eq(0).children().eq(1).css({'backgroundColor':'deeppink'});
+
+$('.footer').children('.fmenu').children().eq(1).children('span').css({'backgroundColor':'pink'});
+
+// 3.형제노드 찾기
+// 형제란? 같은 부모 아래 나란히 있는 같은 레벨의 태그들
+$('.apple').next().css({
+    'backgroundColor' : 'tomato'
+});
+// 자기 뒤에오는 형제
+$('.apple').prev().css({
+    'backgroundColor':'pink'
+});
+// 자기 앞에 오는 형제
+$('.apple').nextAll().css({
+    'fontWeight' : 'bold'
+});
+// 자기 뒤에 오는 형제들
+$('.apple').prevAll().css({
+    'fontSize' : '24px'
+});
+// 자기 앞에오는 형제들
+    
+
+$('.pic').siblings().css({'backgroundColor' : 'cyan'});
+
+$('.pic').siblings().css({'border' : '2px solid #333'});
+// .siblings('선택자')
+// 형제들중 '선택자에 해당하는 모든 태그 찾기'
+// 제일중요 가장 많이 씀니다
+// 모든 형제 찾기
+
+$('.list').siblings('.info').children().eq(1).css({'backgroundColor':'cyan'});
+
+$('.nemo').prev().children().eq(1).children().first().css({'backgroundColor':'#999'});
+
+
+// 4.부모찾기
+$('.apple').parents().css({'border' : '2px solid #111'});
+//페런츠 조상찾기
+// 페런츠('선택자') 모든 조상들 중 해당 선택자 찾기!
+
+$('.apple').parent().css({'border' : '5px solid #222'});
+// 페런트 바로위에 부모찾기
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>

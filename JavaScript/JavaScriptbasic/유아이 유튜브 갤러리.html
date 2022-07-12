@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+        .con{
+            background-color: #eee;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 40px 0;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .con .item{
+            width: 350px;
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 0 20px;
+            border: 1px solid #ddd;
+        }
+
+        .con .pic{
+            height: 150px;
+            background-color: paleturquoise;
+        }
+        .con .key{
+            display: none;
+        }
+        .con .txt{
+            padding: 15px;
+            color: #333;
+            font-family: pretendard;
+
+        }
+        .con h3{
+            margin-bottom: 15px;
+        }
+        .view{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            z-index: 999;
+            display: none;
+        }
+
+        figure{
+            width: 1200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        figure iframe{
+            width: 100%;
+        }
+        .view .txt{
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .close{
+            text-decoration: underline;
+            color: #fff;
+            background-color: unset;
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-size: 20px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="view">
+        <figure></figure>
+        <button class="close">close</button>
+        <div class="txt">
+            <h3></h3>
+            <p></p>
+        </div>
+    </div><!--뷰-->
+
+    <div class="con">
+        <div class="item">
+            <a href="#">
+                <span class="key">F82RWUkrXcQ</span>
+                <div class="pic"></div>
+                <div class="txt">
+                    <h3>영상제목부분</h3>
+                    <p>영상내용들어갑니다</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <span class="key">kWT3HjrNbkE</span>
+                <div class="pic"></div>
+                <div class="txt">
+                    <h3>영상제목부분</h3>
+                    <p>영상내용들어갑니다</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <span class="key">SJPFO9Z3jIQ</span>
+                <div class="pic"></div>
+                <div class="txt">
+                    <h3>영상제목부분</h3>
+                    <p>영상내용들어갑니다</p>
+                </div>
+            </a>
+        </div>
+
+    </div><!--컨-->
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.item').on('click',function(e){
+
+            e.preventDefault();//새로고침 막기
+
+            $('.view').fadeIn();
+        
+         
+
+            let h3 = $(this).find('h3').text(); 
+            let p = $(this).find('p').text(); 
+
+
+            $('.view').find('h3').text(h3);
+            $('.view').find('p').text(p);
+
+            let KEY = $(this).find('.key').text();
+            $('.view').find('figuer').html(`iframe width="1280" height="720" src="https://www.youtube.com/embed/${KEY}" title="HIT THE BEACH & BEOMCHEON GLORY ROOFTOP HOUSE PARTY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe`);
+
+        });
+
+        $('.close').on('click',function(){
+
+          $('.view').fadeOut();
+          $('.view figuer').children().remove();
+
+        });
+
+    </script>
+</body>
+</html>

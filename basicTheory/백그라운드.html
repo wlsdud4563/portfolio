@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>백그라운드</title>
+        <style>
+            div{
+                width: 1200px;
+                height: 600px;
+                background-color: #dddddd;
+                margin-top: 40px;
+                border: 5px solid black;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .box1{
+                background-image: url(이미지/image1.jpg);
+                background-repeat: no-repeat;
+                /* 백그라운드 이미지는 원래 반복됨 노리픽트를 줘야함 */
+            }
+            .box2{
+                background-image: url(이미지/image2.jpg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+                /* background-size: 50px 150px; */
+                /* 백그라운드 사이즈는 가로값 세로값 순으로 입력된다 */
+                /* 백그라운드 커버는 박스의 너비와 높이중 큰 값에 맞춰서 비율에 맞게 이미지를 키우거나 줄임(장점:여백이 안생김 단점 이미지가 잘림)
+                백그라운드 콘테인은 작은값에 맞춰서 비율에 맞게 이미지를 키우거나 줄임(장넘 이미지가 잘리지 않고 모두 출력된다 단점 여백이 생김)
+                /* 주로 커버를 많이 쓴다
+                이유 img src 로 이미지를 넣었을때 브라우저 화면 가득차게 유지시키는 것이 많이 복잡합니다! 그러나 이럴때 백그라운드 이미지 처리를 하고 사이즈를 
+                커버로 적용시키면 간단하게 만들수 있습니다 */
+            .box3{
+                background-image: url(이미지/image3.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 400px 20px;
+                /* 가로값 세로값으로 적용 반대로 가고 싶으면 -마이너스 로 입력하면 된다 */
+            }
+            .box4{
+                background-image: url(../pionner/img/videoplayback.mp4);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                /* 반응형으로 그림뒤에 있고 빈박스 움직임 */
+            }
+            .box5{
+                background-image: url(이미지/마이클잭슨.jpg);
+                background-repeat: repeat;
+            background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+    </body>
+</html>

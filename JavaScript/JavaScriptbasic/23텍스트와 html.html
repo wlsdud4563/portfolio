@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .output input, .result{
+            width: 400px;
+            line-height: 60px;
+            display: block;
+            margin: 20px auto;
+            background-color: #000;
+            color: lawngreen;
+            padding: 10px 10px 10px 20px;
+            border: 10px inset #ccc;
+            font-size: 24px;
+            
+        }
+        .output button{
+            width: 120px;
+            border: 10px outset #ccc;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ccc;
+            background-color: #ddd;
+            display: block;
+            margin: 40px auto;
+            line-height: 60px;
+            color: #000;
+        }
+        .output button:active{
+            background-color: #ccc;
+            border: 10px inset #ddd;
+            color: #000;
+        }
+        .btnbox button{
+            display: block;
+            width: 250px;
+            text-align: center;
+            height: 80px;
+            font-size: 24px;
+            margin: 30px auto;
+            border:  10px outset #ccc;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+     <div class="output">
+        <p class="result"></p>
+    <form>
+          <input type="text" class="enter">
+          <button>submit</button>
+    </form>
+    <div class="btnbox">
+        <button class="btn1">안녕하세요</button>
+        <button class="btn2">hi</button>
+        <button class="btn3"></button>
+        <button class="btn4"></button>
+        <button class="btn5"></button>
+
+    </div>
+
+     </div>
+
+
+     <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+     <script>
+        $('.result').html('<h2>yaho</h2>');
+        // text( 선택자 내부에 텍스트로 컨텐츠 추가)
+        // html( 선택자내부에 html 태그를 추가)
+        $('.btn3').text('야호');
+        $('.btn4').text('<h2>야호</h2>');
+        $('.btn5').html('<h2>야호</h2>');
+
+        $('.btnbox button').on('click',function(){
+            let txt = $(this).text();
+            $('.result').text(txt);
+
+
+        });
+     </script>
+</body>
+</html>

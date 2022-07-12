@@ -1,0 +1,525 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    list-style: none;
+}
+
+
+/* header */
+
+header{
+    
+    height: 57px;
+}
+
+.hWrap{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{}
+
+.gnb{
+    display: flex;
+    font-weight: bold;
+    color: #333;
+    
+}
+.gnb li{
+    margin-right: 50px;
+}
+.gnb li:last-child{
+    margin-right: 0;
+}
+
+.util{
+    display: flex;
+    
+}
+
+.util input{
+    
+    width: 143px;
+    height: 26px;
+    background-image: url(../images/icon_search2.png);
+    background-repeat: no-repeat;
+    background-position: 155px center;
+    /* background-position: right 5px center; */
+    /* position:absolute처럼 right 오른쪽에서 5px 위치시키기  */
+    /* background-position:왼>오른  세로값 */
+    padding-left: 10px;
+    padding-right: 25px;
+}
+
+.util a{
+    width: 64px;
+    height: 28px;
+    color: #fff;
+    background-color: #f49600;
+    font-size: 14px;
+    text-align: center;
+    line-height: 28px;
+    border:1px solid rgba(0,0,0,0.4);
+    border-left:0;
+    margin-left: 5px;
+}
+
+.util .join{
+    background-color: #50b5ff;
+    
+}
+
+
+
+.bn{
+    height: 454px;
+    background-image: url(../images/key_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+    color: #fff;
+ 
+}
+
+.bn h2{
+    padding-top: 80px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.bn .tit{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.bn .srch{
+    width: 560px;    
+    height: 100px;
+    background-color: rgba(0,0,0,0.8);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    border-radius: 10px;   
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.bn .srch input{
+    width: 540px;
+    height: 50px;
+    background-image: url(../images/icon_search1.gif);
+    background-repeat: no-repeat;
+    background-position: right 0;
+    border:0;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+.bn .txt{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.s1{
+    margin-top: 80px;
+}
+
+.s1 h3{
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.s1 .con{
+    display: flex;
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+.s1 .con .item{
+    width: 348px;
+}
+
+.s1 .con h4{
+    color: #0087ea;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 22px;
+    text-align:center;
+}
+
+.s1 .con p{
+    font-size: 14px;
+    color: #666;
+}
+
+.s1 .more{
+    margin-top: 25px;
+    color: #f49600;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.s1 .item img{
+    transition: all 1s;
+}
+/* item에게 마우스를 올렸을 때 그 안에 들어있는 이미지 를 변화! */
+.s1 .item:hover img{
+    box-shadow: 3px 3px 5px #ccc;
+}
+
+/* img에 마우스 올렸을 때만 작동합니다  */
+.s1 img:hover{
+    box-shadow: 3px 3px 5px #ccc;
+}
+
+
+.s2{
+    background-color: #f0f0f0;
+    padding-top: 70px;
+    margin-top: 70px;
+}
+
+.s2 h3{
+    text-align: center;
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.s2 .tit{
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.s2 .con{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.s2 .item{
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 346px;
+}
+
+
+/* 1번째부터 3번째 item까지 선택 */
+.s2 .item:nth-child(n+1):nth-child(-n+3){
+    margin-bottom: 24px;
+}
+
+.s2 .item .pic{
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.s2 .item .txt{
+    /*  background 그라데이션으로 넣기 
+    는 이상하게도 background-image로 넣습니다!
+    
+    1. linear-gradient(방향,A컬러,B컬러)
+    방향을 설정해주지 않으면 기본적으로
+    "위(A컬러) -> 아래(B컬러)"
+
+    방향은
+    to left / to top / to right 식의 키워드로 넣을 수도 있지만,
+    45deg / 60deg 각도로 지정도 가능합니다 
+
+
+    2. radial-gradient()*/
+    /*  */
+    background-image: linear-gradient(90deg, rgb(154, 220, 12) 36%, rgb(255, 9, 9)100%);
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    width: 100%;
+    padding-left: 15px;
+    left: 0;
+    bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.s2 .txt h4{
+    color: #fff;
+}
+
+.s2 .txt p{
+    color: #179dff;
+    font-size: 14px;
+}
+.s2 .txt span{
+    color: #999;
+}
+
+.s2 .item img{
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s;
+}
+.s2 .item img:hover{
+    transform: scale(1.2);
+}
+
+.s2 .item ul{
+    color: #666;
+    font-size: 14px;
+}
+
+.s2 .item .data{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.s2 .item .count{
+    position: absolute;
+    right:15px;
+    top: 15px;
+    display: flex;
+}
+
+.s2 .user{
+    background-image: url(../images/icon_user.png);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    background-position: 0 center;
+}
+
+.s2 .writer li{
+    margin-bottom: 6px;
+}
+
+.s2 .count li{
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    margin-left: 10px;
+}
+
+.s2 .spot{
+    background-image: url(../images/icon_spot.png);
+    padding-left: 15px;
+}
+
+.s2 .view{
+    background-image: url(../images/icon_view.png);
+    padding-left: 20px;
+}
+
+.s2 .clip{
+    background-image: url(../images/icon_copy.png);
+    padding-left: 15px;
+}
+.s2 .more a{
+    width: 346px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+}
+.more a{
+    display: block;
+}
+
+section h1{
+     text-align: center;
+     margin-top: 75px;
+}
+section .h2{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: normal;
+    color: #363636;
+}
+.s3{
+    margin-top: 75px;
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.s3 .s3-1 .item1{
+    width: 537px;
+    border: 1px solid #363636;
+    height: 310px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.s3-1 .item1 .pic{
+    height: 160px;
+    width: 537px;
+}
+.s3-1 .item2{
+    width: 538px;
+    display: flex;
+    justify-content: space-between;
+}
+.s3-1 .box1{
+    width: 260px;
+    border: 1px solid #363636;
+    height: 310px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.s3-1 .item2 .pic{
+    width: 260px;
+    height: 160px;
+}
+.s3-2 .item3{
+    width: 538px;
+    display: flex;
+}
+.s3-2 .box2{
+    width: 260px;
+    border: 1px solid #363636;
+    height: 310px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.s3 .s3-2 .item4{
+    width: 537px;
+    border: 1px solid #363636;
+    height: 310px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.s3-2 .item4 .pic{
+    height: 160px;
+    width: 537px;
+}
+.s3-2 .box2 .pic{
+    width: 260px;
+    height: 160px;
+}
+.s4 h3{
+    text-align: center;
+}
+.s4{
+    background-color: #f0f0f0;
+    padding-top: 70px;
+    margin-top: 70px;
+}
+.s4 .con{
+    margin-top: 25px;
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.s4 .wrap1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+.s4 .item{
+    width: 260px;
+    height: 260px;
+    background-color: aquamarine;
+}
+
+.s4 .itemL{
+    width: 538px;
+}
+
+.s4 .wrap2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.s4 .wrap2 .itemT{
+    width: 260px;
+    height: 538px;
+    background-color: aquamarine;
+}
+
+/* 모든 col안의 모든 첫번째 item들 한번에 선택이 됩니다 */
+.s4 .col .item:nth-child(1){
+    margin-bottom: 17px;
+}
+.s5{
+    background-image: url(../images/mobile_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 70px;
+    padding-top: 72px;
+}
+.s5 .rwrap{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.s5 h4{
+    font-size: 28px;
+    color: #0087ea;
+}
+.s5 p{
+    font-size: 14px;
+    color: #666;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.s5 .btn{
+    display: flex;
+}
+.s5 .btn a{
+    margin-right: 5px;
+}
+footer{
+    background-color: #363c48;
+}
+.footer{
+    display: flex;
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+.footer .tit{
+    padding-top: 30px;
+    width: 260px;
+    margin-bottom: 30px;
+}
+.tit h5{
+    color: #424753;
+    border-bottom: 1px solid #424753;
+}
+.tit a{
+    padding-top: 10px;
+    color: #fff;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        a{
+        text-decoration: none;
+        color: inherit;
+        }
+        *{
+           margin: 0;
+           padding: 0;
+        }
+        nav{
+            position: fixed;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            color: #fff;
+        }
+        nav a{
+            display: block;
+            margin: 10px auto;
+            text-align: right;
+            font-size: 40px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .wrap div{
+            height: 1000px;
+            font-size: 100px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .red{background-color: red;}
+        .orangered{background-color: orangered;}
+        .orange{background-color: orange;}
+        .gold{background-color: gold;}
+        .yellow{background-color: yellow;}
+        nav a.active{
+            text-decoration: underline;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="active">red</a>
+        <a href="#">orangered</a>
+        <a href="#">orange</a>
+        <a href="#">gold</a>
+        <a href="#">yellow</a>
+    </nav>
+    <div class="wrap">
+        <div class="orangered">orangered</div>
+        <div class="orange">orange</div>
+        <div class="gold">gold</div>
+        <div class="yellow">yellow</div>
+    </div>
+    
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+$(window).on('scroll',function(){
+ let scr = $(window).scrollTop();
+ if(scr >= 3700){
+    $('*').css({'color' : '#000'})
+ }else{
+    $('*').css({'color' : '#fff'})
+ }
+
+});
+$('nav a').on('click',function(e){
+e.preventDefault(); //새로고침 막기
+
+let i = $(this).index();
+$('body,html').animate({'scrollTop' : 1000*i})
+
+if(scr > 0 && scr <= 1000){
+    $('nav a').removeClass().eq(0).addClass('actuve');
+}
+if(scr > 1000 && scr <= 2000){
+    $('nav a').removeClass().eq(1).addClass('actuve');
+}
+if(scr > 2000 && scr <= 3000){
+    $('nav a').removeClass().eq(2).addClass('actuve');
+}
+if(scr > 3000 && scr <= 4000){
+    $('nav a').removeClass().eq(3).addClass('actuve');
+}
+if(scr > 4000 && scr <= 5000){
+    $('nav a').removeClass().eq(4).addClass('actuve');
+}
+
+for(let i=0; i<5; i++){
+    if(scr > i*1000 && scr <= (i+1)*1000){
+        $('nav a').removeClass()
+    }
+}
+
+// 에니메이트 스크롤 탑 해당 위치까지 스크롤이 에니메이트 된다
+// 선택자는 반듯이 html body css로 만들어도 그렇게 됨
+// $('html,body').animate({'scrollTop' : 0},1000);  <<<<<
+//                                     //속도 조절 이렇게 하면됨
+
+
+
+});
+// 선택자 우선 순위중 가장 높은거는 임폴턴트 인라인스타일 직접 잡아주는것!!!
+
+
+    </script>
+</body>
+</html>

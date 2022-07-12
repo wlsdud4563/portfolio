@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤</title>
+    <style>
+        body{
+            height: 30000px;
+        }
+        .number{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: turquoise;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="number">
+    00
+</div>
+
+<script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+<script>
+    // 스크롤의 위치값 스크롤 탑은 해당페이지의 위치값을 구하는것
+    // 선택자 무조건 윈도우
+    $(window).scrollTop();
+    let scr = $(window).scrollTop();
+    $('.number').text(scr);
+
+    /*도쿠먼트 오브젝트 모델 
+    헤더 디아이브이 h1등...
+
+    스크롤이 움직이면 자동으로 스크롤의 위치값을 구해줬으면 좋겠다
+
+    스크롤이 움직일때 마다 자동으로 스크롤의 위치를 구하고 그것을 넘버에 출력하고 싶다
+    */
+                //클릭같은 스크롤
+   $(window).on('scroll',function(){
+
+    let scr2 = $(window).scrollTop();
+    $('.number').text(scr2);
+
+    if(scr2 >= 2000 && scr2 <=4000){
+        $('.number').css({'backgroundColor' : 'deeppink'})
+    }else if(scr2 >= 4000 && scr2 <=6000){
+        $('.number').css({'backgroundColor' : 'yellow'})
+    }else if(scr2 >= 6000 && scr2 <=8000){
+        $('.number').css({'backgroundColor' : 'blue'})
+    }
+// 스크롤 내릴때 마다 색바뀜
+    
+    
+});
+$('.number').on('click',function(){
+    $('html, body').animate({'scrollTop' : 0});
+    
+});
+
+
+</script>
+</body>
+</html>

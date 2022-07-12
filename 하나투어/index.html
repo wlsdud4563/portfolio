@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- ↓모바일 웹부터는 이코드가 꼭필요 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="topbn">
+           <img src="images/top_app.png" class="logoimg">
+           <p>매일매일 모바일 특가!<br>
+              하나투어앱 
+           </p>
+           <button class="appdown"><img src="images/top_appdown.png" alt=""></button>
+           <button class="appclose"><img src="images/top_close.png" alt=""></button>           
+    </div>
+    <header>
+        <div class="hwrap">
+      <h1><img src="images/logo.png" alt=""></h1>
+          <!-- 메뉴버튼 햄버거 버튼이라고 한다 -->
+          <button class="hmenu"><img src="images/btn_hdleft.png" alt=""></button>
+      <button class="hsrch"><img src="images/btn_hdsearch.png" alt=""></button>
+      <button class="hlogin"><img src="images/btn_hdright.png" alt=""></button>
+    </div>
+ 
+    <!-- 네비게이션
+    gnb등의 사이트 내부를 이동 할 수 있는 메뉴들을 담은 시맨틱태그 -->
+    <nav>
+    <ul class="gnb">
+       <li><a href="#">홈</a></li>
+       <li><a href="#">패키지</a></li>
+       <li><a href="#">항공</a></li>
+       <li><a href="#">호텔</a></li>
+       <li><a href="#">테마</a></li>
+       <li><a href="#">국내여행</a></li>
+    </ul>
+    <button class="navBtn"><img src="images/btn_head_nav.png" alt=""></button>
+    <ul class="submenu">
+        <li><a href="#">홈</a></li>
+        <li><a href="#">패키지</a></li>
+        <li><a href="#">항공</a></li>
+        <li><a href="#">호텔</a></li>
+        <li><a href="#">테마</a></li>
+        <li><a href="#">국내여행</a></li>
+        <li><a href="#">여행정보</a></li>
+        <li><a href="#">슈퍼세이브</a></li>
+        <li><a href="#">추천기획전</a></li>
+    </ul>
+    </nav>
+</header>
+    <div class="bn">
+          <a href="#">
+              <img src="images/mv1.jpg" alt="">
+          </a>
+          <div class="conter">
+             <span>1</span>/8
+          </div>
+    </div>
+    <div class="quick">
+     <a href="#">
+         <img src="images/tab01.png" alt="">
+         <span>패키지</span>
+    </a>
+    <a href="#">
+        <img src="images/tab02.png" alt="">
+        <span>항공</span>
+   </a>
+   <a href="#">
+    <img src="images/tab03.png" alt="">
+    <span>호텔</span>
+</a>
+<a href="#">
+    <img src="images/tab04.png" alt="">
+    <span>에어텔</span>
+</a>
+<a href="#">
+    <img src="images/tab05.png" alt="">
+    <span>허니문</span>
+</a>
+<a href="#">
+    <img src="images/tab06.png" alt="">
+    <span>골프</span>
+</a>
+<a href="#">
+    <img src="images/tab07.png" alt="">
+    <span>입장권</span>
+</a>
+<a href="#">
+    <img src="images/tab08.png">
+    <span>교통패스</span>
+</a>
+<a href="#">
+    <img src="images/tab09.png" alt="">
+    <span>여행정보</span>
+</a>
+<a href="#">
+    <img src="images/tab10.png" alt="">
+    <span>면세점 혜택</span>
+</a>
+<a href="#">
+    <img src="images/tab11.png" alt="">
+    <span>공연티켓</span>
+</a>
+<a href="#">
+    <img src="images/tab12.png" alt="">
+    <span>전체보기</span>
+</a>
+    </div>
+    <div class="subbn">
+        <a href="#"><img src="images/ad01.jpg" alt=""></a>
+        <a href="#"><img src="images/ad02.jpg" alt=""></a>
+    </div>
+<footer>
+    <div class="util">
+      <a href="#">로그인</a>
+      <a href="#">PC버전</a>
+      <a href="#">TOP</a>
+    </div>
+    <ul class="fmenu">
+       <li><a href="#">이용약관</a></li>
+       <li><a href="#">개인정보처리방침</a></li>
+       <li><a href="#">여행약관</a></li>
+       <li><a href="#">사업자정보확인</a></li>
+    </ul>
+    <address>
+        주) 하나투어 | 대표자: 김진국 | 사업자등록번호 : 102-81-39440 통신판매업신고번호 : 종로01-1806호 | 개인정보 보호책임자 : 박영<br>
+[03161]서울특별시 종로구 인사동 5길 41 <br>
+하나투어상담센터 : 1577-1233 | FAX : 02-734-0392 이메일 : 15771233@hanatour.com | 호스팅 서비스 사업자 : (주) 하나투어 관광사업자 등록번호 : 제1993-000006호 | 영업보증보험 : 22억 1천만원 가입
+    </address>
+    <p class="copy">COPYRIGHT ⓒ HANATOUR SERVICE INC. ALL RIGHT RESERVED</p>
+</footer>
+
+    <script>
+                let btn = document.querySelector('.navBtn');
+        let subMenu = document.querySelector('.submenu');
+
+        let onOff = false;
+
+        btn.addEventListener('click',function(){
+
+            onOff = !onOff;
+
+            if(onOff == true){
+                subMenu.style.display = 'flex';
+            }else{
+                subMenu.style.display = 'none';
+            }
+
+        });
+      
+    </script>
+</body>
+</html>

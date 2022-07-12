@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #wrap div{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+        }
+        .page1{background: tomato;}
+        .page2{background: blue;}
+        .page3{background: red;}
+        .page4{background: yellow;}
+        .page5{background: pink;}
+        .ctrl{
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        button{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: relative;
+            z-index: 30;
+            transition: all 0.3s;
+
+        }
+        .ctrl li{
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .ctrl span{
+            position: absolute;
+            right: -150px;
+            top: 0;
+            font-size: 12px;
+            background-color: #fff;
+            padding: 2px 10px;
+            border: 1px solid #ccc; 
+            transition: all 0.5s;
+        }
+        .ctrl li.active button{
+            background-color: #000;
+
+        }
+        .ctrl li.active span{
+            right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="page1">
+            <span>tomato</span>
+        </div>
+        <div class="page2">
+            <span>blue</span>
+        </div>
+        <div class="page3">
+            <span>red</span>
+        </div>
+        <div class="page4">
+            <span>yellow</span>
+        </div>
+        <div class="page5">
+            <span>pink</span>
+        </div>
+    </div>
+
+    <ul class="ctrl">
+        <li class="active">
+            <button></button>
+            <span>tomato</span>
+        </li>
+        <li>
+            <button></button>
+            <span>bule</span>
+        </li>
+        <li>
+            <button></button>
+            <span>red</span>
+        </li>
+        <li>
+            <button></button>
+            <span>yellow</span>
+        </li>
+        <li>
+            <button></button>
+            <span>pink</span>
+        </li>
+    </ul>
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+        // $('.ctrl li').on('click',function(){
+
+        //     let i = $(this).index();
+        //     let px = $('#wrap div').eq(i).offset().top;
+        //     $('html,body').animate({'scrollTop':px})
+        // }); 첫번째 방법
+        $('.ctrl li').on('click',function(){
+
+
+            let i = $(this).index();
+            let hig = $('#wrap div').height();
+            $('html,body').animate({
+                'scrollTop': hig*i
+            });
+
+        });
+
+        $(window).on('scroll',function(){
+            let scr = $(window).scrollTop();
+            let hig = $('.page1').height();
+
+            if(scr>=0 &&  scr<hig){
+                $('.ctrl li').removeClass().eq(0).addClass('active');
+            }
+            if(scr>=hig && scr < scr hig*2){
+                $('.ctrl li').removeClass().eq(1).addClass('active');
+            }
+            if(scr>=hig*2 && scr < scr hig*3){
+                $('.ctrl li').removeClass().eq(2).addClass('active');
+            }
+            if(scr>=hig*3 && scr < scr hig*4){
+                $('.ctrl li').removeClass().eq(3).addClass('active');
+            }
+            if(scr>=hig*4){
+                $('.ctrl li').removeClass().eq(4).addClass('active');
+            }
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

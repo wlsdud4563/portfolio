@@ -1,0 +1,384 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@100&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@100&family=Nanum+Myeongjo&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    border-top: 4px solid #b61c21;
+
+}
+.header{
+    width: 1200px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    font-family: 'Glory', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+}
+.tit{
+    padding-top: 26px;
+    text-align: center;
+}
+.gnb{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+.gnb li{
+    font-size: 17px;
+    color: #444444;
+    margin-left: 17px;
+    margin-right: 17px;
+}
+.gnb li:hover{
+    color: #b61c21;
+}
+.util1{
+    display: flex;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+}
+.util1 li{
+    color: #b61c21;    
+    border-right: 1px solid #e0e0e0;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+.util1 :nth-last-child(1){
+    border: none;
+    padding: 0;
+}
+.util2{
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+
+}
+.util2 li{
+    border-right: 1px solid #e0e0e0;
+    color: #666666;    
+    padding-right: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+.util2 :nth-last-child(1){
+    border: none;
+    padding: 0;
+}
+.util2 span{
+    color: #b61c21;
+}
+
+.bn{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bn .bn1{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    height: 210px;
+    width: 100%;
+    top: 850px;
+    left: 0;
+    align-items: center;
+    display: flex;
+}
+.bn1 .txt1{
+    font-size: 19px;
+    color: #cbaf88;
+}
+.bn1 .txt2{
+    font-size: 26px;
+    color: #ffffff;
+}
+.bn1 .img2{
+    position: absolute;
+    right: 500px;
+    top: 90px;
+}
+.bn{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.bn .bnimg{
+    width: 100%;
+    /* 부모너비 기준 */
+}
+.bn .txt{
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* 원래 블록요소는 처음 만들어졌을때 사이즈가 부모를 가득 채우고 있다
+    그러나 포지션 앱솔루트 포지션 픽스트 플로트 등 정렬시키기 위한 속성들을 적용하면 사이즈가
+    안에 들어있는 내용물 만큼으로 자동적으로 줄어 들게 됩니다
+    당황하지말고 너비값을 원하는 만큼 주시면 됩니다 */
+}
+.bn .txt .txtwrap{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+.bn p{
+    font-size: 19px;
+    color: #cbaf88;
+    margin-bottom: 10px;
+}
+.bn h2{
+    font-size: 26px;
+    color: #ffffff;
+    font-family: 'Nanum Myeongjo', serif;
+
+}
+.bn .mark{
+    position: absolute;
+    top: 35px;
+    right: 0;
+}
+.maintxt{
+    display: flex;
+    margin-top: 100px;
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+.txtbox{
+    text-align: center;
+
+}
+.txtbox h2{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+.txtbox p{
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 8px;
+    word-break: break-all;
+    /* 단어단위로 줄바꿈 시키는 코드
+    한글로 중앙정렬을 할때는 단어 단위로 줄바꿈 되게 하는 편이
+    가독성이 높다 (한글 좌측정렬일때는 없는게 이쁘고 책처럼 중앙정렬일때는
+    넣어주면 좋다 */
+}
+.row{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+.row .rwrap{
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.box1{
+    width: 485px;
+    height: 751px;
+    position: relative;
+}
+.box1 .rimg1{
+    width: 100%;
+}
+.bwrap{
+    width: 445px;
+    height: 110px;
+    background-color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.bwrap span{
+    color: #cbaf88;
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #cbaf88;
+    border-bottom: 1px solid #cbaf88;
+    
+}
+.bwrap p{
+    font-size: 20px;
+    font-family: 'Nanum Myeongjo', serif;
+    padding-top: 20px;
+
+}
+.box2{
+    width: 485px;
+    position: relative;
+}
+.box2 .rimg2{
+    width: 100%;
+}
+.box2 .rimg3{
+    width: 100%;
+}
+.bwrap2{
+    width: 445px;
+    height: 110px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.bwrap2 span{
+    color: #cbaf88;
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #cbaf88;
+    border-bottom: 1px solid #cbaf88;
+}
+
+.box3{
+    position: relative;
+}
+.bwrap3{
+    width: 445px;
+    height: 110px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.bwrap3 span{
+    color: #cbaf88;
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #cbaf88;
+    border-bottom: 1px solid #cbaf88;
+}
+.row3{
+    display: flex;
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    margin-top: 100px;
+
+}
+.row3 .item{
+   width: 300px;
+   height: 300px;
+   position: relative;
+}
+.row3 .item img{
+    width: 100%;
+}
+.row3 .txtBox{
+    width: 260px;
+    height: 260px;
+    background-color: rgba(255,255,255,0.8);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 14px;
+    color: #444444;
+    line-height: 24px;
+}
+.row .bar{
+    width: 30px;
+    height: 2px;
+    background-color: #b39a78;
+    position: absolute;
+    top: 65px;
+    left: 115px;
+}
+.footer{
+    
+    margin-top: 100px;
+    padding-bottom: 30px;
+}
+.footer .fmenu{
+    background-color: #79746e;
+    color: c9c7c5;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    height: 62px;
+    align-items: center;
+    /* 세로센터 패딩으로 위아래 줘도 된다 */
+    margin-bottom: 30px;
+}
+.fmenu li{
+    border-right: 1px solid #c9c7c5;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+.fmenu .bold{
+    font-weight: bold;
+    color: #fff;
+}
+.fmenu li:last-child{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.footer div{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer h5{
+    color: #333333;
+    font-size: 13px;
+    padding-bottom: 10px;
+    
+}
+.footer address{
+    font-style: normal;
+    color: #666666;
+    font-size: 13px;
+    margin-bottom: 30px;
+
+}
+.footer .safe{
+    color:#666;
+    font-size: 13px;
+}
+.footer div a{
+    text-decoration: underline;
+}
+.footer div a:after{
+    content: '>';
+}
+/*에프터 콘테트
+: 해당요소의 마지막 자식으로 가상의 존재하지 않는 html태그를 삽입해 텍스트를 추가함 */
+/* 비포 컨테트 
+:요소의 첫번째 자식으로 가상의 존재하지 않는 html태그를 삽입해 텍스트를 추가함*/

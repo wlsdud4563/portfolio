@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+
+        /* header */
+
+        header{
+            height: 50px;
+            background-color: #333;
+            color:#fff
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .gnb{display: none;}
+
+        .bn{
+            height: 320px;
+            background-color: deeppink;
+        }
+
+        main{
+            background-color: #eee;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 15px;
+            padding-bottom: 20px;
+        }
+
+        .row1{
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .row1 .item{
+            height: 150px;
+            background-color:tomato;
+            margin-bottom: 10px;
+        }
+
+        .row2{
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .row2 .item{
+            width: calc(50% - 2px);
+            height: 170px;
+            background-color: forestgreen;
+            margin-bottom: 4px;
+        }
+
+        footer{
+            background-color: #333;
+            color: #fff;
+            padding:15px;            
+        }
+
+        @media all and (min-width:1200px){
+            footer ul{
+                display: flex;
+                justify-content: center;
+            }
+
+            footer ul li:after{
+                content: '|';
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+
+            footer ul li:last-child:after{
+                content: none;
+            }
+            footer{
+                height: 80px;
+                box-sizing: border-box;
+            }
+
+
+
+            header{
+                height: 100px;
+            }
+
+            .hWrap{
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 30px;
+            }
+
+            .gnb{
+                display: flex;
+            }
+            .gnb li{
+                margin-left: 20px;
+            }
+
+            .bn{
+                height: 500px;
+            }
+
+            .row1{
+                display: flex;
+                justify-content: space-between;
+            }
+            .row1 .item{
+                float: left;
+                width: 320px;
+                height: 320px;
+            }
+
+
+            .row2 .item{
+                width: 235px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hWrap">
+            <h1><a href="#">LOGO</a></h1>
+            <ul class="gnb">
+                <li><a href="#">list1</a></li>
+                <li><a href="#">list2</a></li>
+                <li><a href="#">list3</a></li>
+                <li><a href="#">list4</a></li>
+                <li><a href="#">list5</a></li>
+            </ul>
+        </div><!--hWrap-->
+    </header>
+
+    <div class="bn"></div>
+
+    <main>
+        <div class="row1">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div><!--row1-->
+
+        <div class="row2">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </main>
+    <footer>
+        <ul class="fmenu">
+            <li><a href="#">fmenu1</a></li>
+            <li><a href="#">fmenu2</a></li>
+            <li><a href="#">fmenu3</a></li>
+            <li><a href="#">fmenu4</a></li>
+            <li><a href="#">fmenu5</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

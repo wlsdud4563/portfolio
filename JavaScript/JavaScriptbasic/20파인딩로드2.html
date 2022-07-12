@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드찾기</title>
+  <style>
+*:not(html,body){
+    /* 낫 태크 이거 뺴고 나머지란뜻 */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #444;
+    font-size: 14px;
+    font-family: 'pretendaed';
+    color: #000;
+}
+span{
+    font-weight: bold;
+}
+ul{
+    list-style: none;
+}
+.select{
+    background-color: papayawhip;
+}
+.apple{
+    background-color: powderblue;
+}
+
+  </style>
+
+</head>
+<body>
+    <div class="wrap">
+        div.wrap
+        <div class="header">
+            div.header
+            <h1>h1</h1>
+            <ul class="gnb">
+             ul.gnb
+             <li>li gnb</li>
+             <li class="select">li gnb select</li>
+             <li>li gnb</li>
+             <li>li gnb <span>스판</span></li>
+             <li>li gnb <span>스판</span></li>
+            </ul>
+            <ul class="util">
+                util
+                <li>li util</li>
+                <li>li util <span></span></li>
+                <li>li util <span></span></li>
+                <li>li util</li>
+            </ul>
+        </div><!--헤더-->
+        <div class="con">
+            div.con
+            <div class="space">
+                div.spacs
+                <div class="box">
+                    div,.box
+                    <p>p1</p>
+                    <p>p1</p>
+                    <p>p1</p>
+                    <p>p1</p>
+                </div>
+                <div class="box">
+                    div,.box
+                    <p>p1</p>
+                    <p>p1</p>
+                    <p>p1</p>
+                </div>
+            </div><!--스페이스-->
+            <div class="nemo">
+                div,.nemo
+                <div class="txt">
+                    div,.txt
+                        <h3>h3</h3>
+                        <ul>
+                            <li>li1</li>
+                            <li>li1</li>
+                            <li>li1</li>
+                            <li>li1</li>
+                            <li>li1</li>
+                        </ul>
+                </div>
+            </div>
+        </div><!--컨-->
+        <div class="footer">
+            div,.footer
+            <h1>h1</h1>
+            <ul class="fmenu">
+                ul,.fmenu
+                <li>li1 <span>span</span></li>
+                <li>li1 <span>span</span></li>
+                <li>li1</li>
+                <li class="apple">li1</li>
+                <li>li1</li>
+            </ul>
+            <ul class="list">
+                ul,.list
+                <li>li1</li>
+                <li>li1</li>
+                <li>li1</li>
+                <li>li1</li>
+            </ul>
+            <div class="info">
+                div,.info
+                <p>p1</p>
+                <p>p1</p>
+                <p>p1</p>
+            </div>
+            <div class="content">
+                div,.content
+                <div class="txt">
+                    div,.txt
+                    <div class="pic">
+                        div,.pic
+                    </div>
+                    <h3>h3</h3>
+                    <p>p1</p>
+                </div>
+                <div class="txt">
+                    div,.txt
+                    <div class="pic">
+                        div,.pic
+                    </div>
+                    <h3>h3</h3>
+                    <p>p1</p>
+                </div>
+            </div>
+        </div>
+    </div><!--랩-->
+
+
+
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+$('.select').parents('.wrap').children('.footer').find('h1').css({'color' : 'gold'});
+
+$('.apple').parents('.footer').siblings('.con').find('.nemo').children('.txt').eq(1).find('ul').children('li').eq(3).css({'backgroundColor' : 'tomato'});
+$('.apple').parents('.wrap').siblings('.header').find('.util').children('li').eq(2).children('span').css({'backgroundColor' : 'pink'});
+
+$('.header h1').parent().siblings('.footer').find('.content').children().eq(1).children('h3').css({'backgroundColor' : 'tomato'}).siblings().css({'backgroundColor':'red'});
+    </script>
+</body>
+</html>

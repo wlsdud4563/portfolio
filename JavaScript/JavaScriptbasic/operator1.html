@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오퍼레이터1 연산자1 오직연산</title>
+    <style>
+           .bar{
+            width: 30px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+</body>
+<div class="bar"></div>
+    <button class="plus">+20</button>
+    <button class="minus">-20</button>
+
+    <script>
+        let bar = document.querySelector('.bar');
+        //.bar를 선택헤서 변수에 저장
+
+        let barwidth = 30;
+        //기본 너비값과 똑같은 값을 저장
+
+        let btnplus = document.querySelector('.plus');
+        let btnminus = document.querySelector('.minus');
+        
+
+        // 하려고하는것 
+
+        btnplus.addEventListener('click',function(){
+           
+            barWidth = barWidth + 20;
+
+            bar.style.Width = barWidth + 'px';
+            
+        });
+    <script>
+        // +,-,*,/,%
+
+        let a = 20;
+        let b = 10;
+
+        document.write(a+b);
+        document.write(a-b);
+        document.write(a*b);
+        document.write(a/b);
+        document.write(a%b);
+        
+        document.write('<hr>');
+        
+        let c = 100;
+        let d = 3;
+        let f = 7;
+
+        document.write(c%d);
+        document.write(c%f);
+
+        //???
+        //%는 나머지를 구하는 연산자
+        //나머지란 자연수에서 자연서를 나누고난 다음 더이상나누지 못한값을 의미
+
+        document.write('<hr>');
+
+        let str1 = "학교종이";
+        let str2 = "땡땡땡";
+        let str3 = "1350";
+        let num1 = 200;
+
+        document.write(str1 + str2 + '<br>');
+        document.write(str3 + num1);
+
+        //문자와 숫자를 더하면 그냥 일렬로 하나로 붙어서 나옴
+        //이떄 출력되는 숫자는 숫자가 아니라 문자열!!!
+        //모든 데이터들은 문자와 더해지면 그냥 문자열로 붙어서 나옴
+
+        document.write(str3 - num1);
+        //암시적형변환
+        //문자 - 숫자를 하면
+        //자바스크립트가 알아서 문자데이터를 숫자로 변환시켜서
+        //연산을 해줍니다
+        //자바스크립트가 인간을 포기
+
+        //글자 -숫자 하면 nan 연산할수 없다는 값이 나옴
+
+
+
+
+    </script>
+</body>
+</html>

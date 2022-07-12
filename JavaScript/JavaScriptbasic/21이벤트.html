@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .btn button{
+            margin: 0 5px;
+            background-color: antiquewhite;
+            padding:  5px;
+            border: 1px solid #000;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 10px solid #000;
+            margin: 40px auto;
+            font-size: 80px;
+            text-align: center;
+            line-height: 200px;
+            transition: 0.5s all;
+        }
+        .btn button:active{
+            background-color: #333;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="btn">
+        <button class="btn1">버튼1</button>
+        <button class="btn2">버튼2</button>
+        <button class="btn3">버튼3</button>
+        <button class="btn4">버튼4</button>
+        <button class="btn5">버튼5</button>
+    </div>
+
+    <div class="box">
+        box
+    </div>
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+// 지금부터는 이벤트 
+// 특정조건을 충족시켰을 때 기능들을 구동!
+// 이벤트는 무조건 on()
+//click()- 있긴한데 정석대로
+
+
+// 온()이벤트를 달아주는 매서드
+// on('무슨이벤트?',펑션(){뭐가 실행됨?});
+
+// 구문을 처음부터 끝까지 써줘야함
+// 마우스오버 마우스 아웃 이벤트 마우스를 올리거나 땔대 설정값이 변하게 함 마우스엔터와 마우스라브 있는데 다음에
+
+$('.btn1').on('click',function(){
+
+    // 구문을 완벽하게 선택자부터 매서드 까지 다 써줘야합니다
+    $('.box').css({'backgroundColor' : 'red'});
+
+});
+$('.btn2').on('click',function(){
+
+    $('.box').css({'backgroundColor' : 'orangered'})
+
+});
+$('.btn3').on('mouseover',function(){
+
+    $('.box').css({'backgroundColor' : 'gold'});
+    
+});
+$('.btn3').on('mouseout',function(){
+
+$('.box').css({'backgroundColor' : 'blue'});
+
+});
+$('.btn4').on('mouseover',function(){
+
+$('.box').css({'backgroundColor' : 'yellowgreen'});
+
+});
+$('.btn4').on('mouseout',function(){
+
+$('.box').css({'backgroundColor' : 'forestgreen'});
+
+});
+$('.btn5').on('dblclick',function(){
+
+$('.box').css({'backgroundColor' : 'orange'});
+
+});
+$('.btn5').on('click',function(){
+
+$('.box').css({'backgroundColor' : 'seagreen'});
+
+});
+// 버튼을 누르면 버튼의 백그라운드 색상을 변경
+
+$('button').on('click',function(){
+
+    $('button').css({'backgroundColor' : 'white'});
+    // 버튼이 항상 위로 올라가야함
+
+    $(this).css({'backgroundColor' : 'dodgerblue'})
+    // 디스 이벤트를 직접적으로 실행시킨 타겟 누른것만 변화시킨다
+    
+    
+    $(this).siblings().css({'backgroundColor' : 'white'})
+    // 이렇게로도 가능
+
+
+
+
+});
+
+    </script>
+</body>
+</html>

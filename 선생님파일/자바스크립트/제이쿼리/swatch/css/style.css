@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+h1{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 50;
+    width: 200px;
+}
+h1 img{
+    width: 100%;
+}
+
+nav{
+    position: fixed;
+    top:50%;
+    margin-top: -100px;
+    left: 0;
+    z-index: 30;
+}
+nav a{
+    display: block;
+    width: 200px;
+    text-align: right;
+    font-size: 14px;
+    font-family: righteous;
+    color: #111;
+    border-top: 1px solid #111;
+    transition: all 0.5s;
+    height: 60px;
+}
+nav a:hover, nav a.on{
+    font-size: 24px;
+}
+
+nav a:nth-child(1):hover, nav a:nth-child(1).on{
+    color: #d4164c;
+    border-color: #d4164c;
+}
+nav a:nth-child(2):hover, nav a:nth-child(2).on{
+    color: #fff;
+    border-color: #fff;
+}
+nav a:nth-child(3):hover, nav a:nth-child(3).on{
+    color: #ffec6a;
+    border-color: #ffec6a;
+}
+nav a:nth-child(4):hover, nav a:nth-child(4).on{
+    color: #005a89;
+    border-color: #005a89;
+}
+
+
+#wrap{}
+#wrap section{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.spring{background-image: url(../images/bg1.jpg);}
+.summer{background-image: url(../images/bg2.jpg);}
+.autumn{background-image: url(../images/bg3.jpg);}
+.winter{background-image: url(../images/bg4-1.jpg);}
+
+
+article{
+    position: absolute;
+    left: 360px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+article p{
+    font-size:50px;
+    font-family: righteous;
+    letter-spacing: 2px;
+}
+
+article span{
+    color: #111;
+}
+
+.spring p{
+    color: #d4164c;
+}
+.summer p{
+    color: #fff;
+}
+.autumn p{
+    color: #ffec6a;
+}
+.winter p{
+    color: #005a89;
+}
+
+.summer span, .autumn span{
+    color: #fff;
+}
+
+
+#wrap img{
+    position: absolute;
+}
+.p11{bottom:20px; right:20px;}
+.p12{bottom:-40px; right:130px;}
+.p13{bottom:140px; right:60px;}
+
+.p21{bottom:-480px; right:-180px;}
+.p22{bottom:-40px; right:130px;}
+
+.p31{bottom:30px; right:180px;}
+.p32{bottom:-270px; right:110px;}
+.p33{bottom:-130px; right:-70px;}
+
+.p41{bottom:-120px; right:20px;}
+.p42{bottom:-180px; right:0px;}

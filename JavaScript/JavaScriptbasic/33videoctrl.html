@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video class="vid1" muted>
+        <source src="../vid/733067864.mp4">
+    </video>
+
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.vid1').on('mouseover',function(){
+
+            $(this).get(0).play(0);
+            $(this).get(0).currentTime = 0;
+            // 쿼런트타입 재생시킬때마다 플레이타임 리셋
+
+        }).on('mouseout',function(){
+
+            $(this).get(0).pause();
+        });
+
+        // 마우스를 올렸을때 바로 재생되게 할 경우 웹 접근성에 문제가 생깁니다
+        // 브라우저 자체에 자동재생을 막아뒀습니다
+        // 그런데 하고 싶다 >뮤티드 muted 사용
+
+/*
+js 로 선택자를 잡으면 도큐먼트 쿼리셀렉트로 가는데
+jq 로 잡으면 $('.box') 작동을 한다
+
+.get(0) 제이쿼리로 포장되어있는 선택자 내부에서 순수한 선택자 가져오기
+play()의 경우 제이쿼리가 아니라 자바스크립트 내부의 함수 입니다그래서 제이쿼리 선택자가 아닌 그자체로 선택해 줘야하가ㅣ때문에 .get을 사용해서 선택자를 추출해 내야합니다
+*/
+
+    </script>
+</body>
+</html>

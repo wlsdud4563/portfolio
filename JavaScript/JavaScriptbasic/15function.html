@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펑션 함수</title>
+</head>
+<body>
+    <button class="btn1">abc</button>
+    <script>
+        function abc(){
+            document.write('abc<br>');
+            document.write('안녕하세요<br>');
+            document.write('반갑습니다!');
+
+        }
+        
+        let btn1 = document.querySelector('.btn1');
+        btn1.addEventListener('click',abc)
+        
+        
+        // 데이터를 저장하는 공간 : 변수
+        // 함수란
+        // 1.실행문ㅇ들을 저장하는 주머니역활
+        // 실행구문들을 여러줄 저장 해놓고 내가 월할때 원하는 곳에서 실행을 시켜 줍니다
+        // 장점 여러개의 구문들을 쉽게 재활용가능
+                    //   |매개변수 구멍 아무거나 넉어도됨
+        function greeting(a,today){
+            alert(`안녕하세요 ${a}님, 반갑습니다!`);
+            alert(`오늘은 ${today} 입니다!`);
+        }
+        greeting('김순희','15일');
+        greeting('이민우');
+    </script>
+</body>
+</html>

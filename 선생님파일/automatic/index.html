@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=P1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="wrap">
+
+        <header>
+            <div class="hWrap">
+            <h1>AK's Portfolio</h1>
+            <!--영어로 이름 지어주기 -->
+            <button class="navBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                <li><a href="#"><i class="fas fa-home"></i>Main</a></li>
+                <li><a href="pages/br/index.html"><i class="fas fa-desktop"></i>BR</a></li>
+                            <!-- 폴더이름 영어로 해서, code 폴더안에 
+                               pages폴더 만들고, 프로젝트 폴더 폴더째로 넣기 -->
+                <li><a href="pages/compose/index.html" target="_blank"><i class="fas fa-desktop"></i>Compose</a></li>
+                <li><a href="pages/earthtory/index.html"><i class="fas fa-desktop"></i>Earthtory</a></li>
+                </ul>
+
+                <button class="close">X</button>
+            </nav>
+        </div><!--hWrap-->
+        </header>
+
+        <main> 
+            <div class="greeting">
+            <div class="picture">
+           <figure>
+               <div class="inner">
+                   <img src="images/avatar.png">
+                </div>
+            </figure>
+            <h2>안녕하세요 <span class="name">유아경</span>의 포트폴리오입니다!</h2>
+            <!-- <span>내이름</span> -->
+           
+        </div><!--picture-->
+
+        <div class="introduction">
+        <h3>introduction</h3> 
+        <ul class="introCon">
+            <li>
+                <strong>Name</strong>
+                <span class="name"></span> <!--자기이름-->
+            </li>
+            <li>
+                <strong>Birth Day</strong>
+                <span class="birth"></span> <!--자기생년월일-->
+            </li>
+            <li>
+                <strong>Mobile</strong>
+                <span class="mobile"></span><!--전화번호-->
+            </li>
+            <li>
+                <strong>E-mail</strong>
+                <span class="email"></span><!--이메일-->
+            </li>
+            <li>
+                <strong>Education</strong>
+                <ul class="edu">
+                </ul>
+            </li>
+            <li>
+                <strong>Work Experience</strong>
+                <ul class="work">
+                </ul>
+            </li>
+        </ul>
+        </div>
+        </div><!--greeting-->
+
+            <div class="skillCon">
+                <h3>My skills</h3>
+                <div class="skillWrap">
+
+            </div><!--skillWrap-->
+            </div><!--skillCon-->
+
+            
+        <div id="content">
+            <h3>Portfolios</h3>
+            <div class="contentWrap">
+            <div class="webWork">
+                <!-- 내가만든 웹! 연결  -->
+                <a href="pages/br/index.html">
+                <figure class="photo">
+                    <img src="images/city03.jpg">
+                    <!-- 자기가 직접 썸네일 만들어서 넣고, 파일이름 수정!!!
+                        썸네일은 보통 깔끔하게 로고만 하던가, 아니면
+                        메인배너이미지를 좀 줄여서 쓰세요 -->
+                </figure>
+                <article class="txt">
+                    <h4>배스킨라빈스</h4>
+                    <p>기본적인 그리드를 활용하여 기존에 있던 배스킨라빈스의
+                        웹페이지를 리뉴얼 하였습니다. 기존 웹페이지의 
+                        복잡한 레이아웃을 간략화 시키고 브랜드 이미지를
+                        더욱 살리는 방향으로 개선하였습니다. 
+                    </p>
+                </article>
+            </a>
+            </div><!--webWork-->
+
+
+            <div class="webWork">
+                <a href="pages/compose/index.html">
+                    <!--만약 여러분이 이걸 새창에서 열고싶다?
+                      <a href="주소" target="_blank">
+                    -->
+                <figure class="photo">
+                    <img src="images/city05.jpg">
+                </figure>
+                <article class="txt">
+                    <h4>어스토리</h4>
+                    <p>기본 그리드를 사용한 기본적인 웹입니다.</p>
+                </article>
+            </a>
+            </div><!--webWork-->
+        </div><!--contentWrap-->
+        </div><!--content-->
+
+        <div id="gallary">
+            <h3>gallary</h3>
+            <div class="view">
+                <div class="bgClose"></div>
+                <div class="viewWrap">
+                <div class="viewPic">
+
+                </div><!--viewPic-->
+
+                <div class="viewTxt">
+                    <h4></h4>
+                    <p></p>
+                </div><!--viewTxt-->
+                </div><!--viewWrap-->
+                <button class="viewX">close</button>
+            </div><!--view-->
+
+            <div class="gallaryWrap">
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/grapic01.jpg">
+                            <!-- 아까 저장한 grapic01.jpg(png) -->
+                        </figure>
+                        <figcaption>
+                            <h4>하품하는 고양이</h4>
+                            <p>unsplash에서 수업하려고 퍼놓은 사진!</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->
+
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/city03.jpg">
+                        </figure>
+                        <figcaption>
+                            <h4>행사배너</h4>
+                            <p>설명글을 적어넣습니다.</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->
+
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/city03.jpg">
+                        </figure>
+                        <figcaption>
+                            <h4>행사배너</h4>
+                            <p>설명글을 적어넣습니다.</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->
+
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/city03.jpg">
+                        </figure>
+                        <figcaption>
+                            <h4>행사배너</h4>
+                            <p>설명글을 적어넣습니다.</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->
+
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/city03.jpg">
+                        </figure>
+                        <figcaption>
+                            <h4>행사배너</h4>
+                            <p>설명글을 적어넣습니다.</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->
+
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/city03.jpg">
+                        </figure>
+                        <figcaption>
+                            <h4>행사배너</h4>
+                            <p>설명글을 적어넣습니다.</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->
+
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/city03.jpg">
+                        </figure>
+                        <figcaption>
+                            <h4>행사배너</h4>
+                            <p>설명글을 적어넣습니다.</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->
+                
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/city03.jpg">
+                        </figure>
+                        <figcaption>
+                            <h4>행사배너</h4>
+                            <p>설명글을 적어넣습니다.</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->
+                
+                <div class="gallItems">
+                    <a href="#">
+                        <figure>
+                            <img src="images/city03.jpg">
+                        </figure>
+                        <figcaption>
+                            <h4>행사배너</h4>
+                            <p>설명글을 적어넣습니다.</p>
+                        </figcaption>
+                    </a>
+                </div><!--gallItems-->              
+            </div><!--gallaryWrap-->
+        </div><!--gallary-->
+
+
+        <div class="video">
+            <h3>Video Portfolio1</h3>
+
+                <div class="show">
+                    <div class="showCloseWrap"></div>
+                    
+                    <div class="videoBox">
+                        <video loop preload autoplay></video>
+                    </div>
+
+                    <div class="videoTxt">
+                        <h4></h4>
+                        <p></p>
+                    </div><!--videoTxt-->
+
+                    <i class="videoClose">close</i>
+                </div><!--show-->
+
+            <div class="videoWrap">
+
+                <div class="vidCard">
+                    <div class="vidThumb">
+                        <video muted loop preload>
+                            <source src="images/video01.mp4">
+                        </video>
+                    </div><!--vidThumb-->
+                    <div class="vidTit">
+                        <h4>영상제목</h4>
+                        <p>영상에 대한 설명 텍스트글</p>
+                    </div><!--vidTit-->
+                </div><!--videoCard1-->
+
+
+                <div class="vidCard">
+                    <div class="vidThumb">
+                        <video muted loop preload>
+                            <source src="images/video01.mp4">
+                        </video>
+                    </div><!--vidThumb-->
+                    <div class="vidTit">
+                        <h4>영상제목</h4>
+                        <p>영상에 대한 설명 텍스트글</p>
+                    </div><!--vidTit-->
+                </div><!--videoCard2-->    
+                
+                
+                <div class="vidCard">
+                    <div class="vidThumb">
+                        <video muted loop preload>
+                            <source src="images/video01.mp4">
+                        </video>
+                    </div><!--vidThumb-->
+                    <div class="vidTit">
+                        <h4>영상제목</h4>
+                        <p>영상에 대한 설명 텍스트글</p>
+                    </div><!--vidTit-->
+                </div><!--videoCard3-->   
+                
+                
+                <div class="vidCard">
+                    <div class="vidThumb">
+                        <video muted loop preload>
+                            <source src="images/video01.mp4">
+                        </video>
+                    </div><!--vidThumb-->
+                    <div class="vidTit">
+                        <h4>영상제목</h4>
+                        <p>영상에 대한 설명 텍스트글</p>
+                    </div><!--vidTit-->
+                </div><!--videoCard4-->       
+                
+                
+                <div class="vidCard">
+                    <div class="vidThumb">
+                        <video muted loop preload>
+                            <source src="images/video01.mp4">
+                        </video>
+                    </div><!--vidThumb-->
+                    <div class="vidTit">
+                        <h4>영상제목</h4>
+                        <p>영상에 대한 설명 텍스트글</p>
+                    </div><!--vidTit-->
+                </div><!--videoCard5-->  
+                
+                
+                <div class="vidCard">
+                    <div class="vidThumb">
+                        <video muted loop preload>
+                            <source src="images/video01.mp4">
+                        </video>
+                    </div><!--vidThumb-->
+                    <div class="vidTit">
+                        <h4>영상제목</h4>
+                        <p>영상에 대한 설명 텍스트글</p>
+                    </div><!--vidTit-->
+                </div><!--videoCard6-->   
+            </div><!--videoWrap-->
+        </div><!--video-->
+
+
+        <div class="vid2">
+
+             <h3>video2</h3>
+
+              <div class="show2">
+                <div class="vidBox2"></div><!--vidBox2-->
+                <div class="vidTxt2">
+                    <h4></h4>
+                    <p></p>
+                </div><!--vidTxt2-->
+
+                <i class="vidClose2">close</i>
+                <div class="closeWrap2"></div>
+              </div><!--show2-->
+
+             <div class="vidWrap2">
+
+                <div class="vidCard2">
+                    <!-- 해당 vidKey 안에 임베드 코드를 넣어야합니다 -->
+                    <span class="vidKey">13jhFFYCWVU</span>
+                    <div class="vidThumb2">
+                        썸네일 직접만들어 img src로 넣으세요
+                    </div><!--vidThumb2-->
+                    <div class="vidTit2">
+                        <h4>해당영상의 제목파트</h4>
+                        <p>해당영상의 내용파트</p>
+                    </div>
+                </div><!--vidCard2-->
+
+                <div class="vidCard2">
+                    <span class="vidKey">CfPxlb8-ZQ0</span>
+                    <div class="vidThumb2">
+                        썸네일 직접만들어 img src로 넣으세요
+                    </div><!--vidThumb2-->
+                    <div class="vidTit2">
+                        <h4>해당영상의 제목파트</h4>
+                        <p>해당영상의 내용파트</p>
+                    </div>
+                </div><!--vidCard2-->
+
+                <div class="vidCard2">
+                    <span class="vidKey">twM7ulKpPjI</span>
+                    <div class="vidThumb2">
+                        썸네일 직접만들어 img src로 넣으세요
+                    </div><!--vidThumb2-->
+                    <div class="vidTit2">
+                        <h4>해당영상의 제목파트</h4>
+                        <p>해당영상의 내용파트</p>
+                    </div>
+                </div><!--vidCard2-->                
+             </div><!--vidWrap-->
+        </div><!--vid2-->
+
+    </main>
+    </div><!--wrap-->
+
+<script src="https://kit.fontawesome.com/caf6a2635a.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="inputHere.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

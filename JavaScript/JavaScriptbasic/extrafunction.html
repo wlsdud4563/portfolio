@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" class="num1">
+        <input type="number" class="num2">
+        <input type="number" class="num3">
+
+        <button>평균내기</button>
+
+    </form>
+
+    <script>
+        let num1 = document.querySelector('.num1');
+        let num2 = document.querySelector('.num2');
+        let num3 = document.querySelector('.num3');
+
+        let form = document.querySelector('form');
+    function avrg(a,b,c){
+
+        a=Number(a);
+        a=Number(b);
+        a=Number(c);
+       alert(a+b+c/3);
+
+    }
+    form.addEventListener('submit',function(e){
+        e.preventDefault();//새로고침 방지
+
+        avrg(num1.value,num2.value,num3.value)
+
+    });
+        
+    function dan(num){
+
+        for(let i = 1; i<=9; i++){}
+        document.write(`${num} x 1 = ${num * 1}<br>`);
+    }
+    </script>
+</body>
+</html>

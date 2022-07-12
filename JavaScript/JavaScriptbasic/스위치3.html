@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>스위치 선택문</li>
+        <li>for 반복문</li>
+    </ol>
+    <script>
+
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+        document.write("허진영<br>");
+            // 초기값   조건문 증감식
+        for(let i = 0; i<10; i++){
+            document.write(i + ". 허진영<br>");
+        }
+        /*
+        초기값 발생
+        */
+
+        document.write('<h1<2단</h1>');
+        for(let i = 1; i<=9; i++){
+            // 문자열 사에에 변수등 표현식이 들어 갈 떄는 
+            //문자열과 표현식 사이와 사이를 +로 연결해 줘야 합니다
+            document.write("<p>2 x "+ i + "=" + i*2 + "</p>)
+            // 그런데 es6 버전부터는 새로운 문법이 나왔습니다
+        }
+
+        document.write('<table border="1'>);
+            document.write('</tr>');
+
+            for(let i = 1; i<=10; i++){
+             document.write('<td>1행${i}열</td>')
+            }
+
+            document.write('</tr>')
+            document.write('</table>');
+
+            for(i=0; i<=60; i+=2){
+                document.write(i+'<br>'){
+                    if(i%2 == 0){
+                        document.write('${i}+<br>');
+                    }
+                }
+            }
+    </script>
+</body>
+</html>

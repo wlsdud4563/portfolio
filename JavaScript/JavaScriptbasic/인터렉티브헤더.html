@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{list-style: none;}
+        a{text-decoration: none; color: inherit}
+        .bar{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid orchid;
+            border-right: 1px solid orchid;
+            width: 80px;
+            height: 7px;
+        }
+        h1{
+            text-align: center;
+        }
+        header{
+            background-color: mediumblue;
+            color: #fff;
+            padding-bottom: 40px;
+            position: relative;
+        }
+        .hwrap{
+            position: relative;
+            width: 1320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .gnb{
+            display: flex;
+            margin-top: 30px;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .gnb li{
+            margin: 0 20px;
+        }
+        .util{
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 0;
+        }
+        .util li{
+            margin-left: 10px;
+        }
+        body{
+            height: 3000px;
+        }
+        header.on .hwrap{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header.on .gnb{
+            margin: 0;
+            align-self: flex-end;
+            /* 얼라인 아이템즈는 부모에게 줘서 내부의 아이템들을 수직축으로 맞추는 속성 */
+
+            /* 얼라인 셀피는 자식들 중 하나만 적용을 시켜서 개만 수직충 내에서 정렬하게 한다 */
+            /* - 플렉스 앤드는 수직축 내의 가장하단을 가르킴 */
+            
+        }
+        header.on{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="on">
+        <div class="hwrap">
+            <h1><a href="#">logo</a></h1>
+        </div>
+        <ul class="gnb">
+            <li><a href="#">fsadsad</a></li>
+            <li><a href="#">dsa</a></li>
+            <li><a href="#">dsadsa</a></li>
+            <li><a href="#">sadsadsa</a></li>
+            <li><a href="#">gnbdsadasdsa5</a></li>
+            <span class="bar"></span>
+        </ul>
+        <ul class="util">
+            <li><a href="#">util1</a></li>
+            <li><a href="#">util2</a></li>
+            <li><a href="#">util3</a></li>
+            <li><a href="#">util4</a></li>
+        </ul>
+
+    </header>
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.bar').hide();
+
+        $('.gnb li').on('mouseover',function(){
+            $('.bar').show();
+            let offsetLeft = $(this).offset().left;
+            $('.bar').css({'left':offsetLeft});
+
+            let wid = $(this).width();
+            $('.bar').width(wid);
+        });
+
+        $(window).on('scroll',function(){
+            let scr = $(window).scrollTop();
+            if(scr >= 500){
+                $('header').addClass('on');
+            }else{
+                $('.header').removeClass('on');
+            }
+        });
+        
+    </script>
+</body>
+</html>

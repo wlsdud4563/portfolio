@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+             .box1{
+                background-color: deeppink;
+                width: 200px;
+                height: 200px;
+                border: 5px solid #000;
+                animation-name: color;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                position: fixed;
+                right: 0;
+                bottom: 0;
+            }
+
+            @keyframes color{
+                0%{background-color: deeppink;}
+                50%{background-color: turquoise;}
+            }
+            /* css애니메이션
+            -키프레임을 나눠서, 각 프레임마다 변할 값을 지정하는 형태로 작동합니다.
+            1. 항상 애니먀이션은 이름이 필요합니다
+            .box1(애니메이션-이름:컬러) 
+            이 이름을 통해서 사용할수 있다
+            이 키프레임은 이름만 호출해 주면 어려 요소에게 다적용시킬 수 있습니다
+            이름 짓는 규칙은 클래스명 짓기와 동일 합니다
+            (영어로만/대소문자 구별/숫자로 시작하지말것)
+            2.
+            애니메이션 듀레이션(필수)
+            애니메이션 플레이타임을 지정해줘야합니다
+            1s = 1초
+            자바는 1초 =1000
+            3
+            에니메이션 반복 횟수를 지정해줍니다
+            지정하지 않을시 기본 1회이고 무한대로 플레이 하고 싶은경우 인피니트를 주면됩니다
+            
+            4. 키프레임
+            @ketrame{} 이런형태로 쓰이고 {} 안에 새롭게 프레임을 나눠줘야 합니다(떄문에 괄호가 다단계로 복잡해 질수 있으니 정리를 잘하세요)
+            @키프레임
+            0%{}
+            50%{}
+            100%{}
+            
+            이렇게 새분화 하여 사용 할수 있습니다*/
+            /* 애니메이션 필모드
+            애니메이션은 끝나고 나면 원래 지정된 css값으로 돌아가려고 합니다
+            이때 포워드로 지정해 주시면 애니메이션이 끝난 시점에서 변화를 점추고 마지막에 지정된 키프레임의 
+            형태를 유지하게 됩니다 */
+
+            /* 
+            6. 애니메이션 딜레이
+            틀정시간이 지난뒤에 지체된뒤 에니메이션이 플레이 되도록 하는 속성
+            
+            7. 애니메이션 디렉션
+            애니메이션이 한번 끝나고 나서 다음번 재시작 할때의 형태를 지정해주는것 
+            altemat 한번 끝나고 난뒤 애니매이션은 첫번째 애니메이션의 역순 플레이
+            
+            8 애니메이션 타이밍 펑션
+            일명 이징
+            애니메이션 플레이 타임 동안 시간 분배를 결정하는 함수를 지정합니다 
+            기본 값으로 빠르게 시작했다 점점 느려지는 형태
+            linear (일반빠르기)
+            ease-in 등 여러가지 값들을 지원하지만,
+            cubic()속성을 사용하여 직접 설계할 수도 있습니다 */
+            .box2{
+                width: 400px;
+                height: 400px;
+                animation-name: color;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                position: fixed;
+                bottom: 210px;
+                right: 0;
+            }
+            .txt{
+                position: fixed;
+                left: 0;
+                top: 50%;
+                width: 100%;
+                text-align: center;
+                transform: translateY(-50%);
+
+            }
+            h1{
+                font-size: 120px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 900;
+                animation: float;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+                /* 애니메이션이 끝난지점에서 멈춘다 포워드*/
+                opacity: 0;
+
+            }
+            h2{
+                font-size: 70px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 900;
+                animation-name: float;
+                animation-duration: 3s;
+                opacity: 0;
+                animation-fill-mode: forwards;
+                animation-delay: 0.3s;
+                /* 딜에이로 나오는 시간을 늦출수 있다 */
+            }
+            @keyframes float{
+                0%{
+                    opacity: 0;
+                }
+                100%{ 
+                    opacity: 1;
+                    transform: translateY(-50%);
+                }
+            }
+            .round{
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+                border-radius: 50%;
+                transform: translateY(-30px);
+                animation-name: bounce;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: ease-in;
+                /* 애니메이션이 한번 끝나고 나서 다음재시작할때 의 형태를 지정해주는것
+                 alternate 을 사용 */
+                 /* 줄여쓰기도 가능 */
+                
+            }
+            @keyframes bounce{
+                0%{transform: translateY(-30%);}
+                100%{transform: translateY(0);}
+            }
+            
+    </style>
+</head>
+<body>
+    <div class="txt">
+<h1>Have A Nice Day</h1>
+<h2>welcome To My Blog:D</h2>
+</div>
+
+<div class="round">
+</div>
+
+    <div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+
+
+    </div>
+
+    
+</body>
+</html>

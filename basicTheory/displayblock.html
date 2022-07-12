@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>디스플레이 블록</title>
+        <style>
+            .btn1{
+                width: 120px;
+                height: 38px;
+                border-radius: 120px;
+                border: 4px solid darkviolet;
+                text-align: center;
+                line-height: 38px;
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                /* a는 인라인 요소입니다.. */
+                /* 인라인 요소는 공간값을 가질수 없다 */
+                display: block;
+                /* 블록요소로 바꾸기
+                a는 인라인 요소다 인라인 요소는 너비와 높이를 가질수가 없다 
+                그래서 a에게 공간값을 줘야할 경우 블록요소로 바꿔줘야한다 */
+                transition: all 1s;
+                /* 트렌지션 지연효과 적용범위/ 시간 */
+                display: none;
+                /* 보이지 않게 숨기기  */
+            
+            }
+            .btn1:hover{
+                color: #3388ff;
+            
+            }
+    
+            .btn2{
+                width: 500px;
+                height: 500px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 500px;
+                color: rgb(0, 0, 0);
+                
+                border: 3px solid blueviolet;
+                display: block;
+                transition: all 1s;
+                margin-top: 30px;
+            }
+            .btn2:hover{
+                color: #3388ff;
+            }
+            .btn2:active{
+                background-color: black;
+                border-color: rgb(0, 0, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#" class="btn1">BUTTON</a>
+        <a href="#" class="btn2">BUTTON</a>
+    </body>
+</html>

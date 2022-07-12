@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .btn{
+            width: 600px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn button{
+            padding: 10px 20px;
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+        /* 태그이름.클래스 */
+        /* 버튼 점 엑티브라고 한거는 버튼들 중에서 엑티브라는 클래스를 가진것 */
+        .btn button.active{
+            background-color: #000;
+            color: #fff;
+        }
+        body.red{
+            background-color: red;
+        }
+        body.orangered{
+            background-color: orangered;
+        }
+        body.orange{
+            background-color: orange;
+        }
+        body.yellow{
+            background-color: yellow;
+        }
+        body.gold{
+            background-color: gold;
+        }
+        nav{
+            position: fixed;
+            width: 40%;
+            height: 100%;
+            background-color: magenta;
+            left: -40%;
+            top: 0;
+            transition: all 0.4s linear;
+        }
+        .navbtn{
+            width: 100px;
+            height: 100px;
+            background-color: darkblue;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            border-radius: 50%;
+            
+        }
+        .navbtn span{
+            transition: all 0.5s;
+            display: block;
+            width: 48px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 200px;
+            position: absolute;
+            top: 46px;
+            left: 26px;
+        }
+        .navbtn .s1{
+            margin-top: -16px;
+        }
+        .navbtn .s3{
+            margin-top: 16px;
+        }
+        .navbtn:hover .s1, .navbtn.on .s1{
+            transform: rotate(45deg);
+            margin-top: 0;
+        }
+        .navbtn:hover .s3, .navbtn.on .s2{
+            transform: rotate(-45deg);
+            margin-top: 0;
+        }
+        .navbtn:hover .s2, .navbtn.on .s3{
+            display: none;
+        }
+        nav.open{
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbtn">
+            <span class="s1"></span>
+            <span class="s2"></span>
+            <span class="s3"></span>
+    </div>
+    <nav>
+
+    </nav>
+    <div class="btn">
+        <button>red</button>
+        <button>orangered</button>
+        <button>orange</button>
+        <button>yellow</button>
+        <button>gold</button>
+    </div>
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+let color = ['red','orangered','orange','yellow','gold']
+        $('button').on('click',function(){
+
+
+           
+            // 클래스 안에는 점붙히면 안됨
+            $(this).siblings().removeClass();
+            let i = $(this).index();
+            $('body').removeClass().addClass(color[i]);
+
+            
+        });
+
+        $('.navbtn').on('click',function(){
+
+            $('nav').toggleClass('open');
+            // 토글 클레스 껏다켯다 바로하게끔 만들어줌 쉬움
+            $(this).toggleClass('on');
+        });
+    </script>
+</body>
+</html>

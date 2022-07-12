@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>플렉서블 박스</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .con{
+            display: flex;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .box{
+            width: 33.33%;
+            height: 400px;
+            background-color: blueviolet;
+            border: 5px solid black;
+        }
+        .box:first-child{
+            margin-right: 30px;
+        }
+        /* 디스플레이 플렉스로 정렬한 아이템의 경우 무슨일이 있어도 흘러넘치는 자식요소를 바닥으로
+        떨어뜨리지 않으려고 합니다
+        
+        이떄 모든 박스들의 너비가 상대값이고 마진이나 보더 값이 절대 값이라면 절대값의 값들은 변하지 않고
+        나머지 상대값을 가진 것들이 변한다*/
+        .wrap{
+            display: flex;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        /* 위드값을 지정하지 않은 블로요소는 항상 부모를 가득 채우고 있다 이런
+        블록요소에게 마진을 줄 경우에는 그 마진 만큼은 너비 값이 빠짐 */
+        .space1{
+             width: 30%;
+             height: 300px;
+             background-color: orangered;
+             position: relative;
+        }
+        .space2{
+            width: 70%;
+            height: 300px;
+            background-color: brown;
+        }
+        .space1 span{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            left: calc(50% - 10px)
+            /* 칼큘레이터 계산기
+            
+        내가 연산하기 힘든 값이나 귀찮은 값을 브라우저에게 직접 연산시켜 적용시키는 법 */
+        /* 연산자와 피연산자 사이는 띄워쓴다! */
+        
+        /* 앱솔루트의 좌표값을 %로 줄 경우 상대 닶이라 늘어났다 줄어 들었다 하는 부모 내부에서 계속 변하는
+            거리 값을 유지 할 수 있다 */
+            /* 항상 가운데 두고 싶다면  */
+            top: 50%;
+            transform: translateX(-50%);
+        } 
+
+
+        @media all and (min-width:1200px){
+            .box{
+                background-color: burlywood;
+            }
+            .box:first-child{
+                width: 500px;
+                background-color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="wrap">
+    <div class="space1">
+        <span></span>
+    </div>
+    <div class="space2"></div>
+    </div>
+</body>
+</html>

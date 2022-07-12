@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+header{
+    border-bottom: 2px solid #b5121b;
+    
+}
+
+header .hwrap{
+    width: 940px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-bottom: 20px;
+}
+header .hwrap h1{
+    text-align: center;
+    padding-top: 53px;
+}
+header .hwrap .gnb{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #2f2f2f;
+    
+}
+.gnb li{
+    margin-right: 69px;
+    margin-top: 19px;
+    margin-bottom: 20px;
+    
+}
+
+.gnb li:last-child{
+    margin-right: 0px;
+}
+
+.util{
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 0;
+}
+.util li{
+    margin-right: 20px;
+    font-size: 14px;
+    color: #6f6f6f;
+    font-size: 12px;
+    font-weight: bold;
+}
+.subutil{
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+.subutil li{
+    margin-right: 10px;
+}
+.subutil li:last-child{
+    margin-top: 12px;
+    margin-left: 8px;
+}
+.bn{
+    background-image: url(../images/mainbn.jpg);
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    height: 483px;
+}
+.bn a{
+    display: block;
+    width: 100%;
+}
+.main{
+    margin-top: 45px;
+}
+.mainwrap{
+    width: 940px;
+    display: flex;
+   justify-content: space-between;
+   margin-left: auto;
+   margin-right: auto;
+}
+.fran{
+    width: 240px;
+    
+}
+.fran img:last-child{
+    display: block;
+    margin-top: 33px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mall{
+    width: 490px;
+    height: 246px;
+    background-color: #2f2f2f;
+}
+.mallitem{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mall .malltit{
+    font-size: 12px;
+    color: #6f6f6f;
+    margin-top: 15px;
+}
+.mallitem .box{
+    width: 153px;
+    height: 140px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/bg_bar.png);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+}
+.box:first-child{
+    background-image: none;
+}
+
+.box p{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: #6f6f6f;
+    font-size: 12px;
+}
+.store p{
+    font-size: 12px;
+    color: #6f6f6f;
+    margin-top: 15px;
+}
+.store img:last-child{
+    display: block;
+    margin-top: 33px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card{
+    display: flex;
+    justify-content: center;
+}
+.tit{
+    margin-top: 35px;
+    display: flex;
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+.tit .row{
+    width: 205px;
+    font-size: 12px;
+    color: #6f6f6f;
+}
+.row img{
+    vertical-align: middle;
+    /* 버티컬 얼라인 미들 이미지와 텍스트 정렬 */
+}
+.news a{
+    width: 140px;
+    display: block;
+    white-space: nowrap;
+    /* 텍스트를 여느 블록요소처럼 부모 공간 밖으로 뚥고 나가게 하는 속성 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 근데 한줄짜리 밖에 안됨
+    여러줄짜리 텍스트는 말줄임표 처리하는 코드는 따로존재함 */
+}
+.row .quick{
+    display: flex;
+
+}
+.quick a{
+    background-image: url(../images/bg_bar.png);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    
+}
+.quick a:nth-child(2){
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.quick a:nth-child(1){
+    background-image: none;
+}
+
+.quick img{
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quick p{
+    margin-top: 5px;
+}
+.row .news li{
+    display: flex;
+    justify-content: space-betweens;
+    margin-bottom: 5px;
+}

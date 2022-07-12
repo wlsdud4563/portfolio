@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>플렉스오더</title>
+    <style>
+        .con{
+            display: flex;
+        }
+        .con div{
+            width: 200px;
+            height: 300px;
+            border: 10px solid violet;
+            font-size: 120px;
+            text-align: center;
+            line-height: 300px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .box1{
+            background-color: antiquewhite;
+        }
+        .box2{
+            background-color: bisque;
+            order: 3;
+        }
+        .box3{
+            background-color: brown;
+            order: 2;
+            /* 오더는 순서를 바꾸는 속성
+            모든 플렉스 아이템들은 기본적으로 오더를 0을 가지고 있다 
+            그래서 어떤 아이템이든 *보다 큰 숫자를 주면 맨 뒤로 밀리게 됩니다
+            
+            숫자가 크면 클수록 메인축(정렬축 내의)뒤쪽에 배치됩니다
+            그래서 플렉스 아이템들의 배치 순서를 서로 바꾸고 싶다면 모든 아이템들에게 오더값을 재분배해서 원하는 순서조합을 만들어주면 됩니다
+            
+            주의점 
+            오더는 플렉스의 부속속성입니다 부모에 플렉스가 없는 상태에서 오더를 쓰면 작동을 안합니다..*/
+        }
+        .box4{
+            background-color: burlywood;
+        }
+        .box5{
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+    </div>
+</body>
+</html>

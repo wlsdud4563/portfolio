@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .s1{
+            height: 100vh;
+            width: 100%;
+            background-color: darkblue;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .round{
+            width: 200px;
+            height: 200px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: cornsilk;
+            border-radius: 50%;
+            mix-blend-mode: difference;
+        }
+        h1{
+            font-size: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            padding: 100px 0;
+            position: relative;
+        }
+       
+    </style>
+</head>
+<body>
+    <section class="s1">
+        <div class="round"></div>
+        <h1>HELLO WORLD!</h1>
+    </section>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 마우스무브는 언뜻 보면 마우스 오버랑 비슷해보이지만 요소위에서 마우스가 움직이는 동안 끊임없이 이벤트를 실행한다
+        $('.s1').on('mousemove',function(e){
+            // 이벤트 펑션에 매개변수를 넣으면 해당 매개변수를 통해 이벤트시 일어나는 일들에 간섭할 수 있습니다
+
+            let x = e.pageX;
+            let y = e.pageY;
+
+            console.log(x,y);
+
+            $('.round').css({
+                'left' : x,
+                'top' : y
+            });
+            $('h1').css({
+
+                'left' : x, / 20,
+                'top' : y / 20
+            })
+            
+            
+        });
+        
+        $('h1').on('mouseover',function(){
+            $('round').animate({
+                'width' : 400, 'height' : 400
+
+            });
+
+        
+        
+        });
+        </script>
+</body>
+</html>

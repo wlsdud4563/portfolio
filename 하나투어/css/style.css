@@ -1,0 +1,288 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+header{
+    z-index: 100;
+    width: 100%;
+    position: sticky;
+    /* 포지션 렐러티브 상태다가 스크롤 위치가 해당 오브젝트의 상단에 도착하면
+    포지션 픽스드로 자동전환되는 속성
+     */
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.topbn{
+    background-color: #747b8e;
+    height: 56px;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.topbn button{
+    background-color: transparent;
+    border: 0;
+}
+.logoimg img{
+    width: 28px;
+    margin-right: 10px;
+}
+.appdown img{
+    width: 95px;
+    margin-right: 10px;
+}
+.appclose img{
+    width: 16px;
+}
+.appdown{
+    margin-left: auto;
+}
+.topbn p{
+    margin-left: 5px;
+    font-weight: 300;
+}
+.hwrap{
+   height: 50px;   
+   display: flex;
+   align-items: center;
+}
+.hwrap button{
+    background-color: transparent;
+    border: 0;
+}
+.hwrap h1 img{
+    width: 100px;
+    display: block;
+}
+.hwrap button img{
+    width: 16px;
+    display: block;
+    /* 모든 이미지들은 버티컬 얼라인 속성때문에 살짝 아래에서 떠있습니다 그래서 진정시키기 위해 이미지 속성들을 블락속성으로 바꿔줍니다 */
+}
+h1{
+    order: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hmenu{
+    order: 0;
+    margin-left: 15px;
+}
+.hlogin{
+    order: 3;
+    margin-right: 15px;
+}
+.hsrch{
+    order: 2;
+    margin-right: 30px;
+
+}
+nav{
+    position: relative;
+}
+.gnb{
+    display: flex;
+    text-align: center;
+    height: 50px;
+    border-top: 1px solid #ddd;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+}
+.gnb li{
+    width: 15%;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #444444;
+    
+}
+.gnb li:last-child{
+    width: 20%;
+}
+nav .navBtn{
+    background-color: transparent;
+    border: 0;
+    width: 44px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+nav .navBtn img{
+    width: 18px;
+}
+nav .gnb li:hover{
+    color: #f06;
+    border-bottom: 4px solid #f06;
+}
+.submenu{
+    display: none;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 4px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    top: 50px;
+    z-index: 30;
+    width: 100%;
+    box-sizing: border-box;
+}
+.submenu li{
+    width: 33.33%;
+    padding: 4px;
+    box-sizing: border-box;
+    
+}
+.submenu li a{
+    display: block;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.submenu li:nth-child(1) a{
+    border-color: #f06;
+    color: #000;
+}
+.submenu li:hover a{
+    background-color: #444444;
+    
+    
+}
+.bn{
+    position: relative;
+}
+.bn a{
+    display: block;
+    width: 100%;
+    
+}
+.bn img{
+    width: 100%;
+}
+.conter{
+    width: 50px;
+    height: 26px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 26px;
+    color: #fff;
+    text-align: center;
+    line-height: 26px;
+    font-weight: bold;
+}
+/* 너비값이 지정되어 있지 않은 블록요소는 기본적으로 부모를 가득 채우고 있다 */
+.quick{
+    flex-wrap: wrap;
+    display: flex;
+}
+.quick a{
+    width: 25%;
+    border: 1px solid #dddddd;
+    text-align: center;
+    box-sizing: border-box;
+    color: #555;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.quick a img{
+    width: 30px;
+}
+.quick span{
+    display: block;
+}
+/* 스판에 디스플레이 블락을 줬기때문에 새로로 새울수 있었음 */
+.subbn{
+    background-color: #ccc;
+    padding-top: 20px;
+}
+.subbn img{
+    width: 100%;
+    vertical-align: top;
+}
+.util{
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.util a{
+    width: 40%;
+    border-right: 1px solid #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.util a:last-child{
+    width: 30%;
+    border: none;
+    background-image: url(../images/bg_footop.png);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    /* 만약 그냥 백그라운드 포지션 라이트 센터
+    를 입력한다면 백그라운드 이미지는 해당 박스의 오른쪽 그리고 가장 바닥 아래에 위치하게 됩니다
+    그러나 포지션 엡솔루트를 사용한것 처럼 원하는 위치에 위치 시키고 싶다면
+    
+    background-position:right 10px bottom 15px; 식으로 입력하면 된다!!!*/
+    background-size: auto 5px;
+    /* 인덱스의 이미지 경우 미디어 요소이기 때문에 너비나 높이중 하나의 사이즈를 바꾸면 그 사이즈에 맞춰 다른 한쪽의 사이즈도
+    비율에 맞게 늘어나거나 줄어듭니다!
+    
+    그렇지만 백그라운드의 경우 사이즈를 줄일때
+    반드시 자동으로 줄어들었으면 하는 부분은 오토 처리를 해줘야 합니다
+    ex)백그라운드 사이즈: 오토 5px
+    백그라운드의 크기를 높이가 5px에 맞추어서 자동으로 맞추기*/
+}
+footer{
+    border-top: 1px solid #000;
+}
+.fmenu{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.fmenu li::after{
+    content: '|';
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.fmenu li:nth-child(2){
+    font-weight: bold;
+}
+.fmenu li:last-child{
+    content: none;
+}
+
+address, .copy{
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}

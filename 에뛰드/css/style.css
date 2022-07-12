@@ -1,0 +1,438 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+.topbn{
+    background-image: url(../images/topbn_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+
+.topbn a{
+    color: #fff;
+    margin-left: 15px;
+    line-height: 30px;
+    font-weight: bold;
+
+}
+.topbn button{
+    background-color: transparent;
+    border: 0;
+    margin-right: 15px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.topbn button img{
+    width: 14px;
+}
+h1{
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 img{
+    width: 53px;
+}
+.hwrap{
+    height: 55px;   
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+.hwrap button{
+    background-color: transparent;
+    border: 0;
+    width: 30px;
+}
+.btnhome img{
+    width: 20px;
+    margin-left: 15px;
+}
+.btnsrch img{
+    width: 17px;
+}
+.btnsrch{
+    margin-right: 15px;
+}
+.btncart img{
+    width: 19px;
+}
+
+.btnall span{
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin-bottom: 4px;
+}
+.btnall span:last-child{
+    margin-bottom: 0;
+}
+.btncart{
+    position: relative;
+}
+.btncart span{
+    width: 14px;
+    height: 14px;
+    background-color: #f54a7e;
+    font-size: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 1px;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.gnb{
+    display: flex;
+    font-size: 14px;
+    color: #888;
+    padding-left: 15px;
+    align-items: center;
+    /* 얼라인 아이템센터가 안먹힐때는 하이트값을 봐라!!!!!! */
+    height: 40px;
+    width: 680px;
+    /* 고정 */
+}
+.gnb li{
+    margin-right: 15px;
+}
+nav{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    overflow-x: hidden;
+
+}
+nav button{
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    border-left: 1px solid #ccc;
+    height: 39px;
+    width: 40px;
+    background-color: #fff;
+}
+nav button img{
+    width: 12px;
+}
+
+.mainbn img{
+    width: 100%;
+}
+.txt{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.txt a img{
+    width: 8px;
+}
+.txt h2{
+    font-size: 16px;
+}
+.txt span{
+    margin-right: 5px;
+    font-size: 14px;
+    color: #666;
+}
+main{
+    background-color: #f0f0f0;
+}
+.s1{
+    background-color: #fff;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.s1 .con{
+    display: flex;
+    justify-content: space-around;
+
+}
+.com .item{
+    width: 50%;
+
+}
+.item p{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.item p span{
+    font-size: 12px;
+    color: #666;
+    text-decoration: line-through;
+}
+.pwrap{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.peger{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+.peger a{
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: #ddd;
+    border-radius: 50%;
+    text-indent: -9999px;
+ 
+}
+.subbn2 img{
+    width: 100%;
+}
+.subbn3 img{
+    width: 100%;
+    margin-top: 15px;
+}
+.product{
+    background-color: #ccc;
+}
+.product .btn{
+    display: flex;
+}
+.product .btn button{
+    border: 0;
+    height: 40px;
+    width: calc(100% / 8);
+}
+.btn1{
+    background-color: #fe792f;
+}
+.btn2{
+    background-color: #fd9a86;
+}
+.btn3{
+    background-color: #da8d71;
+}
+.btn4{
+    background-color: #fe7d6a;
+}
+.btn5{
+    background-color: #f36551;
+}
+.btn6{
+    background-color: #d097b3;
+}
+.btn7{
+    background-color: #ef6da0;
+}
+.btn8{
+    background-color: #b262e2;
+}
+.zip{
+    background-color: #fff;
+    border:10px solid #fe792f;
+}
+.zip img{
+    width: 120px;
+}
+.zip a{
+    display: flex;
+}
+.product .zip .tit{
+    padding-top: 15px;
+    padding-left: 15px;
+}
+.product .zip h4{
+    font-size: 18px;
+    font-weight: normal;
+}
+.product .zip .color{
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.product h3{
+    line-height: 50px;
+}
+.quick{
+    background-color: #f0f0f0;
+}
+.quick .quickwrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.quick .quickwrap li{
+    width: 50%;
+    position: relative;
+    height: 68px;
+}
+.quick a{
+    display: flex;
+    height: 68px;
+    align-items: center;
+    padding-left: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+/* 이븐 짝수번째만 잡기 */
+/*  오더 홀수번째만 잡기 */
+.quick a:nth-child(even){
+    border-left: 1px solid #ccc;
+}
+.quickwrap li p{
+    margin-left: 15px;
+    color: #666;
+    font-size: 14px;
+    
+}
+.aro{ 
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+footer{
+    background-color: #ccc;
+}
+.bbs{
+    margin-top: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+    align-items: center;
+    line-height: 50px;
+}
+.bbs p{
+    margin-left: 10px;
+}
+.bbs h3{
+    font-size: 16px;
+}
+.bbs button{
+    border: 0;
+    background-color: transparent;
+    margin-left: auto;
+}
+.bbs button img{
+    width: 14px;
+}
+.fmenu{
+   display: flex;
+   justify-content: center;
+}
+.fmenu li::after{
+    content: "|";
+    margin-left: 7px;
+    margin-right: 7px;
+    font-size: 14px;
+}
+.fmenu li:last-child::after{
+    content: none;
+}
+.sns{
+    display: flex;
+    justify-content: center;
+}
+.sns a{
+    margin-top: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.sns a img{
+    width: 32px;
+}
+address{
+    text-align: center;
+    font-style: normal;
+    font-size: 14px;
+}
+.tel{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+.tel a{
+    background-image: url(../images/ico_tel.png);
+    background-repeat: no-repeat;
+    background-size: 10px auto;
+    background-position: 2px center;
+    font-size: 12px;
+    color: #444;
+    padding-top: 2px;
+    padding-left: 18px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+}
+.tel a:first-child{
+    margin-right: 10px;
+    border: 1px solid #000;
+}
+.tel a:last-child{
+    border: 1px solid #000;
+}
+.com{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+.info{
+    font-size: 14px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.info li::after{
+ content: '|';
+ margin-left: 7px;
+ margin-right: 7px;
+}
+.info li:nth-child(3)::after{
+    content: none;
+}
+.info li:nth-child(4)::after{
+    content: none;
+}
+.info li:last-child{
+    width: 100%;
+    text-align: center;
+    /* 플렉스 랩을 써서 특정 문장을 밑으로 떨어뜨릴때 쓰는방법 */
+}
+.mark{
+    margin-top: 15px;
+    height: 76px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.copy{
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
+}

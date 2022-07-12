@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 800px;
+            height: 600px;
+            position: relative;
+            border: 10px solid #000;
+        }
+        .wrap div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 600px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 80px;
+            display: none;
+        }
+        .wrap .deeppink{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="deeppink">deeppink</div>
+        <div class="dodgerblue">dodgerblue</div>
+        <div class="lawngreen">lawngreen</div>
+        <div class="gold">gold</div>
+        <div class="darkviolet">darkviolet</div>
+        <div class="orangered">orangered</div>
+    </div><!--wrap-->
+
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+        //모든 디아이브이 한테 자기안의 택스트로 백스라운드색적용
+        $('.wrap div').each(function(){
+            let txt = $(this).text();
+            $(this).css({'background' : txt});
+        });
+        let i = 0;
+        setInterval(function(){
+            let ns = (i+1) % 6;
+                $('.wrap').children().eq(i).fadeOut();
+                $('.wrap').children().eq(ns).fadeIn();
+                // 이렇게쓰면 흰색배경까지 플러스됨
+                i = ns;
+                
+            
+            },1000);
+    </script>
+</body>
+</html>

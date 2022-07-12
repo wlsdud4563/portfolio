@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // let day = prompt("오늘의 요일은?");
+        // let result;
+          
+        // day = day[0];//[n] 순서
+        // //데이에 저장되어있는 문장졀중 가장 맨앞에 문자만 똑 떼서 사용이 가능하다
+
+        // switch(day){
+        //     case "월" : result = "아메리카노 1+1";
+        //     break;
+        //     case "화" : result = "케익할인";
+        //     break;
+        //     case "수" : result = "전품목할인";
+        //     break;
+        //     case "목" : result = "라때무료";
+        //     break;
+        //     case "금" : result = "사이즈업";
+        //     break;
+        //     case "토" : result = "랜덤무료";
+        //     break;
+        //     case "일" : result = "쿠키증정";
+        //     break;
+        //     default : result = "재대로 된 값을 입력해 주세용"
+        // }
+        // document.write(result);
+    //    1.(ㄱ) 명령실행을 위한 핵심 괄호 혹은 명령 실행
+    // 프롬프트 () ->프롬프트 명령어(함수) 실행
+    // 도큐먼트 화이트 -> 도큐먼트 안에 화이트 라고 실행
+    // if() -> if 구문 작동을 위한 핵심 엔진 부분()
+    // 2 {} 코드블럭, 여러개의 실행구문들을 하나로 묶는 용도 코드블럭 주머니 역활
+    // if(3>2) {도큐먼트 화이트 ("3이 크다 ")}
+    // 얼럴트 ("2가 작다")
+    // []인덱스 넘버와 관련이 있습니다
+    // 인텍스 넘버란 그냥 순서 얘기....
+    // 자바스크립트의 순서는 0부터 시작합니다 그리고 이 순서의 개념을 인덱스라고 불러요 aa
+
+    //  location.replace(naver.com);
+    //  주소표시줄에 있는 값을 바꿔서 싸이트로 이동
+    let site = prompt("자주이용하는 포털사이트를 입력해주세요");
+    let result;
+
+    switch(site){
+        case "네이버" : url = "https://naver.com";
+        break;
+        case "구글" : url = "https://google.com";
+        break;
+        case "네이트" : url = "https://nate.com";
+        break;
+        case "다음" : url = "https://daum.com";
+        break;
+        
+        default : result = "다음 네이버 구글 네이트 중 하나를 입력해 주세요"
+
+    }
+   if(url){location.replace(url);}
+
+
+
+    </script>
+</body>
+</html> 

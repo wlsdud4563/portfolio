@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            background: yellowgreen;
+            width: 200px;
+            height: 260px;
+        }
+        .box2{
+            background: rgb(122, 9, 214);
+            width: 400px;
+            height: 360px;
+        }
+        .box3{
+            background: rgb(239, 102, 102);
+            width: 600px;
+            height: 460px;
+        }
+        .box4{
+            background: rgba(154, 20, 20, 0.907);
+            width: 800px;
+            height: 560px;
+        }
+        .box5{
+            background: rgb(0, 200, 245);
+            width: 1000px;
+            height: 660px;
+        }
+        div{
+            position: relative;
+        }
+        div span{
+            font-size: 40px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <strong></strong>
+        <span>box1</span>
+    </div>
+    <div class="box2">
+        <strong></strong>
+        <span>box2</span>
+    </div>
+    <div class="box3">
+        <strong></strong>
+        <span>box3</span>
+    </div>
+    <div class="box4">
+        <strong></strong>
+        <span>box4</span>
+    </div>
+    <div class="box5">
+        <strong></strong>
+        <span>box5</span>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        let a = $('.box1').width(); //해당 선택자의 너비 구하기
+        let b = $('.box1').height();
+
+        $('.box1 strong').text(`${a},${b}`);
+
+        $('.box1').on('click',function(){
+            $(this).width(1000);
+            $(this).height(500);
+        });
+
+        $('div').on('click',function(){
+             let wid = $(this).width();
+             let hig = $(this).height();
+
+             $(this).width(hig).height(wid);  //높이 넙이 바꾸기
+        });
+
+
+        // let a = $('.box1').offset().top; 탑뒤에 괄호 붙히지 않는다
+        // $('.box1').children('strong').text(a);
+
+        // 오프셋이란 해당 문서의 시작지점에서 부터 선택자의 외곽까지의 거리ㅈ
+        //  let num = 0;
+        $('div').each(function(){
+
+            let offsetTop = $(this).offset().top;
+            $(this).children('strong').text(offsetTop);
+
+            // $(this).children('strong').text(num);
+            // num++;
+        });//이치 펑션 
+        // 이치 모든 선택자마다 한번씩 함수를 실행시키는 것
+        // html문서를 스캔하다가 선택자와 같은 것을 볼때 마다 해당 펑션 내부의 것들을 반번씩 실행시킵니다 이때 한번에 하나씩 만 하기 때문에 (디스)를 사용할수 있다
+
+
+    </script>
+</body>
+</html>

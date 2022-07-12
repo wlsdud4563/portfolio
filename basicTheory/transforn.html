@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: bisque;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .con div{
+            width: 200px;
+            height: 200px;
+            border: 5px solid black;
+            line-height: 200px;
+            text-align: center;
+            font-weight: 900;
+            font-family: arial;
+            margin-bottom: 20px;
+            transition: all 1s;
+        }
+        .con .box2:hover{
+            transform: scale(2);
+            /* 트렌스폼 스케일은 크기를 조절하는 속성
+            보통 배수로 사용됨 (2)배(3)배 x y값 입력가능 */
+            /* 트렌스폼이란 형태를 변형하는 속성이다 
+            그런데 보이는 모양만 변할뿐이지 원래있었던 위치나 크기가 유지가 된다 
+            
+            보이는 모양이 달라진다고해도 브라우저에 계산되는 값은 원래의크기 위치가 동일
+            트렌스폼 스케일(2)를 줘서 두배로 키운다고 한들 브라우저 내에 계산되고 있는 값은 여전히 동일
+            
+            레이아웃 짜는 용도로 쓰는게 아니고 마우스 올렸을때 특정요소가 커지게 한다거나 이외 특정한 상황에서 특정요소를 이동시켜 보이고 싶다거나 할때 사용
+            
+            */
+        }
+        .con .box1:hover{
+            transform: skew(40deg);
+            /* 기울이기 
+            40deg= 40도 */
+        }
+        .con .box5:hover{
+            transform: rotate(360deg);
+            /* 로테이트
+            회전하는 속성 */
+        }
+        .con .box4:hover{
+            transform: rotateX(270deg);
+        }
+        .con .box6:hover{
+            transform: rotateY(270deg);
+        }
+        .con2 .box4{
+          transform: translateX(50px) translateY(150px); 
+          /* 있던자리에서 움직이는 속성
+          트렌스폼 레이트 x y 값으로 움직임 */
+        }
+        .con2{
+            position: relative;
+        }
+        .con2 .box5{
+            position: absolute;
+            left: 50%;
+            background-color: blueviolet;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* 포지션 앱솔루트 상태에서 가운데 위치시키기
+            앱솔루트 상태에서top50% left 50% 입력하면 무모요소의 가운데 지점에서 시작되게끔 배치된다 */
+            /* 트렌스폼 트렌스레이트 (-50%, -50%) 입력시키면 정가운데로 위치된다
+            가능한 이유: 트렌스폼 트렌스레이트의  */
+        }
+    </style>
+</head>
+<body>
+    <!-- 이렇게 쓰면 클래스가 2개 -->
+    <div class="con1 con">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box6">box6</div>
+    </div>
+    <div class="con2 con">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box6">box6</div>
+    </div>
+
+</body>
+</html>

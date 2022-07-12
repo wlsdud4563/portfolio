@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        ul{
+            list-style: none;
+        }
+        header{
+            height: 50px;
+            background-color: #333;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .gnb{display: none;}
+
+    
+        .bn{
+            background-color: pink;
+            height: 320px;
+        }
+        .bn a{
+            width: 100%;
+            display: block;
+        }
+        main{
+            background-color: rgb(50, 50, 50);
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        main .mainwrap{
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        main .mainwrap .con{
+            display: flex;
+            justify-content: space-between;
+        }
+        main .mainwrap .con .item{
+            
+            height: 150px;
+            background-color: brown;
+            margin-bottom: 10px;
+        }
+        main .mainwrap .box{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        main .mainwrap .box .minibox{
+            width: 235px;
+            height: 170px;
+            background-color: royalblue;
+        }
+        footer{
+            height: 80px;
+            background-color: black;
+        }
+        .fmenu{
+            display: flex;
+            justify-content: center;
+            line-height: 80px;
+        }
+        .fmenu li{
+            color: #fff;
+        }
+        .fmenu li::after{
+            content: '|';
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .fmenu li:last-child::after{
+            content: none;
+        }
+        @media all and (min-width:1200px){
+
+header{
+    height: 100px;
+}
+
+.hWrap{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.gnb{
+    display: flex;
+}
+.gnb li{
+    margin-left: 20px;
+}
+.bn{
+    height: 500px;
+    width: 100%;
+}
+
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hwrap">
+            <h1>로고</h1>
+             <ul class="gnb">
+                 <li><a href="#">list</a></li>
+                 <li><a href="#">list</a></li>
+                 <li><a href="#">list</a></li>
+                 <li><a href="#">list</a></li>
+                 <li><a href="#">list</a></li>
+                 <li><a href="#">list</a></li>
+             </ul>
+        </div>
+    </header>
+    <div class="bn">
+        <a href="#"></a>
+    </div>
+    <main>
+        <div class="mainwrap">
+            <div class="con">
+                <div class="item">1</div>
+                <div class="item">1</div>
+                <div class="item">1</div>
+            </div>
+            <div class="box">
+                <div class="minibox">2</div>
+                <div class="minibox">2</div>
+                <div class="minibox">2</div>
+                <div class="minibox">2</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <ul class="fmenu">
+            <li><a href="#">fmenu</a></li>
+            <li><a href="#">fmenu</a></li>
+            <li><a href="#">fmenu</a></li>
+            <li><a href="#">fmenu</a></li>
+            <li><a href="#">fmenu</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

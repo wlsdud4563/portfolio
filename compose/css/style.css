@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: #000000;
+    text-decoration: none;
+}
+
+h1{
+    text-align: left;
+}
+.header{
+    width: 980px;
+    height: 78px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.list{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
+.list li{
+    margin-left: 20px;
+    background-image: url(../images/line.jpg);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+
+    /* 이제는 백그라운드 이미지를 직접 불러와야할 파일이 한단계 아래인
+    css 폴더 안으로 이동해 있습니다
+    그렇기 떄문에 이제는 ../를 사용해서 경로를 한 단계 위로 이동해서 이미지폴더 내부의 이미지를 찾아 사용하면 됩니다 */
+}
+.list li:nth-child(1){
+    background-image: none;
+}
+.bn{
+    height: 600px;
+    background-image: url(../images/slider1.png);
+    background-size: cover;
+    background-position: center 0;
+}
+.bn a{
+    width: 600px;
+    display: block;
+}
+.main h3{
+    margin-top: 40px;
+    color: #b3917c;
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: lighter;
+}
+.main h3 span{
+    font-weight: bold;
+}
+.main{
+    text-align: center;
+    /* 블록요소에게 내부에 있는 인라인 요소들과 텍스틀을 가운데 정렬해라 라고 명령하는것 */
+}
+.main .item{
+    display: flex;
+    justify-content: center;
+}
+.main .item .box{
+    width: 326px;
+}
+.box h4{
+    margin-top: 14px;
+    font-size: 18px;
+}
+.box p{
+    font-size: 13px;
+}
+.row{
+    background-image: url(../images/main.jpg);
+    background-repeat: no-repeat;
+}
+.row h3{
+     margin-top: 40px;
+     padding-top: 30px;
+     color: white;
+}
+.con{
+    width: 980px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    width: 490px;
+    justify-content: space-between
+    
+}
+
+.gallery .g{
+    width: 157px;
+    height: 130px;
+    
+}
+.gallery img{
+    width: 157px;
+    height: 130px;
+}
+.vid{
+    margin-right: 30px;
+}
+.footer{
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.news{
+    font-size: 12px;
+    margin-top: 10px;
+}
+.news li:hover{
+    text-decoration: underline;
+}
+.news li::before{
+    content: '·';
+    color: #b3917c;
+}
+/* 비포는 가상선택자 임 html에 존재하지 않는 것을 css 컨텍트 속성을 사용하여 텍스트를 삽입할수 있음 */
+/* 쓰임새 :단순 장식을 위한, 의미없는 디자인 요소들을 html상에 태그처리 하는 것 보다 css에서 한번에 처리하는 것이 사후 관리가 편하기 떄문에 그런용도로 사용 */
+.footer .fbox{
+    width: 326px;
+    
+}
+.fbox .yellow{
+    color: yellow;
+}
+.fbox h4{
+    color: #b3917c;
+    font-size: 16px;
+}
+.fbox .cs{
+    color: white;
+    margin-top: 10px;
+}
+.fbox a{
+    color: #ababab;
+    font-size: 12px;
+}
+.fbox address{
+    color: #ababab;
+    font-size: 12px;
+    font-style: normal;
+}
+.sns a{
+    margin-right: 10px;
+   
+}
+.sns{
+    display: flex;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>animation</title>
+        <style>
+            *{margin:0;padding:0;}
+            .box{
+                width: 200px;
+                height: 200px;
+                background-color: turquoise;
+            }
+
+            @keyframes box1{
+                0%{transform: scale(1);}
+                100%{transform: scale(4);}
+            }
+            
+            .box1{
+                margin:40px auto;
+                /* animation-name:box1; */
+                /* 잠시 꺼두기위해서 이름 숨김처리... */
+                /*애니메이션 변수(데이터 불러올 이름) 지정
+                지정해둔 이름으로 밖에서 @keyframes활용하여
+                애니메이션 동작을 지정해줌 
+                */
+                animation-duration: 3s;
+                /*애니메이션 길이 (s로 초단위)*/
+                animation-iteration-count: infinite;
+                /*애니메이션 반복횟수*/
+                animation-direction: alternate;
+                /* 애니메이션 반대로 지정할 수 있음(되감기) */
+                animation-timing-function: linear;
+                /*애니메이션 이징 : 시간함수 
+                애니메이션이 실행될때 시간배분
+                */
+            }
+
+            .intro{
+                margin:100px 0;
+                font-size: 46px;
+                font-weight: bolder;
+                text-align: center;
+            }
+
+            .intro div{
+                animation-name:intro;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+                /* 애니메이션이 끝난지점에서 변형이 멈춤
+                    ->초기값으로 돌아가지 않음
+                */
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            .intro .txt2{
+                animation-delay: 0.5s;
+            }
+            @keyframes intro{
+                0%{
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                100%{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .box2{
+                margin: 40px auto;
+                border-radius: 50%;
+                animation:box2 3s infinite;
+                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
+            @keyframes box2{
+                0%{
+                    border-radius: 50%;
+                    background-color:turquoise
+                }
+                20%{
+                    background-color:orange
+                }
+                40%{
+                    background-color:deeppink
+                }
+                60%{
+                    background-color:dodgerblue;
+                }
+                80%{
+                    background-color:limegreen;
+                    border-radius: 0;
+                }
+            }
+
+  @keyframes scale-easeOutBounce {
+	0% {
+		transform: scale(1);
+	}
+
+	12% {
+		transform: scale(0.89);
+	}
+
+	24% {
+		transform: scale(0.56);
+	}
+
+	36% {
+		transform: scale(0.02);
+	}
+
+	54% {
+		transform: scale(0.25);
+	}
+
+	74% {
+		transform: scale(0.02);
+	}
+
+	82% {
+		transform: scale(0.06);
+	}
+
+	92% {
+		transform: scale(0.01);
+	}
+
+	96% {
+		transform: scale(0.02);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+
+}
+
+
+
+        </style>
+    </head>
+    <body>
+
+        <div class="intro">
+            <div class="txt1">안녕하세요</div>
+            <div class="txt2">딸기의 블로그입니다</div>
+        </div><!--intro-->
+
+        <div class="box box1">box1</div>
+
+        <div class="box box2">box2</div>
+    </body>
+</html>

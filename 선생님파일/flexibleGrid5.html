@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형헤더</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        a{
+            color:inherit;
+            text-decoration: none;
+        }
+
+        /* header */
+
+        header{
+            height: 50px;
+            background-color: #333;
+        }
+
+        h1{
+            text-align: center;
+            color: #fff;
+        }
+
+        .btnNav{
+            border: 0;
+            background-color: #000;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        .btnNav span{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .btnNav span:last-child{
+            margin-bottom: 0;
+        }
+
+        nav{
+            position: fixed;
+            top:0;
+            left:-70%;
+            /* 옆에서 튀어나오는 애니메이트 효과 주려면
+            너비만큼 left값을 -로 준다 */
+            transition: all 1s ease-in;
+            width: 70%;
+            height: 100%;
+            background-color: #000;
+            color: #fff;
+        }
+
+        nav button{
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: 0;
+            color: #fff;
+            text-align: center;
+            font-size: 30px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .util{
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .util li{
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+
+        .gnb{
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        .gnb li{
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+@media all and (min-width:1440px){
+    
+    header{
+        background-color: transparent;
+        height: auto;
+        /* 아까 height:50px 줘놨던거 없애기 = 
+        원래 블록요소가 그러하듯 
+        안에 들어있는 내용물 만큼으로 자동 생성되도록 하기 */
+    }
+
+    header button{
+        display: none;
+    }
+
+    .hWrap{
+        background-color: powderblue;
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        /* 
+        바로위 부모가 position관련 속성을 가지고
+        있지 않을 때, 그 위의 부모가 position관련 속성을
+        가지고 있다면 그 부모를 기준으로 움직입니다  */
+    }
+
+    .util{
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        margin-top: 0;
+    }
+    h1{
+        color: #333;
+        padding-top: 25px;
+    }
+
+    nav{
+        position: unset;
+        width: auto;
+        background-color: transparent;
+        color: #333;
+    }
+
+    .gnb{
+        margin-top:22px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .gnb li{
+        font-size: 20px;
+        padding-left: 0;
+        margin-bottom: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hWrap">
+            <h1><a href="#">Logo</a></h1>
+            <button class="btnNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul class="util">
+                    <li><a href="#">util1</a></li>
+                    <li><a href="#">util2</a></li>
+                    <li><a href="#">util3</a></li>
+                    <li><a href="#">util4</a></li>
+                </ul><!--util-->
+
+                <ul class="gnb">
+                    <li><a href="#">gnb1</a></li>
+                    <li><a href="#">gnb2</a></li>
+                    <li><a href="#">gnb3</a></li>
+                    <li><a href="#">gnb4</a></li>
+                    <li><a href="#">gnb5</a></li>
+                </ul><!--gnb-->
+
+                <button class="btnClose">X</button>
+            </nav>
+        </div><!--hWrap-->
+    </header>
+    
+
+
+    <script>
+        let btnNav = document.querySelector('.btnNav');  //여기에는 nav열기버튼 클래스
+        let btnClose = document.querySelector('.btnClose')//여기에는 nav닫기버튼 클래스
+        let nav = document.querySelector('nav'); //옆에서 튀어나올 메뉴이름 
+
+        //다 따옴표 '' 안에 써 줘야함!!!!
+
+        btnNav.addEventListener('click',function(){
+
+            nav.style.left = 0
+        })
+
+        btnClose.addEventListener('click',function(){
+            nav.style.left = '-70%'
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .btnbox{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .btnbox button{
+            margin: 0 5px;
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            border: 10px solid #000;
+            margin: 40px auto;
+            font-size: 80px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="btnbox">
+        <button class="fadein">fadein</button>
+        <button class="fadeout">fadeout</button>
+        <button class="fadetoggle">fadetoggle</button>
+        <button class="slideup">slideup</button>
+        <button class="slidedown">slidedown</button>
+        <button class="slidetoggle">slidetoggle</button>
+    </div>
+
+    <div class="box">box</div>
+
+
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <script>
+           $('.fadein').on('click',function(){
+
+            $('.box').fadeIn();
+        
+           });
+
+        //    디스플레이 논 되어있는 요소를 디스플레이 블락으로 바꾸고 오파시티 값을 0에서 1로 빠르게 증가시킴
+
+           $('.fadeout').on('click',function(){
+
+            $('.box').fadeOut(1000);
+            // 안에 숫자를 쓰면 천천히 된다
+            // 1초 = 1000
+
+            });
+
+            // 요소의 오파시티값을 1에서 0으로 빠르게 감소시킨 다음 0이 되는 순간 디스플레이 논으로 전환
+
+            $('.slideup').on('click',function(){
+
+                $('.box').slideUp();
+
+            });
+
+            // 슬라이드 업 하이트값을 빠르게 줄이고 디스플레이논
+            $('.slidedown').on('click',function(){
+
+            $('.box').slideDown();
+
+            });
+            // 슬라이드 다운 논에서 블락으로 전환후 하이트값을 빠르게 증가
+
+            $('.fadetoggle').on('click',function(){
+
+             $('.box').fadeToggle();
+
+            });
+            // 토글 껄다 켯다 땟다 붙혔다
+            
+            $('.slidetoggle').on('click',function(){
+
+            $('.box').slideToggle();
+
+            });
+
+    </script>
+</body>
+</html>

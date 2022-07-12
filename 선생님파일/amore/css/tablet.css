@@ -1,0 +1,50 @@
+@media all and (min-width:768px){
+   .bn .mobile{
+       display: none;
+   }
+   .bn .pc{
+       display: block;
+   }
+   .bn .txt{
+       text-align: left;
+       width: auto;
+       left: calc(50% + 40px);
+       margin-top: -40px;
+   }
+   .bn .txt a{
+       text-align: center;
+       margin-left: unset;
+   }
+   .row1{
+       display: flex;
+       padding: 0;
+       margin-top: 40;
+       max-width: 1200px;
+       /* 더이상 커지지 않게 */
+       margin-left: auto;
+       margin-right: auto;
+   }
+    .row1 .mobile{
+        display: none;
+    }
+    main .row1 .item2 .mobile{
+        display: none;
+    }
+    main .row1 .item2 .pc{
+        display: block;
+    }
+    main .row1 .item .pc{
+        display: block;
+    } 
+    main .row2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+ 
+ 
+
+
+}/*768픽셀 테블렛 영역*/

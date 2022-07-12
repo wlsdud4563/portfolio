@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>종합</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+                color: #ffffff;
+            }
+            .header{
+                height: 80px;
+                background-color: #000000;
+                
+                margin-left: auto;
+                margin-right: auto;
+                
+
+            }
+            .hWrap{
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+            }
+            /* 배경뒤에 배경 넣기 W대문자 중요 */
+            
+                h1{
+                font-size: 30px;
+                position: absolute;
+                top: 15px;
+                width: 1000px;
+            }
+            .list:last-child{
+                margin-right: 0;
+            }
+
+            .list{
+                display: flex;
+                position: absolute;
+                right: 0;
+                top: 30px;
+                
+                
+            }
+            .list li{
+                font-size: 16px;
+                margin-left: 30px;
+                color: #ffffff;
+            
+            }
+            .bn{
+                height: 500px;
+                background-image: url(이미지/banner.jpg);
+            }
+            .con{
+                display: flex;
+                justify-content: space-between;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+            .con .box{
+                width: 320px;
+                height: 180px;
+                background-color: gray;
+                margin-top: 40px;
+                
+
+            }
+            .con2{
+                display: flex;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 40px;
+
+            }
+            .con2 .box{
+                width: 250px;
+                height: 200px;
+                background-color: #333;
+            }
+            .con2 .boxL{
+                width: 500px;
+                height: 200px;
+                background-color: #dddddd;
+            }
+            .footer{
+                height: 120px;
+                margin-top: 80px;
+                background-color: #000000;
+            }
+
+       
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="hWrap">
+            <h1><a href="#">LOGO</a></h1>
+            <ul class="list">
+                <li><a href="#">list1</a></li>
+                <li><a href="#">list2</a></li>
+                <li><a href="#">list3</a></li>
+                <li><a href="#">list4</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="bn"></div>
+        <div class="con">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="con2">
+            <div class="box"></div>
+            <div class="boxL"></div>
+            <div class="box"></div>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>

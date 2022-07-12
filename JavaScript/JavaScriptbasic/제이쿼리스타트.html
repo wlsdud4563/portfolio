@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 스타트</title>
+
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 5px solid #000;
+            margin-top: 40px;
+            background-color: ;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <button class="red">레드</button>
+    <button class="blue">블루</button>
+
+    <div class="box"></div>
+    <!-- 제이쿼리는 자바스크립트 라이브러리 입니다 라이브러리란?
+    쉽게 말해서 도큐먼트 화이트 기능들 자바스크립트 코어에 저장 되어있다고했죠?
+그런데 브라우저 자체에 저장된 명령어들이 아닌 유저들이 만든 명령어들을 묶어서 만들어둔 파일
+
+제이쿼리는 자바스크립트를 쉽게 쓰게 해주는 라이브러리
+그래서 외부파일이기 때문에 스크립트 src를 사용해서 연결해줘야 작동합니다-->
+    <script src="../JavaScriptbasic/js/jquery-3.6.0.min.js"></script>
+    <!-- 이 연결한 스크립트와 스크립트 사이에는 아무것도 쓰면안됨 -->
+    <!-- $는 제이쿼리 함수 안붙여주면 작동안함 -->
+
+    <script>
+
+        $('.red').click(function(){
+
+            $('.box').css('backgroundColor', 'red')
+        });
+        $('.blue').click(function(){
+            $('.box').css('backgroundColor','#777')
+        });
+    </script>
+</body>
+</html>

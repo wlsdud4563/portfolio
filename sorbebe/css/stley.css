@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    /* 인헤리트 상속값 부모에게 받은 값을 자식에게도 적용시킴 */
+    /* a의 경우 브라우저 내부에 내장된 css에서 컬러를 지정해 놓은 경우가 대다수다 */
+    /* 그렇기 때문에 이때까지 a에게 직접 적용 시키면서 작용 해왔는데 불편함
+    인헤리트를 적요시키면 폰트관련 모든 속성들과 색상들을 같이 받아오는게 여러모로 편합니다 */
+}
+.header{
+    background-color: white;
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+    height: 96px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    /* 포지션속성을 가진 것들끼리 겹치면 나중에 만들어 진것들이 위로올라온다
+    이때 z-index를 써서 정렬한다 1보다 큰값으로 작동 단 다른 제트 인덱스를 가진 요소 위로
+    또다른 요소를 올리고 싶다면 그요소보다 더 큰값을 주면된다*/
+}
+.hwrap{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+h1{
+    padding-top: 35px;
+}
+.list{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 40px;
+}
+.list li{
+   margin-left: 30px;
+   font-size: 18px;
+   color: black;
+   font-family: 
+   letter-spacing: -1px;
+}
+.list li:hover{
+    color: #3badb5;
+}
+
+.util{
+ display: flex;
+ font-size: 12px;
+ color: #888888;
+ position: absolute;
+ top: 10px;
+ right: 0px;
+}
+.util li{
+ border-right: 1px solid #888888;
+ /* 보더:경계선 외각선 프레임 */
+ padding-right: 7px;
+ padding-left: 7px;
+ line-height: 12px;
+ /* 라인 하이트를 주면 줄어들긴함 폰트들의 높이 값의 실체는 폰트 사이즈가 아니라 라인 하이트임 */
+}
+.util li:nth-child(1){
+    background-image: url(../images/ico_language.png);
+    background-repeat: no-repeat;
+    padding-left: 12px;
+    background-position: 0 2px;
+    border-right: 0;
+}
+.util li:last-child{
+    border: 0;
+    padding-right: 0;
+    font-weight: bold;
+    color: #3badb5;
+}
+.bn{
+    position: relative;
+    margin-top: 80px;
+
+}
+.bn .bnimg{
+    height: 565px;
+    background-image: url(../images/main_visual_01.jpg);
+    background-size: cover;
+    background-position: center 0;
+}
+.bn .bnimg a{
+    height: 100%;
+    /* 부모의 높이값 받아오기 */
+    display: block;
+}
+.pager{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    /* 요소와 요소를 곂여줄떈 그냥 포지션 앱솔루트를 쓰자!!! */
+}
+.pager a{
+    margin-left: 4px;
+    margin-right: 4px;
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: black;
+}
+.row1{
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+}
+.row1 .item{
+    display: flex;
+}
+.item .box{
+    margin-left: 11px;
+    margin-right: 11px;
+}
+.story{
+    text-align: center;
+    margin-top: 22px;
+    margin-bottom: 40px;
+}
+.row2{
+    display: flex;
+    justify-content: center;
+}
+.row2 .item2{
+ margin-left: 11px;
+ margin-right: 11px;
+}
+.row2 .item2 .box1{
+    margin-bottom: 22px;
+    position: relative;
+
+}
+.over{
+    position: absolute;
+    /* 뭔가를 곂칠떄는 무조건 포지션 앱솔루트 */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* 오파시티는 투명도 조절 0~1까지의 숫자를 통해 해당요소의 투명도를 조절 */
+    transition: all 1.5s;
+}
+.over:hover{
+    opacity: 1;
+}
+.footer{
+    background-color: #32404b;
+    text-align: center;
+}
+.fwrap{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+select{
+    background-color: transparent;
+    /* 트렌스페런트 기본값 */
+    width: 120px;
+    padding: 5px;
+    /* 상하좌우 5px */
+    color: #cccccc;
+    position: absolute;
+    top: 20px;
+    right: 0;
+}

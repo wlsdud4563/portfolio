@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        button{
+            border: 0;
+            background-color: transparent;
+        }
+        .btn{
+            width: 140px;
+            height: 42px;
+            text-align: center;
+            background-color: #eee;
+            border-bottom: 2px solid #ccc;
+            border-right: 2px solid #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn div{
+            position: absolute;
+            top: -45px;
+            left: 400px;
+            background-color: blanchedalmond;
+            width: 100%;
+            height: 100%;
+            transition: all 1s;
+        }
+        .btn span{
+            position: relative;
+            /* 포지션 앱솔루트를 쓰면 당연히 앱솔루트된 자식이 다른 것들 위로 올라온다
+            그때 아래에 깔린 다른 자식을 위로 올리고 싶다면 z 인덱스를 줘야하는데
+            
+            제트 인덱스는 포지션 값이나 트렌스폼 값을 가진 대사에게서만 작동한다*/
+            z-index: 3;
+        }
+        .btn:hover div{
+            top: 0;
+            left: 0;
+        }
+        .btn2{
+            width: 140px;
+            height: 40px;
+            text-align: center;
+            position: fixed;
+            top: 300px;
+            left: 300px;
+            background-color: blueviolet;
+            border: 2px solid #eee;
+        }
+        .btn2 .txt{
+            color: crimson;
+        }
+        .btn2 div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: bisque;
+            color: black;
+            transition: all 1s;
+            overflow: hidden;
+        }
+        .btn2:hover div{
+            width: 100%;
+        }
+        .btn2 .bartxt{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 140px;
+            height: 45px;
+            display: flex;
+            
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">
+        <span>버튼</span>
+        <div></div>
+    </button>
+
+    <button class="btn2">
+          <span class="txt">버튼</span>
+          <div class="bar">
+              <span class="bartxt">button</span>
+          </div>
+    </button>
+</body>
+</html>

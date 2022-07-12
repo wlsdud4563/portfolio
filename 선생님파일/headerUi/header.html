@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        a{text-decoration: none;color:inherit;}
+        ul{list-style: none;}
+
+        header{
+            background-color: #000;
+            color: #fff;
+            padding-bottom: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        h1{
+            text-align: center;
+            padding-top: 24px;
+        }
+
+        ul{
+            display: flex; 
+            justify-content: center;
+            margin-top: 10px;
+        }
+        ul li{
+            margin:0 20px;
+        }
+
+        body{
+            height: 3000px;
+        }
+
+        header.on .wrap{
+            display: flex;
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: space-between;
+        }
+
+        header.on ul{
+            align-self: center;
+        }
+        header.on ul li{
+            margin:0 60px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="wrap">
+        <h1><a href="#">LOGO</a></h1>
+        <ul>
+            <li>gnb1</li>
+            <li>gnb2</li>
+            <li>gnb3</li>
+            <li>gnb4</li>
+            <li>gnb5</li>
+        </ul></div>
+    </header>
+
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+
+
+    <script>
+        $('body').on('mousewheel',function(e,d){
+            if(d<0){
+            $('header').addClass('on');
+           }
+        });
+
+        $(window).on('scroll',function(){
+            let scr = $(window).scrollTop();
+            if(scr == 0 ){
+                $('header').removeClass('on')
+            }
+
+        })
+    </script>
+</body>
+</html>

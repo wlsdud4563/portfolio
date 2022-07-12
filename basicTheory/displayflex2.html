@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>displayflex2</title>
+        <style>
+            .con{
+                background-color: pink;
+                display: flex;
+                justify-content: space-between;
+                /* 메인축 내에서의 아이템 정렬스페이스 비트윈은 남은 여백사이에 아이템을 자동분배 */
+                /* 디스플레이 플렉스가 없으면 저스티파이 컨텐트는 작동하지 않는다 옵션중 하나 */
+            }
+            .item{
+                width: 250px;
+                height: 250px;
+                background-color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="con">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            
+        </div>
+    </body>
+</html>

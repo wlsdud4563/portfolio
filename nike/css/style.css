@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+header{
+    z-index: 30;
+    /* 포지션 픽스드 끼리 곂쳐졌을때 나중에 작업한 부분이 먼저 올라오기 때문에 z인덱스로 앞으로 보낼수 있다 */
+    width: 700px;
+    height: 100%;
+    background-image: linear-gradient(-45deg, #e6fc55, #b9fb05, #97e031);
+    transform: skewX(-40deg);
+    position: fixed;
+    left: -420px;
+    top: 0;
+    /* 포지션 픽스트 상태에서 하이트나 위드를 100%를 준경우 브라우저와 동일한 높이나 너비가 됩니다
+    포지션 픽스드를 쓰는 순간 해당요소의 상속대상은 브라우저가 되기 때문
+    */
+}
+h1{
+    transform: skewx(45deg);
+    position: absolute;
+    left: 150px;
+    top: 40px;
+}
+
+.gnb{
+    position: absolute;
+    top: 150px;
+    right: 0;
+    width: 220px;
+    text-align: center;
+}
+.gnb a{
+    display: block;
+    line-height: 50px;
+    transition: all 0.5s;
+}
+.gnb span{
+    /* 인라인 요소에게 트렌스폼 적용이 안됩니다 
+    스판은 대표적인 인라인 요소다  */
+    display: block;
+    transform: skew(40deg);
+}
+.gnb>li:first-child{
+    background-color: #111;
+    color: #fff;
+    
+}
+.gnb>li:hover{
+    background-color: #111;
+}
+.gnb>li>a:hover{
+    color: #fff;
+}
+.gnb>li:hover>a{
+    background-color: #111;
+    color:#fff;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+}
+.gnb>li{
+    position: relative;
+    font-family: play;
+    font-style: italic;
+    font-weight: 700;
+}
+.gnb>li>a{
+    font-size: 18px;
+}
+.gnb .sub{
+    position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 1s;
+        opacity: 0;
+}
+.gnb li:hover .sub{
+    position: absolute;
+    left: 220px;
+    top: 0;
+    opacity: 1;
+}
+.sub a{
+    display: block;
+    width: 150px;
+    line-height: 50px;
+    background-color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #b9fb05;
+    color: #fff;
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+    opacity: 0.8;
+}
+
+
+
+
+figure{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+}
+figure video{
+    width: 100%;
+    min-width: 1600px;
+    
+    /* 최소 너비
+    100%라는 상대값을 따라서 비디오가 가이즈가 커졌다 줄어들었다를 반복 할 수 있는데 이때
+    아무리 사이즈가 줄어 들어도 너비가 1600미만으로는 줄어들지 않게 하는 속성
+    
+    왜 줘야하나요? 
+    우리가 하고 싶은것 : 한화면을 가득채운 영상뷰
+    우리가 한것 1920 모니터로 작업하면서 위드값 100% 주기
+    결과 성공적
+    
+    생각해볼문제점 과연 다른 사이즈와 다른 비율의 모니터에 이렇게 영상이 가득차서 나올까
+    문제점에 대한답 아니요
+    어떻게 할까?
+    만약 이게 이미지라면 백그라운드 처리 하고 백그라운드 커버 하면 되는데
+    그러나 이건 영상임
+    영상의 특징: 너비와 높이중 마지막에 쓰인 값에 맞춰서
+    같이 다른 하나를 비율에 맞게 늘리거나 줄임*/
+    /* ㄴ 아하! 그렇다면 너비를 특정 미만으로 줄어들지 않게 하면 되겠다!!* */
+}
+.sns{
+    position: fixed;
+    top: 60px;
+    right: 50px;
+    display: flex;
+    color: #b9fb05;
+    font-size: 25px;
+}
+.sns a{
+    margin-left: 30px;
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+.sns a:hover{
+    opacity: 100%;
+    transform: scale(1.5);
+    /* 마우스올렸을때 커지게 하고 싶으면 트랜스폼 스케일을 쓴다 폰드같은경우 크게 하였을경우 밀려나기 때문
+    트랜스폼 스케일을 쓴다 */
+}
+article{
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+
+}
+article p{
+    font-size: 160px;
+    color: #b9fb05;
+    font-family: 'Monoton', cursive;
+    line-height: 1;
+    
+    /* 라인하이트는 다른 여타 속성들과는 달리 
+    단위없이 줄 수도 있다 단위 없이 줄 경우 폰트사이즈의 배수로 들어갑니다 
+    라인하이트는 위아래로 커진다*/
+}
+article em{
+    font-size: 50px;
+    color: #fff;
+    font-family: 'Play', sans-serif;
+}
+article h2{
+    font-size: 34px;
+    color: #bbb;
+    font-family: 'Play', sans-serif;
+    font-weight: normal;
+}
+article strong{
+    color: #b9fb05;
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+section{
+    width: 800px;
+    height: 100%;
+    position: fixed;
+    background-color: #111;
+    transform: skewX(-40deg);
+    opacity: 0.5;
+    bottom: 0;
+    right: -800px;
+    transition: all 1s;
+    
+}
+section:hover{
+    right: -500px;
+    opacity: 0.8;
+}
+.con{
+    width: 400px;
+    height: 100%;
+    position: absolute;
+    left: 150px;
+    bottom: 0;
+    background-color: #000;
+    transition: all 1s;
+    color: #b9fb05;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.con:hover{
+    left: 50px;
+}
+section:hover .btn{
+    display: none;
+    /* 디스플레이 논을 하면 트렌지션이 안먹힘 */
+}
+.btn{
+    color: #b9fb05;
+    font-size: 60px;
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    transform: scaleX(40deg);
+}
+.btn i{
+    position: absolute;
+    right: 0;
+    bottom: 0%;
+    animation-name: arrow;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes arrow{
+    0%{right: 0;}
+    100%{right: 100px; opacity: 0; transform: scale(1.5);}
+}
+.btn i:nth-child(2){
+    animation-delay: 0.5s;
+}
+.btn i:nth-child(3){
+    animation-delay: 1s;
+}
+.cwrap{
+ margin-bottom: 40px;
+}
+.cwrap p{
+   transform: skewX(40deg);
+}
+.cwrap div{
+    margin-bottom: 10px;
+    transform: translate(200px);
+    transition: all 0.5s;
+}
+section:hover .cwrap div{
+    transform: translate(0);
+}
+.cwrap div:nth-child(2){
+    transition-delay: 0.1s;
+}
+.cwrap div:nth-child(3){
+    transition-delay: 0.2;
+}

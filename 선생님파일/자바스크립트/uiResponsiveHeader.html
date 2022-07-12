@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 헤더 -.-</title>
+    <style>
+        *{margin: 0; padding:0;}
+        ul{list-style: none;}
+        a{color: inherit;text-decoration: none;}
+
+        header{
+            height: 50px;
+            background-color: mediumblue;
+        }
+
+        h1{
+            font-size: 20px;
+            font-family: impact;
+            font-style: italic;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            text-decoration: underline 3px #fff;
+        }
+
+        .btnNav{
+            z-index: 999;
+            width: 50px;
+            height: 50px;
+            border:0;
+            border-left: 2px solid darkblue;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: transparent;
+        }
+
+        .btnNav span{
+            display: block;
+            width: 22px;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 100px;
+            position: absolute;
+            top:23px;
+            left:14px;
+            transition: all 0.5s;
+        }
+
+        .s1{
+            margin-top: -7px;
+        }
+
+        .s3{
+            margin-top: 7px;
+        }
+
+        .btnNav.open .s1{
+            transform: rotate(45deg);
+            margin-top: 0;
+        }
+
+        .btnNav.open .s2{
+            opacity: 0;
+        }
+
+        .btnNav.open .s3{
+            transform: rotate(-45deg);
+            margin-top: 0;
+        }
+
+        .btnNav.open{
+            background-color: darkblue;
+        }
+
+
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: darkblue;
+            color: #fff;
+            display: none;
+        }
+
+        .util{
+            display: flex;
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            left: 0;
+            font-family: pretendard;
+            font-size: 18px;
+            justify-content: center;
+        }
+
+        .util li{
+            margin:0 10px;
+        }
+
+        .gnb{
+            margin-top: 80px;
+        }
+
+        .gnb>li>a{
+            font-family: impact;
+            font-size: 40px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 10px;
+            display: block;
+            position: relative;
+        }
+
+        .gnb>li>a:after{
+            content: '';
+            width: 15px;
+            height: 15px;
+            border-left: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            transform: rotate(-45deg);
+        }
+
+        .gnb>li>a.active:after{
+            transform: rotate(135deg);
+        }
+
+        .gnb>li{
+            padding-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        .sub li{
+            background-color: rgba(0,0,0,0.2);
+            padding:5px 10px;
+        }
+
+        .sub{
+            display: none;
+        }
+
+
+
+@media all and (min-width:1200px){
+
+    header{
+        height: auto;
+    }
+
+    h1{
+        line-height: normal;
+        padding-top: 25px;
+        font-size: 40px;
+    }
+
+    .hWrap{
+        width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+
+    nav{
+        position: static;
+        display: block;
+        background-color: transparent;
+    }
+
+    .util{
+        font-size: 12px;
+        font-weight: bold;
+        top: 20px;
+        right: 0;
+        left: unset;
+        /* 위에서 left:0 무효화시키는 것!
+        left와 right둘다 들어가 있으면 left만 적용 */
+        width: auto;
+    }
+    .gnb{
+        margin-top: 20px;
+        paddng:0;
+        display: flex;
+        justify-content: center;
+    }
+    .gnb li{
+        margin:0 25px;
+        padding:0;
+        border:0;
+        font-size: 22px;
+        background-color: unset;
+        margin-bottom: 0;
+    }
+
+    .gnb li a{
+        padding: 0;
+        font-size: 22px;
+        border:0;
+    }
+
+    .gnb li a:after{
+        content: none;
+    }
+    .btnNav{display: none;}
+
+    .gnb>li{
+        position: relative;
+    }
+
+    .gnb>li>a{
+        padding-bottom: 15px;
+    }
+
+    .sub{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 39px;
+        background-color: darkblue;
+    }
+    .sub li{
+        padding:10px 20px;
+    }
+
+
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hWrap">
+            <h1><a href="#">LOGO</a></h1>
+         
+        <nav>
+            <ul class="gnb">
+                <li><a href="#">GNB1</a>
+                    <ul class="sub">
+                        <li><a href="#">sub1</a></li>
+                        <li><a href="#">sub2</a></li>
+                        <li><a href="#">sub3</a></li>
+                        <li><a href="#">sub4</a></li>
+                    </ul><!--sub1-->
+                </li><!--gnb1-->
+
+                <li><a href="#">GNB2</a>
+                    <ul class="sub">
+                        <li><a href="#">sub1</a></li>
+                        <li><a href="#">sub2</a></li>
+                        <li><a href="#">sub3</a></li>
+                    </ul><!--sub1-->
+                </li><!--gnb2-->     
+                
+                
+                <li><a href="#">GNB3</a>
+                    <ul class="sub">
+                        <li><a href="#">sub1</a></li>
+                        <li><a href="#">sub2</a></li>
+                        <li><a href="#">sub3</a></li>
+                        <li><a href="#">sub4</a></li>
+                        <li><a href="#">sub5</a></li>
+                        <li><a href="#">sub6</a></li>
+                    </ul><!--sub3-->
+                </li><!--gnb3-->
+                
+                <li><a href="#">GNB4</a>
+                    <ul class="sub">
+                        <li><a href="#">sub1</a></li>
+                        <li><a href="#">sub2</a></li>
+                        <li><a href="#">sub3</a></li>
+                        <li><a href="#">sub4</a></li>
+                        <li><a href="#">sub5</a></li>
+                    </ul><!--sub4-->
+                </li><!--gnb4-->    
+
+            </ul><!--gnb-->
+
+
+            <ul class="util">
+                <li><a href="#">util1</a></li>
+                <li><a href="#">util2</a></li>
+                <li><a href="#">util3</a></li>
+                <li><a href="#">util4</a></li>
+                <li><a href="#">util5</a></li>
+            </ul><!--util-->
+
+        </nav>
+
+        <button class="btnNav">
+            <span class="s1"></span>
+            <span class="s2"></span>
+            <span class="s3"></span>
+        </button><!--btnNav-->
+
+
+        </div><!--hWrap-->
+    </header>
+    
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+
+
+function pc(){
+
+    $('nav').show(); //모바일에서 nav fade 구동하고 나면
+    //display:none처리가 되어 있는 것을 pc에서 리셋시키기 위함 
+
+
+$('.gnb>li>a').off(); //이벤트 제거 
+$('.gnb>li').off(); //이벤트 제거 
+
+$('.gnb>li').on('mouseover',function(){
+
+    $(this).children('.sub').stop().slideDown();
+
+}).on('mouseout',function(){
+    
+    $(this).children('.sub').stop().slideUp();
+});
+
+}//pc.func
+
+
+
+
+function mobile(){
+    
+    let onOff = true;
+    $('nav').hide();
+    
+    
+    $('.btnNav').on('click',function(){
+        
+        console.log(onOff);
+    onOff = !onOff;
+
+    if(onOff == false){
+        $('nav').fadeIn();
+        $(this).addClass('open');
+    }else{
+        $('nav').fadeOut();
+        //$(this).removeClass(); 모든 클래스 싹다 삭제 -.- 
+        $(this).removeClass('open'); 
+    }
+
+});//btnNav 클릭!
+
+$('.gnb>li').off(); //이벤트 제거 
+$('.gnb>li>a').off(); //이벤트 제거
+
+$('.btnNav').removeClass('open');
+$('.sub').css('height','auto');
+
+$('.gnb>li>a').on('click',function(e){
+    e.preventDefault();
+    $(this).siblings('.sub').stop().slideToggle();
+    $(this).parent().siblings().find('.sub').stop().slideUp();
+
+    $(this).toggleClass('active')
+    .parent().siblings().children('a').removeClass('active');
+});
+
+}//mobile function!!!!
+
+// 반응형원리는 ? 브라우저의 너비
+
+let winWidth = $(window).width();
+if(winWidth >=1200){
+   pc();
+}else{
+    mobile();
+}
+
+
+//브라우저 리사이징할 때 자동으로 인식해서 함수 실행
+
+$(window).on('resize',function(){
+    let winWidth2 = $(window).width();
+
+    if(winWidth2 >= 1200){
+        pc();
+    }else{
+        mobile();
+    }
+
+});
+
+</script>
+</body>
+</html>

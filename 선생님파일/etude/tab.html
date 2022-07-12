@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+
+        .wrap{
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn{
+            display: flex;
+        }
+
+        .btn button{
+            flex: 1;
+            border:5px solid #000;            
+        }
+
+        .con{}
+        .con div{
+            display: none;
+            height: 300px;
+            width: 100%;
+            line-height: 300px;
+            font-family: 'arial';
+            font-size: 70px;
+            font-weight: 900;
+            text-align: center;
+            border: 5px solid #000;
+            text-transform: uppercase;
+            box-sizing: border-box;
+        }
+
+        .con .box1{
+            display: block;
+        }
+
+        /* .on이라는 클래스를 가진 버튼 */
+        button.on{
+            background-color: black;
+            color: #fff;
+        }
+</style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="btn">
+            <button class="on">red</button>
+            <button>orangered</button>
+            <button>orange</button>
+            <button>gold</button>
+            <button>yellowgreen</button>
+            <button>green</button>
+        </div>
+        <div class="con">
+            <div class="box1">red</div>
+            <div class="box2">orangered</div>
+            <div class="box3">orange</div>
+            <div class="box4">gold</div>
+            <div class="box5">yellowgreen</div>
+            <div class="box6">forestgreen</div>
+        </div><!--con-->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.con div').each(function(){
+            let color = $(this).text();
+
+            $(this).css({'backgroundColor' : color})
+
+        });
+
+        $('button').each(function(){
+            let color = $(this).text();
+            $(this).css({'borderColor' : color})
+        })
+
+
+        $('button').click(function(){
+            let i = $(this).index();
+            $('.con').children('div').eq(i).show()
+            .siblings().hide();
+            
+            $(this).addClass('on').siblings().removeClass('on')
+
+        });
+    </script>
+
+</body>
+</html>

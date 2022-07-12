@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // let num = prompt('경품번호를 입력해주세요');
+        // // 프롬프트로 입력받는 것은 문자열 string입니다!
+
+        
+        // let result;
+        
+
+        // if(num == 1111){
+
+        //     result = "맥북프로";
+
+        // }else if(num == 2222){
+        //     result = '루믹스gh6';
+        // }else if(num == 3333){
+        //     result = '아이폰13프로맥스';
+        // }else if(num == 4444){
+        //     result = '아이폰';
+        // }else if(num == 5555){
+        //     result = '아이패드';
+        // }else if(num == 6666){
+        //     result = '에어팟프로 당첨';
+        // }else{
+        //     document.write('꽝입니다')
+        // }
+
+        // if(result){
+        //     document.write(result + "당첨");
+
+        // }
+        // // 번호가 1111이면 맥북당첨
+        // // 번호가 2222이면 카메라 당첨
+        // // 번호다 3333이면 아이폰당첨
+
+        let num = prompt('경품번호');
+        let result;
+        
+        switch(num){
+            case "1111" : result = "다이슨";
+            break;
+            case "2222" : result = "비스포크";
+            break;
+            case "3333" : result = "맥북프로";
+            break;
+            case "4444" : result = "루믹스";
+            break;
+            case "5555" : result = "에어팟프로";
+            break;
+            case "6666" : result = "갤럭시프로";
+            break;
+            default : document.write("꽝입니다");
+        }
+
+        document.write(result);
+
+        /*
+        // if는 조건문
+        // 스위치는 선택문
+        비교대상과 어떤 것들이 같을때 
+        // switch(비교대상 ff){
+            case a : ff가 a와 같을 때 실행될 실행구문;
+            break;
+            case b : ff가 b와 같을때 실행될실행구문;
+            break;
+            case c : 실행구문;
+            break;
+            case d : 실행구문;
+            break;
+            case e : 실행구문;
+            break;
+
+            default : 위에서 해당하는 것 하나도 없을때 실행될 구문 실행구문; 
+        }
+            q.그러면 그냥 if문 쓰면 안되나요?
+            a. 맞습니다 그러나 스위치를 사용하면 코드가 훨씬 간결해지고 관리하기가 쉽습니다
+            q. 브레이크 안써주면 어떤 일이 일어나죠?
+            a. 실행될 실행구문이 실행되고 그아래 모든 실행 구문들 또한 다실행 되어버림니다
+            q. 디폴트를 안쓰면 안되요?
+            else 생략가능 하지 않아썽ㅆ나요?
+            a. 디폴트도 필요없을땐 생략이 가능합니다.
+            
+        */
+    </script>
+</body>
+</html>

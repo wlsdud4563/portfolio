@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.imgbox{
+    height: 516px;
+    position: relative;
+}
+.imgbox .photo{
+    height: 516px;
+}
+.box{
+    width: 400px;
+    height: 700px;
+}
+.imgbox over{
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 516px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 1s;
+
+    display: inline-block;
+    /* 인라인 요소처럼 정렬하되 블록요소 처럼 너비와 노ㅠ이를 다가질수 있다 너비 높이 마진 모든 개념을 다 가질수 있지만 인라인 요소처럼 생기고 정렬되는 속성 */
+
+}
+.imgbox .over img{
+    display: block;
+    width: 20px;
+}
+imgbox .over p{
+    background-color: bisque;
+    text-align: center;
+}

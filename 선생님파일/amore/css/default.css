@@ -1,0 +1,114 @@
+@media all and (min-width: 1200px){
+    .mobile{
+        display: none;
+    }
+    .pc{
+        display: block;
+    }
+    header{
+        height: 147px;
+        
+
+    }
+    .hWrap{
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+
+    }
+    .btnNav{
+        display: none;
+    }
+    .btnSns{
+        display: none;
+    }
+    .btnClose{
+        display: none;
+    }
+    h1{
+        padding-top: 35px;
+    }
+    h1 img{
+        width: 256px;
+    }
+    .gnb{
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+    }
+    nav{
+        background-color: transparent;
+        position: unset;
+    
+    }
+    
+    .gnb li{
+        margin-left: 50px;
+        margin-right: 50px;
+        position: relative;
+    
+    }
+    .gnb>li>a::after{
+        content: none;
+    }
+    .gnb>li::after{
+        display: block;
+        content: '';
+        width: 0;
+        height: 4px;
+        background-color: #7e7941;
+        transition: all 0.6s linear;
+    }
+    .gnb>li:hover::after{
+        width: 100%;
+    }
+
+    input{
+        width: 170px;
+        background-color: transparent;
+        border: 1px solid #8e9996;
+    }
+    .sub{
+        margin-top: 20px;
+        display: flex;
+        background-color: transparent;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .sub li{
+        margin-left: 20px;
+        margin-right: 20px;
+        line-height: normal;
+        border: 0;
+        white-space: nowrap;
+        /* 화이트 스페이스 노랩 글자를 안떨어트리고 계속 가로정렬시킬수 있음
+        텍스트는 일정고간 이상 넘어서면 줄바꿈이 된다 (보통은 단어단위로)
+        그래서 떨어지지 않게 하고 싶다면 주는것 */
+       
+    
+    }
+    .util{
+        position: absolute;
+        top: 40px;
+        right: 0;
+        margin-top: 0;
+    }
+    input{
+        border-bottom:  1px solid #373939;
+        padding-bottom: 3px;
+        width: 170px;
+        background-color: transparent;
+        border: 0;
+        background-image: url(../images/btn_util_search.png);
+        background-repeat: no-repeat;
+        background-size: 14px auto;
+        background-position: right center;
+    }
+
+
+
+} /*1200px*/ 

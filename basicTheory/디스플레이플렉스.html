@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>display:flex</title>
+        <style>
+            .con{
+                display: flex;
+            }
+            /* 가로정렬할 아이템 끼리는 반드시 하나의 부모로 묶어준다 */
+            /* 묶어준 부모를 컨테이너 라고 부른다 */
+            /* 디스플레이플렉스로 가로정렬하기 */
+            /* 하나의 컨테이너 안에 가로정렬시킬 아이템들을 집어넣는다 */
+            /* 컨테이너에게 디스플레이플렉스를 주면 안에 아이템들이 정렬된다 */
+            .item{
+                width: 200px;
+                height: 300px;
+                background-color: orange;
+                margin-right: 20px;
+                margin-bottom: 30px;
+
+            }
+            .con2{
+                display: flex;
+                background-color: blue;
+                margin-bottom: 200px;
+
+            }
+            .item2{
+                width: 250px;
+                height: 320px;
+                background-color: lightblue;
+                margin-right: 30px;
+            }
+            .header{
+                height: 80px;
+                width: 1000px;
+                background-color: black;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .bn{
+                height: 480px;
+                width: 1000px;
+                background-color: crimson;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .space{
+                display: flex;
+                margin-top: 20px;
+                background-color: papayawhip;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .box{
+                width: 310px;
+                height: 360px;
+                background-color: lawngreen;
+                margin-right: 35px;
+            }
+           
+            .box:last-child{
+                margin-right: 0;
+            }
+            .footer{
+                width: 1000px;
+                height: 60px;
+                background-color: blue;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="con">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+            <div class="con2">
+                <div class="item2"></div>
+                <div class="item2"></div>
+                <div class="item2"></div>
+            </div>
+
+        <div class="header"></div>
+        <div class="bn"></div>
+        <div class="space">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>

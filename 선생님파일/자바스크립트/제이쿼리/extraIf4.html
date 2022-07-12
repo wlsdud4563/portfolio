@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- 
+
+    <input type="text">
+    input 태그는 사용자에게서 데이터를 넘겨받을 수 있는
+    HTML 태그의 총집합
+
+     input - text, color, tel, search, number, time...
+     select- 여러 option중에서 선택해서 보냄...
+
+     input에서 넘겨받은 데이터는
+     해당 input의 value로 전송됩니다 
+
+     <form>
+      사용자들에게 넘겨받는 데이터들을 하나로 묶어ㅕ서
+      전송하는 기능까지 가지고 있는 태그
+      = input들을 감싸는 필드 
+
+      form이 서버로 데이터를 전송하든,
+      우리처럼 자바스크립트로 데이터를 다루던 간에
+      form 에서 사용되는 이벤트는 "submit"
+      언제 발생하느냐??
+      form 내부의 input에다가 값을 입력하고 enter를 쳤을때
+      혹은 form 내부의 button을 클릭 했을때 
+
+ -->
+
+<form class="bmiForm">
+
+    <select class="gender">
+        <option value="male">남성</option>
+        <option value="female">여성</option>
+    </select>
+
+    <!-- label 태그는 input 태그에 이름달아주는 용도 -->
+    <label>키
+    <input type="text" class="height" placeholder="키">
+    </label>
+
+    <label>체중
+    <input type="text" class="weight" placeholder="체중">
+    </label>
+
+    <button>입력</button>
+</form><!--bmiForm-->
+
+
+<div class="result">
+ <h1>BMI 지수를 알아봅시다!</h1>
+ <h2>당신의 표준체중은 <span class="val1"></span>Kg 입니다!</h2>
+ <p>BMI 지수 : <span class="val2"></span></p>
+ <p>키 : <span class="val3"></span>cm</p>
+ <p>체중 : <span class="val4"></span>kg</p>
+
+ <h3><span class="val5"></span> 입니다! </h3>
+ <p class="txt"></p>
+ <!-- 
+만약에 비만, 과체중이다 -> 세심한 관리가 필요합니다
+정상체중 -> 이대로 쭉 유지하시면 됩니다!
+저체중 -> 식단 및 운동 관리를 하셔야 합니다!
+
+  -->
+
+</div><!--result-->
+
+<script>
+   let form = document.querySelector('.bmiForm');
+   let select = document.querySelector('.gender');
+   let height = document.querySelector('.height');
+   let weight = document.querySelector('.weight');
+
+   let val1 = document.querySelector('.val1');//표준체중
+   let val2 = document.querySelector('.val2');//bmi지수
+   let val3 = document.querySelector('.val3');//키
+   let val4 = document.querySelector('.val4');//체중
+   let val5 = document.querySelector('.val5');//bmi결과
+
+   let txt = document.querySelector('.txt'); 
+
+   //val1.innerText = 넣을값
+
+
+   form.addEventListener('submit',function(e){
+            e.preventDefault(); //form제출할때 새로고침 막기
+
+
+    let slt = select.value; //성별
+    let hig = height.value; //키
+    let wei = weight.value; //체중 
+
+
+    // 표준체중 구하기
+    // (키*0.01)*(키*0.01) * 곱할값!!
+    //곱할값은 남성이면 21이 되는거고 여성이면 22가 되는거
+
+    let n;
+    if(slt == "male"){
+        n = 21;
+    }else{
+        n = 22;
+    }
+
+    let avg = (hig * 0.01) * (hig * 0.01) * n; //표준체중
+        avg = parseInt(avg); //소숫점자리 내림 
+
+
+     //BMI 수치를 구한 다음
+    let bmi = wei / ((hig * 0.01) * (hig * 0.01));
+        bmi = Math.round(bmi * 10) / 10; 
+              //두자리수에서 반올림
+
+          /*
+    bmi -> 18.5 미만 : 저체중
+    bmi -> 18.5 이상 ~ 23 미만 : 정상체중
+    bmi -> 23이상 ~25미만 : 과체중
+    bmi -> 25~ :비만 
+    */
+    
+    let result;
+    let result2;
+
+
+    if(bmi < 18.5){
+        result = '저체중';
+        result2 = '식단 및 운동관리가 필요합니다';    
+    }else if(bmi >= 18.5 && bmi < 23){
+        result = '정상체중';
+        result2 = '이대로 쭉 유지하세요';    
+    }else if(bmi >= 23 && bmi < 25){
+        result = '과체중';
+        result2 = '세심한 관리가 필요합니다';    
+    }else{
+        result = '비만';
+        result2 = '세심한 관리가 필요합니다';    
+    }
+
+    txt.innerText = result2;
+
+
+    val1.innerText = avg;
+    val2.innerText = bmi;
+    val3.innerText = hig;
+    val4.innerText = wei;
+    val5.innerText = result;
+ 
+   
+
+    /*
+    
+    만약에 비만, 과체중이다 -> 세심한 관리가 필요합니다
+정상체중 -> 이대로 쭉 유지하시면 됩니다!
+저체중 -> 식단 및 운동 관리를 하셔야 합니다!
+
+  를 txt.innerText = 로 넣기 
+*/
+
+
+
+   }); //form 이벤트
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

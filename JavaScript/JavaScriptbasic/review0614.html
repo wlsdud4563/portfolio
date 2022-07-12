@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>f리뷰0614</title>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+        }
+        .wrap{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding:  40px;
+            border: 1px solid #ddd;
+            margin-top: 100px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .wrap div{
+            width: 48%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 22px;
+            font-family: pretendard;
+        }
+        fieldset{
+            border: 0;
+            margin-bottom: 20px;
+            color: #363636;
+        }
+        /* 인풋중에 속성값 타입 텍스트를 가지고 있는것들을 전부 한꺼번에 잡기 */
+        input[type=text]{
+                     border: 0;
+                     padding: 5px;
+                     border-bottom: 1px solid #ccc;
+                     margin: 0 10px;
+                     font-size: 22px;
+                     font-weight: bold;
+                     width: 100px;
+                     text-align: right;
+                     
+        }
+            
+        input::placeholder{
+            color: steelblue;
+        }
+        .formbox{
+            position: relative;
+        }
+        button{
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80px;
+            height: 38px;
+            text-align: center;
+            background-color: transparent;
+            border: 1px solid #363636;
+            border-radius: 3px;
+            color: blueviolet;
+            font-weight: bold;
+        }
+        .result{
+            display: flex;
+            align-items: center;
+        justify-content: flex-end;
+        /* 플랙스 엔드 끝에서 붙는다 */
+        flex-wrap: wrap;
+        }
+        .print{
+            font-size: 48px;
+            font-weight: 900;
+            color: #111;
+            margin-right: 10px;
+        }
+        .warning{
+            color: crimson;
+            font-size: 16px;
+            margin-top: 5px;
+            visibility: hidden;
+            /* 숨김처림
+            1.오파시티
+            2.디스플레이 논
+            3.비시빌리티 히든
+            으로 쓸수 있다
+            디스플레이 논처럼 숨김 처리하는 속성이나 디스플레이논은 공간자체를 삭제하는 반면에 비지빌리티 히든은 원래의 공간을 계속유지한체 필요하면 나오게 만드는 속성 좋음
+            */
+            
+        }
+        .warning span{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #363636;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: bold;
+            margin-left: 35px;
+        }
+        .tax{
+            width: 100%;
+            font-size: 16px;
+            text-align: right;
+            display: block;
+
+        }
+        input[type=checkbox]{
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccc;
+            vertical-align: -5px;
+            margin-left: 5px;
+
+        }
+        /* 체크박스를 눌렀을때는 호버가 아니고 체크드 */
+        input[type=checkbox]:checked{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+         <div class="formbox">
+             <form action="">
+               <fieldset>
+                <!-- <legend>시급입력</legend>  레전드 해당그룹에 타이틀을 붙이는 용도 -->
+
+                       <label for="pay">시급</label>
+                       <input id="pay" type="text" class="pay" placeholder="9,160" required>원
+                       
+               </fieldset>
+                    <!-- 필드셋 폼 약식 안에서 여러 인풋들이랑 레이블 들을 묶을대 사용하는 div같은 무언가 -->
+
+                    <fieldset>
+                        <label for="hours">총 근무 시간</label>
+                        <input type="text" class="hr" id="hours" placeholder="48">시간
+                        <p class="warning">
+                            <span>!</span>법정 근로기준 시간을 초과하였습니다.
+                        </p>
+                    </fieldset>
+                    <button>입력</button>
+                    
+               </form>
+         </div><!--formbox-->
+         <div class="result">
+            <p>
+              <span class="print"></span>원
+            </p>
+            <label class="tax">
+                세금 3.3% 공제
+                <input type="checkbox" class="check">
+            </label>
+          </div>
+    </div><!--wrap-->
+    
+    <script>
+// 선택지를 잡아주자
+      
+      let form = document.querySelector('form'),
+      pay = document.querySelector('.pay'),
+      hr = document.querySelector('.hr'),
+      print = document.querySelector('.printresult     warning = document.querySelector('.warning'),
+      check = document.querySelector(.'check');
+
+    //   이벤트 생성을 해 줍시다! : form의 submit 이벤트
+    form.addEventListener('submit',function(e){
+            e.preventDefault(); //submit 이벤트의 새로고침 막기
+            let money = pay.value;
+            let hours = hr.value;
+
+
+            let result = money * hours;
+
+            // 입력받은 금액기 9160보다 작으면 경고창을 띄웁니다 법정 최저임금미만입니다
+            // 시간을 15시간 이상 입력할 경우 경고창을 또 끠웁니다
+            // 주휴수당 지급 대상입니다
+            // 시간을 52시간 이상입력할경우 경고창
+            // 법정근로 기준시간 초과
+            
+            if(money < 9160){
+                alert('법정최저임금 미만입니다.');
+            }
+            if(hours >= 15){
+                alert('주휴수당 지급 대상입니다.');
+            }
+            if(hours >= 52){
+                warning.style.visibility = "visibility";
+            }
+            if(check.checked == true){
+                result = result - (result * 0.033);
+                print.innerText = result;
+            }
+
+            print.innerText = result;
+ 
+            //1.입력 받은 값들을 각각의 변수에 저장을 좀 합니다
+            //2, 저장받은 값들은 연산하고
+            //3. span.print안에 출력함!
+
+    }); //func.form
+
+    check.addEventListener('click',function(){
+
+        console.log(this.checked);
+
+        if(this.checked == true){
+            let result = pay.value * hr.value;
+            print.innerText = result - (result * 0.033);
+
+
+        }else{
+
+        }
+
+    });
+    
+    </script>
+</body>
+</html>

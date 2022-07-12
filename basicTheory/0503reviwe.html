@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>플렉스 관련된이야기</title>
+        <style>
+            section{
+                background-color: #dddddd;
+                border-radius: 30px;
+                margin-top: 40px;
+                margin-left: 20px;
+                margin-right: 20px;
+                padding: 20px;
+                /* 이렇게 쓰면 상하좌우 통합으로 적용됨 */
+        
+            }
+            .con1{
+                border: 5px solid black;
+                display: flex;
+                /* 반듯이 컨테이너 한테 줘야한다 */
+            }
+            .box1{
+                border: 3px solid forestgreen;
+                width: 250px;
+                height: 250px;
+                /* 사이와 사이를 띄우고 싶을때 제일먼저 고려 사항은 margin */
+            }
+            .con2{
+                border: 5px solid black;
+                display: flex;
+                justify-content: space-between;
+                /* 스페이스 비트윈은 내부의 아이템들은 고르게 분포시키는 속성 */
+            }
+            .box2{
+                width: 250px;
+                height: 250px;
+                border: 3px solid crimson;
+            }
+            .con3{
+                border: 5px solid goldenrod;
+                display: flex;
+                justify-content: center;
+
+            }
+            .box3{
+                width: 250px;
+                height: 250px;
+                border:  3px solid blueviolet;
+            }
+            .con4, .con5{
+                display: flex;
+                border: 5px solid blue;
+                justify-content: space-evenly
+
+            }
+            .box4, .box5{
+                width: 250px;
+                height: 250px;
+                background-color: antiquewhite;
+                border: 3px solid black;
+            }
+            .box5{
+                background-color: darkblue;
+                
+            }
+            .con5{
+                justify-content: flex-start;
+                width: 1200px;
+                flex-wrap: wrap;
+            }
+            .box5:nth-child(1){
+                width: 900px;
+            }
+            .con6{
+                border: 5px solid chocolate;
+                display: flex;
+                align-items: center;
+                /* 
+                align-items:는 수직축 정렬입니다
+                그런데 기본값이 stretch입니다
+                얘가 뭐냐면 
+                모든요소를 부모사이즈 꽉채울수 있게끔 높이를 조절하는 속성 가장 높이가 높은 긴 자식요소를 따라 나머지 요소 길이를 맞춤
+                얼라인 아이템즈 센터만 잘기억하자!
+                
+                */
+ 
+
+            }
+            .box6{
+                width: 250px;
+                border: 3px solid gold;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <!-- 일종의 div인데 특수한 의미의 div 섹션 -->
+        <h1>display: flex 복습</h1>
+        <section>
+            <div class="con1">
+              <div class="box1"></div>
+              <div class="box1"></div>
+              <div class="box1"></div>
+              <div class="box1"></div>
+              </div>
+              <pre>
+                  1.display flex는 반듯시 컨테이너에게 준다
+                  2.아이템들 사이를 띄우고 싶으면 제일먼저 margin을 고려합니다
+              </pre>
+        </section>
+        <section>
+            <div class="con2">
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+            </div>
+        </section>
+        <pre>
+            justify-content 속성은 컨테이너에게 적용시킨다 메인축이나 가로축 내에서 아이텐을 정렬하는 속성
+            justify-content 비트윈은 컨터에너 내에 아이템들을 사이간격을 고르게 벌려 분포시킨다 그래서 기본적인 그리드를 짤 때
+            박스들간의 마진을 일일이 계산하리 필요없이 간단하게 배치하여 만들어 주는 속정
+        </pre>
+        <section>
+            <div class="con3">
+                <div class="box3"></div>
+                <div class="box3"></div>
+                <div class="box3"></div>
+                <div class="box3"></div>
+            </div>
+            <pre>
+            justify-content 센터는 가운데에 아이템들을 배치시키는 속성
+            웹제작에 있어서 가운데 배열은 가장 중요한 속성중 한가지 입니다
+
+            다만 가운데 정렬된 속성들 끼리 띄우고 싶다면 margin을 써서 끠워야합니다 때로 패딩사용
+            </pre>
+        </section>
+        <section>
+            <div class="con4">
+                <div class="box4"></div>
+                <div class="box4"></div>
+                <div class="box4"></div>
+                <div class="box4"></div>
+            </div>
+        </section>
+        <pre>
+            justify-content: <space-around></space-around>
+            오븍제긑가 들어가고 남은 여백을 오브잭트 개수*2로 나눠서 각각의 오브젝트 좌우에 배치
+            justify-content space-evenly
+           오브젝트개수 +1로 나줘서 각각의 오브젝트 사이에 배치
+           space-between
+           은 맨앞의 오브젝트와 마지막의 오브젝트 바깥쪽 여백은 주지않ㄴ는 방면 이븐리는 바깥쪽 여백도 주는겉이라 생각하면 편함
+
+        </pre>
+        <section>
+            <div class="con5">
+                <div class="box5"></div>
+                <div class="box5"></div>
+                <div class="box5"></div>
+                <div class="box5"></div>
+            </div>
+            <pre>
+                display:f;ex를 사용해서 가로정렬을 하면 부모요소 보다 내무의 자식 요소들이 훨씬커도 어떻게든 부모요소 안쪽으로 수용하려는 속성이 생긴다
+                ex)부모요소의 크기 1200px 자식요소들의 총합 1650px그럼 에도 불구하고 자식들을 구겨 넣어서라도 절대 아래로 드랍하지 않는다
+                이데 디스플레이 플렉스의 가장큰 특징
+
+                그러나 경우에 따라서 자연스럽게 아래로 흘러내리는 그리드를 제작해야 할때가 있는데 이때는 
+                flex-wrap:warp을 부모요소에게 사용해 주면 됩니다!!!
+                >구겨졌던 자식의 크기가 원래대로 돌아오면서 부모의 너비를 초과는 요소들 아래로 자연스럽게 떨어집니다
+            </pre>
+        </section>
+        <section>
+            <div class="con6">
+                <div class="box6">
+                    aaaa
+                </div>
+                <div class="box6">
+                    bbbbb
+                    bbbbbb<br>
+                </div>
+                <div class="box6">
+                    ccccc<br>
+                    cccccc<br>
+                    cccccccc
+                </div>
+                <div class="box6">
+                    dddd<br>
+                dddddd<br>
+            ddddddd<br>
+        dddddd</div>
+            </div>
+        </section>
+    </body>
+</html>

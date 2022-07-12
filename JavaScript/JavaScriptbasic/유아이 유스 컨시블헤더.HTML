@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+        header{
+            height: 50px;
+            background-color: mediumblue;
+        }
+        h1{
+            font-size: 20px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-style: italic;
+            line-height: 50px;
+            text-decoration: underline 3px #fff;
+            color: #fff;
+            text-align: center;
+        }
+        .btnnav.open{
+            width: 50px;
+            height: 50px;
+            border-left: 2px solid darkblue;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: transparent;
+            
+        }
+        .btnnav span{
+            display: block;
+            width: 22px;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 100px;
+            position: absolute;
+            top: 23px;
+            left: 14px;
+            transition: all 0.6s;
+        }
+        .s1{
+            margin-top: -7px;
+        }
+        .s3{
+            margin-top: 7px;
+        }
+        .btnnav:hover .s1{
+            transform: rotate(45deg);
+            margin-top: 0;
+        }
+        .btnnav:hover .s3{
+            transform: rotate(-45deg);
+            margin-top: 0;
+        }
+        .btnnav:hover .s2{
+            display: none;
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: darkblue;
+            color: #fff;
+        }
+        .util{
+            display: flex;
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            left: 0;
+            font-family: pretendaed;
+            font-size: 18px;
+            justify-content: center;
+        }
+        .util li{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .gnb{
+            margin-top: 80px;
+        }
+        .gnb>li>a{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 40px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 10px;
+            display: block;
+            position: relative;
+        }
+        .gnb>li>a::after{
+            content: '';
+            width: 15px;
+            height: 15px;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            transform: rotate(-45deg);
+        }
+        .gnb>li{
+            padding-left: 15px;
+            margin-bottom: 10px;
+        }
+        .sub li{
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 5px 10px
+        }
+        .sub{
+            display: none;
+        }
+        .gnb>li>a.active:active{
+            transform: rotate(135deg);
+        }
+     @media all and (min-width:1200px){
+
+        header{
+            height: auto;
+          
+        }
+        h1{
+            line-height: normal;
+            padding-top: 25px;
+            font-size: 40px;
+
+        }
+        .hwrap{
+            width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        nav{
+            position: static;
+            display: block;
+            background-color: transparent;
+        }
+        .util{
+            font-size: 12px;
+            font-weight: bold;
+            top: 20px;
+            right: 0;
+            left: unset;
+            /* 위에서 레프트 0을 무효롸 시키는 것 */
+            width: auto;
+        }
+        .gnb{
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .gnb li{
+            margin: 0 25px;
+            padding: 0;
+            border: 0;
+            font-size: 22px;
+            background-color: unset;
+            margin-bottom: 0vmax;
+        }
+        .gnb>li{
+            position: relative;
+
+        }
+        .gnb>li>a{
+            padding-bottom: 15px;
+        }
+        .gnb li a{
+            padding: 0;
+            font-size: 22px;
+            border: 0;
+
+        }
+        .gnb li a::after{
+            content: none;
+        }
+        .sub{
+            
+            position: absolute;
+            background-color: darkblue;
+            left: 50%;
+            top: 39px;
+            transform: translateX(-50%);
+            
+
+        }
+        .sub li{
+            padding: 10px 20px;
+
+        }
+     }
+
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+    <div class="hwrap">
+        <h1><a href="#">LOGO</a></h1>
+        <ul class="gnb">
+            <li><a href="#">gnb1</a>
+                 <ul class="sub">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                 </ul>
+            </li><!--gnb1-->
+            <li><a href="#">gnb2</a>
+                <ul class="sub">
+                   <li><a href="#">sub1</a></li>
+                   <li><a href="#">sub2</a></li>
+                   <li><a href="#">sub3</a></li>
+                </ul>
+           </li><!--gnb2-->
+           <li><a href="#">gnb3</a>
+            <ul class="sub">
+               <li><a href="#">sub1</a></li>
+               <li><a href="#">sub2</a></li>
+               <li><a href="#">sub3</a></li>
+               <li><a href="#">sub4</a></li>
+               <li><a href="#">sub5</a></li>
+               <li><a href="#">sub6</a></li>
+            </ul>
+           </li><!--gnb3-->
+           <li><a href="#">gnb4</a>
+            <ul class="sub">
+               <li><a href="#">sub1</a></li>
+               <li><a href="#">sub2</a></li>
+               <li><a href="#">sub3</a></li>
+               <li><a href="#">sub4</a></li>
+               <li><a href="#">sub5</a></li>
+            </ul>
+           </li><!--gnb4-->
+        </ul>
+    </div>
+    <ul class="util">
+        <li><a href="#">util1</a></li>
+        <li><a href="#">util2</a></li>
+        <li><a href="#">util3</a></li>
+        <li><a href="#">util4</a></li>
+        <li><a href="#">util5</a></li>
+    </ul>
+</header>
+</nav>
+
+
+     <button class="btnnav">
+        <span class="s1"></span>
+        <span class="s2"></span>
+        <span class="s3"></span>
+     </button>
+
+     <script src="js/jquery-3.6.0.min.js"></script>
+     <script>
+
+        function pc(){
+
+            $('.gnb>li>a').off();
+            $('.gnb>li').off();
+        $('.gnb>li').on('mouseover',function(){
+            $(this).children('.sub').stop.slideDown();
+
+
+        }).on('mouseout',function(){
+            $(this).children('.sub').stop.slideUp();
+
+
+        });
+    }   //pc
+
+
+
+
+
+
+    function mobile(){
+
+
+        $('.btnnav').on('click',function(){
+            $(this).toggleClass('.open');
+            $('nav').stop().toggleClass();
+
+        });
+
+        $('.gnb>li').off();
+        $('.gnb>li>a').off();
+        $('.sub').css('height','auto');
+        $('.btnnav').removeClass('open');
+        $('.gnb>li>a').on('click',function(e){
+            e.preventDefault();
+            $(this).siblings('.sub').slideToggle().parent().siblings().stop().find('.sub').slideUp();
+
+            $(this).toggleClass('.active').parent().siblings().children('a').stop.removeClass('active')
+
+
+        }); 
+    } //모바일
+
+
+        // 반응형 원리는? 브라우저의 너비
+        let winWidth = $(window).width();
+        if(winWidth >=1200){
+            pc();
+
+        }eles{
+           mobile();
+        }
+
+        $(window).on('resize',function(){
+
+            let winWidth2 = $(window).width();
+            if(winWidth2 >=1200){
+                pc();
+
+            }else{
+                mobile();
+            }
+        });
+     </script>
+</body>
+</html>
